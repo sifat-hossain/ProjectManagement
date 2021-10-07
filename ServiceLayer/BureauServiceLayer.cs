@@ -39,6 +39,7 @@ namespace ProjectManagement.ServiceLayer
 
         public async Task<List<BureauViewModel>> GetAllBureau()
         {
+
             List<Bureau> bureau = await dbContext.Bureaus.FromSqlRaw("exec SpGetBureau").ToListAsync();
             List<BureauViewModel> bureauViewModel = mapper.Map<List<BureauViewModel>>(bureau);
             return bureauViewModel;
