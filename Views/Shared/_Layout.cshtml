@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ProjectManagement</title>
+    <link href="~/Dashboard/plugins/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link href="~/Dashboard/plugins/overlayScrollbars/css/OverlayScrollbars.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="~/Dashboard/plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Dashboard/dist/css/adminlte.css">
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed ">
+    <div class="wrapper">
+        <partial name="_Navbar" />
+        
+        <partial name="_Sidebar" />
+        
+
+        <div class="content-wrapper">
+            @RenderBody()
+        </div>
+    </div>
+    <div hidden>
+        <partial name="_Footer" />
+    </div>
+    <script src="~/Dashboard/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/Dashboard/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/Dashboard/dist/js/adminlte.min.js"></script>
+    <script src="~/Dashboard/plugins/overlayScrollbars/js/OverlayScrollbars.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+
+</body>
+</html>

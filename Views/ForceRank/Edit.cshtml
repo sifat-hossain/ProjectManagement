@@ -1,0 +1,52 @@
+﻿@model ProjectManagement.ViewModel.ForceRankViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@if (ViewBag.Message != null)
+{
+    <partial name="Message" />
+}
+<center>
+    <div class="col-md-6">
+        <div class="card">
+            <hr />
+            <div class="card-header p-2"><h1>Edit Rank</h1> </div><!-- /.card-header -->
+            <div class="card-body">
+                <div class="tab-content">
+                    <!-- /.tab-pane -->
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="ForceRankId" />
+                        <div class="form-group row">
+                            <label class="control-label col-md-3"> Rank Name</label>
+                            <input asp-for="ForceRankName" class="form-control col-md-6" />
+                            <span asp-validation-for="ForceRankName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Service Name</label>
+                            <select class="form-control col-md-6" asp-for="RankTypeId" asp-items="@(new SelectList(@ViewBag.RankType,"RankTypeId","RankTypeName"))">
+                                <option value="" selected disabled> Please Select a Service Name</option>
+                            </select>
+                            <span asp-validation-for="RankTypeId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </div>
+                    </form>
+                    <div>
+                        <a asp-action="Index">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</center>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

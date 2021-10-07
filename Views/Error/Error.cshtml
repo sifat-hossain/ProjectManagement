@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "Error";
+   
+}
+
+
+<center>
+    <div class="alert alert-default-danger alert-dismissible col-md-6">
+        
+        <strong>@ViewBag.ErrorMessage</strong>
+
+        <a style="color:dodgerblue" asp-action="Index" asp-controller="Home"> Go Back to Home Page  <span><i class="fa fa-arrow-right"></i></span> </a>
+    </div>
+</center>

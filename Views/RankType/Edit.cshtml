@@ -1,0 +1,66 @@
+﻿@model ProjectManagement.ViewModel.RankTypeViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<hr />
+@*<div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="DesignationId" />
+                <div class="form-group">
+                    <label asp-for="DesignationName" class="control-label"></label>
+                    <input asp-for="DesignationName" class="form-control" />
+                    <span asp-validation-for="DesignationName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>*@
+
+@if (ViewBag.Message != null)
+{
+    <partial name="Message" />
+}
+
+<center>
+    <div class="col-md-6">
+        <div class="card">
+            <hr />
+            <div class="card-header p-2"><h1>Edit Service</h1> </div><!-- /.card-header -->
+            <div class="card-body">
+                <div class="tab-content">
+                    <!-- /.tab-pane -->
+                    <form class="form-horizontal" method="post" asp-action="Edit" asp-controller="RankType">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="RankTypeId" />
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Service Name </label>
+                            <input asp-for="RankTypeName" class="form-control col-md-6" />
+                            <span asp-validation-for="RankTypeName" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="offset-sm-1 col-sm-10">
+                                <input type="submit" class="btn btn-success" />
+                            </div>
+                        </div>
+                    </form>
+                    <div>
+                        <a asp-action="Index">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</center>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

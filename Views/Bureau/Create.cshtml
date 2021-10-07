@@ -1,0 +1,45 @@
+﻿@model ProjectManagement.ViewModel.BureauViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@if (ViewBag.Message != null)
+{
+    <partial name="Message" />
+}
+<center>
+    <div class="col-md-6">
+        <div class="card">
+            <hr />
+            <div class="card-header p-2"><h1><b>Create New Bureau</b></h1> </div><!-- /.card-header -->
+            <div class="card-body">
+                <div class="tab-content">
+                    <!-- /.tab-pane -->
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Bureau Name</label>
+                            <input asp-for="BureauName" class="form-control col-md-6" />
+                            <span asp-validation-for="BureauName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Bureau Full Name</label>
+                            <input asp-for="BureauFullName" class="form-control col-md-6" />
+                            <span asp-validation-for="BureauFullName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </form>
+                    <div>
+                        <a asp-action="Index">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</center>
+

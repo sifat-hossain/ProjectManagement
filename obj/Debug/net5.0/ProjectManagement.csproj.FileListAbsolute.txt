@@ -1,0 +1,357 @@
+<<<<<<< HEAD
+G:\ProjectManagement\bin\Debug\net5.0\appsettings.Development.json
+G:\ProjectManagement\bin\Debug\net5.0\appsettings.json
+G:\ProjectManagement\bin\Debug\net5.0\ProjectManagement.StaticWebAssets.xml
+G:\ProjectManagement\bin\Debug\net5.0\ProjectManagement.exe
+G:\ProjectManagement\bin\Debug\net5.0\ProjectManagement.deps.json
+G:\ProjectManagement\bin\Debug\net5.0\ProjectManagement.runtimeconfig.json
+G:\ProjectManagement\bin\Debug\net5.0\ProjectManagement.runtimeconfig.dev.json
+G:\ProjectManagement\bin\Debug\net5.0\ProjectManagement.dll
+G:\ProjectManagement\bin\Debug\net5.0\ref\ProjectManagement.dll
+G:\ProjectManagement\bin\Debug\net5.0\ProjectManagement.pdb
+G:\ProjectManagement\bin\Debug\net5.0\ProjectManagement.Views.dll
+G:\ProjectManagement\bin\Debug\net5.0\ProjectManagement.Views.pdb
+G:\ProjectManagement\bin\Debug\net5.0\AspNetCoreHero.ToastNotification.Views.dll
+G:\ProjectManagement\bin\Debug\net5.0\AspNetCoreHero.ToastNotification.dll
+G:\ProjectManagement\bin\Debug\net5.0\AutoMapper.dll
+G:\ProjectManagement\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+G:\ProjectManagement\bin\Debug\net5.0\Humanizer.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.AspNetCore.Razor.Language.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.CodeAnalysis.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.CodeAnalysis.Razor.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.CodeAnalysis.Workspaces.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.Identity.Client.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+G:\ProjectManagement\bin\Debug\net5.0\dotnet-aspnet-codegenerator-design.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+G:\ProjectManagement\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+G:\ProjectManagement\bin\Debug\net5.0\Newtonsoft.Json.dll
+G:\ProjectManagement\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+G:\ProjectManagement\bin\Debug\net5.0\System.Composition.AttributedModel.dll
+G:\ProjectManagement\bin\Debug\net5.0\System.Composition.Convention.dll
+G:\ProjectManagement\bin\Debug\net5.0\System.Composition.Hosting.dll
+G:\ProjectManagement\bin\Debug\net5.0\System.Composition.Runtime.dll
+G:\ProjectManagement\bin\Debug\net5.0\System.Composition.TypedParts.dll
+G:\ProjectManagement\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+G:\ProjectManagement\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+G:\ProjectManagement\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+G:\ProjectManagement\bin\Debug\net5.0\System.Runtime.Caching.dll
+G:\ProjectManagement\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+G:\ProjectManagement\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ProjectManagement\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+G:\ProjectManagement\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+G:\ProjectManagement\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+G:\ProjectManagement\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+G:\ProjectManagement\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+G:\ProjectManagement\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+G:\ProjectManagement\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+G:\ProjectManagement\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+G:\ProjectManagement\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+G:\ProjectManagement\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+G:\ProjectManagement\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+G:\ProjectManagement\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+G:\ProjectManagement\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+G:\ProjectManagement\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+G:\ProjectManagement\obj\Debug\net5.0\ProjectManagement.csproj.AssemblyReference.cache
+G:\ProjectManagement\obj\Debug\net5.0\ProjectManagement.GeneratedMSBuildEditorConfig.editorconfig
+G:\ProjectManagement\obj\Debug\net5.0\ProjectManagement.AssemblyInfoInputs.cache
+G:\ProjectManagement\obj\Debug\net5.0\ProjectManagement.AssemblyInfo.cs
+G:\ProjectManagement\obj\Debug\net5.0\ProjectManagement.csproj.CoreCompileInputs.cache
+G:\ProjectManagement\obj\Debug\net5.0\ProjectManagement.MvcApplicationPartsAssemblyInfo.cs
+G:\ProjectManagement\obj\Debug\net5.0\ProjectManagement.MvcApplicationPartsAssemblyInfo.cache
+G:\ProjectManagement\obj\Debug\net5.0\ProjectManagement.RazorAssemblyInfo.cache
+G:\ProjectManagement\obj\Debug\net5.0\ProjectManagement.RazorAssemblyInfo.cs
+G:\ProjectManagement\obj\Debug\net5.0\staticwebassets\ProjectManagement.StaticWebAssets.Manifest.cache
+G:\ProjectManagement\obj\Debug\net5.0\staticwebassets\ProjectManagement.StaticWebAssets.xml
+G:\ProjectManagement\obj\Debug\net5.0\scopedcss\bundle\ProjectManagement.styles.css
+G:\ProjectManagement\obj\Debug\net5.0\ProjectManagement.TagHelpers.input.cache
+G:\ProjectManagement\obj\Debug\net5.0\ProjectManagement.TagHelpers.output.cache
+G:\ProjectManagement\obj\Debug\net5.0\ProjectManagement.RazorCoreGenerate.cache
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\Bureau\Create.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\Bureau\Index.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\CompletedProject\Create.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\CompletedProject\Delete.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\CompletedProject\Details.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\CompletedProject\Edit.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\CompletedProject\Index.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\Designation\Create.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\Designation\Edit.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\Designation\Index.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\Error\Error.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\ForceRank\Create.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\ForceRank\Edit.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\ForceRank\Index.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\Home\Error.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\RankType\Create.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\RankType\Edit.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\RankType\Index.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\Shared\Message.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\Shared\_Footer.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\Shared\_Navbar.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\Shared\_Sidebar.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\VendorInformation\Index.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+G:\ProjectManagement\obj\Debug\net5.0\ProjectManagement.RazorTargetAssemblyInfo.cache
+G:\ProjectManagement\obj\Debug\net5.0\ProjectManagement.RazorTargetAssemblyInfo.cs
+G:\ProjectManagement\obj\Debug\net5.0\ProjectManagement.Views.pdb
+G:\ProjectManagement\obj\Debug\net5.0\ProjectManagement.csproj.CopyComplete
+G:\ProjectManagement\obj\Debug\net5.0\ProjectManagement.dll
+G:\ProjectManagement\obj\Debug\net5.0\ref\ProjectManagement.dll
+G:\ProjectManagement\obj\Debug\net5.0\ProjectManagement.pdb
+G:\ProjectManagement\obj\Debug\net5.0\ProjectManagement.genruntimeconfig.cache
+=======
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\appsettings.Development.json
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\appsettings.json
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\ProjectManagement.exe
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\ProjectManagement.deps.json
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\ProjectManagement.runtimeconfig.json
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\ProjectManagement.runtimeconfig.dev.json
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\ProjectManagement.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\ref\ProjectManagement.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\ProjectManagement.pdb
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\ProjectManagement.Views.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\ProjectManagement.Views.pdb
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.GeneratedMSBuildEditorConfig.editorconfig
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.AssemblyInfoInputs.cache
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.AssemblyInfo.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.csproj.CoreCompileInputs.cache
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.MvcApplicationPartsAssemblyInfo.cache
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.RazorAssemblyInfo.cache
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.RazorAssemblyInfo.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\staticwebassets\ProjectManagement.StaticWebAssets.Manifest.cache
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\staticwebassets\ProjectManagement.StaticWebAssets.xml
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\scopedcss\bundle\ProjectManagement.styles.css
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.TagHelpers.input.cache
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.TagHelpers.output.cache
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.RazorCoreGenerate.cache
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Shared\_Footer.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Shared\_Navbar.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Shared\_Sidebar.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.RazorTargetAssemblyInfo.cache
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.RazorTargetAssemblyInfo.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.Views.pdb
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.dll
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ref\ProjectManagement.dll
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.pdb
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.genruntimeconfig.cache
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.csproj.CopyComplete
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\AutoMapper.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Humanizer.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.AspNetCore.Razor.Language.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.CodeAnalysis.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.CodeAnalysis.Razor.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.CodeAnalysis.Workspaces.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.Identity.Client.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\dotnet-aspnet-codegenerator-design.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Newtonsoft.Json.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\System.Composition.AttributedModel.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\System.Composition.Convention.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\System.Composition.Hosting.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\System.Composition.Runtime.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\System.Composition.TypedParts.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\System.Runtime.Caching.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Designation\Index.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Designation\Create.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Designation\Edit.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\ProjectManagement.StaticWebAssets.xml
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\AspNetCoreHero.ToastNotification.Views.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\AspNetCoreHero.ToastNotification.dll
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.MvcApplicationPartsAssemblyInfo.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Shared\Message.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\RankType\Index.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\RankType\Create.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\RankType\Edit.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\ForceRank\Index.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\ForceRank\Create.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\ForceRank\Edit.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Home\Error.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Error\Error.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.csproj.AssemblyReference.cache
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\CompletedProject\Create.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\CompletedProject\Delete.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\CompletedProject\Details.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\CompletedProject\Edit.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\CompletedProject\Index.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\VendorInformation\Index.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Bureau\Index.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Bureau\Create.cshtml.g.cs
+>>>>>>> parent of b3b32a2 (all view model)

@@ -1,0 +1,74 @@
+﻿@model ProjectManagement.ViewModel.ForceRankViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@*<div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="ForceRankName" class="control-label"></label>
+                    <input asp-for="ForceRankName" class="form-control" />
+                    <span asp-validation-for="ForceRankName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="RankTypeId" class="control-label"></label>
+                    <select asp-for="RankTypeId" class ="form-control" asp-items="ViewBag.RankTypeId"></select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>*@
+
+@if (ViewBag.Message != null)
+{
+    <partial name="Message" />
+}
+<center>
+    <div class="col-md-6">
+        <div class="card">
+            <hr />
+            <div class="card-header p-2"><h1><b>Create New Rank</b></h1> </div><!-- /.card-header -->
+            <div class="card-body">
+                <div class="tab-content">
+                    <!-- /.tab-pane -->
+                    <form class="form-horizontal" method="post" asp-action="Create" asp-controller="ForceRank">
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Rank Name</label>
+                            <input asp-for="ForceRankName" class="form-control col-md-6" />
+                            <span asp-validation-for="ForceRankName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Service Name </label>
+                            <select class="form-control col-md-6" asp-for="RankTypeId" asp-items="@(new SelectList(@ViewBag.RankType,"RankTypeId","RankTypeName"))">
+                                <option value="" selected disabled> Please Select a Service Name</option>
+                            </select>
+                            <span asp-validation-for="RankTypeId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group row">
+                            <div class="offset-sm-1 col-sm-10">
+                                <input type="submit" class="btn btn-success" />
+                            </div>
+                        </div>
+                    </form>
+                    <div>
+                        <a asp-action="Index">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</center>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
