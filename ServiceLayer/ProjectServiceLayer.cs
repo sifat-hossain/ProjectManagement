@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ProjectManagement.DTO;
+
 
 namespace ProjectManagement.ServiceLayer
 {
@@ -44,9 +44,32 @@ namespace ProjectManagement.ServiceLayer
 
         public async Task<List<ProjectViewModel>> GetAllProject()
         {
-            List<Project> project =await dbContext.Projects.FromSqlRaw("exec SpGetProject").ToListAsync();
+            List<ProjectViewModel> projectViewModel = new();
+            try
+            {
+                ProjectViewModel pv = new();
+                List<Project> project = await dbContext.Projects.FromSqlRaw("exec SpGetProject").ToListAsync();
+                List<Bureau> bureau = await dbContext.Bureaus.FromSqlRaw("exec SpGetBureau").ToListAsync();
+                
+                foreach (var item in project)
+                {
+                    pv.ProjectId = item.ProjectId;
+                    pv.ProjectName = item.ProjectName;
+                    pv.ProjectInitialBudget = item.ProjectInitialBudget;
+                    pv.ProjectFinalBudget = item.ProjectFinalBudget;
+                    pv.ProjectStartDate = item.ProjectStartDate;
+                    pv.ProjectEndDate = item.ProjectEndDate;
+                    pv.ProjectDescription = item.ProjectDescription;
+                    pv.ProjectAttachment = item.ProjectAttachment;
+                    pv.BureauName = bureau.Where(x => x.BureauId == item.BureauId).FirstOrDefault().BureauName;
+                    projectViewModel.Add(pv);
 
-            List<ProjectViewModel> projectViewModel = mapper.Map<List<ProjectViewModel>>(project);
+                }
+            }
+            catch
+            {
+                throw;
+            }
             return projectViewModel;
         }
 

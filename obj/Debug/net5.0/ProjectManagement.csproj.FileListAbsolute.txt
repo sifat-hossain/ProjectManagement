@@ -123,7 +123,6 @@ E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\runt
 E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 E:\Software Department\ProjectManagement\ProjectManagement\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.csproj.AssemblyReference.cache
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.GeneratedMSBuildEditorConfig.editorconfig
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.AssemblyInfoInputs.cache
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.AssemblyInfo.cs
@@ -156,6 +155,7 @@ E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razo
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Project\Create.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Project\Index.cshtml.g.cs
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\RankType\Create.cshtml.g.cs
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\RankType\Edit.cshtml.g.cs
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\RankType\Index.cshtml.g.cs
@@ -176,4 +176,3 @@ E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Proj
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ref\ProjectManagement.dll
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.pdb
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.genruntimeconfig.cache
-E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Project\Index.cshtml.g.cs

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ProjectManagement.Models.Project>
+﻿
 
 @{
     ViewData["Title"] = "Index";
@@ -14,65 +14,66 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ProjectName)
+                @Html.DisplayName("Project Name")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ProjectInitialBudget)
+                @Html.DisplayName("Project Initial Budget")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ProjectFinalBudget)
+                @Html.DisplayName("Project Final Budget")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ProjectStartDate)
+                @Html.DisplayName("Project Start Date")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ProjectEndDate)
+                @Html.DisplayName("Project End Date")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ProjectDescription)
+                @Html.DisplayName("Project Description")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ProjectAttachment)
+                @Html.DisplayName("Project Attachment")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Bureau)
+                @Html.DisplayName("Bureau Name")
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in @ViewBag.Project) {
-        <tr>
-            <td>
-                @item.ProjectName)
-            </td>
-            <td>
-                @item.ProjectInitialBudget)
-            </td>
-            <td>
-                @item.ProjectFinalBudget)
-            </td>
-            <td>
-                @item.ProjectStartDate)
-            </td>
-            <td>
-                @item.ProjectEndDate)
-            </td>
-            <td>
-                @item.ProjectDescription)
-            </td>
-            <td>
-                @item.ProjectAttachment)
-            </td>
-            <td>
-                @item.Bureau.BureauName)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ProjectId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProjectId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProjectId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in @ViewBag.Project)
+        {
+            <tr>
+                <td>
+                    @item.ProjectName)
+                </td>
+                <td>
+                    @item.ProjectInitialBudget)
+                </td>
+                <td>
+                    @item.ProjectFinalBudget)
+                </td>
+                <td>
+                    @item.ProjectStartDate)
+                </td>
+                <td>
+                    @item.ProjectEndDate)
+                </td>
+                <td>
+                    @item.ProjectDescription)
+                </td>
+                <td>
+                    @item.ProjectAttachment)
+                </td>
+                <td>
+                    @item.Bureau.BureauName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ProjectId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ProjectId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ProjectId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

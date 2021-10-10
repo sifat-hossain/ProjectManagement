@@ -17,9 +17,10 @@ namespace ProjectManagement.Controllers
         {
             projet = _project;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            ViewBag.Project = projet.GetAllProject();
+            var projectList= await projet.GetAllProject();
+            ViewBag.Project = projectList;
             return View();
         }
 

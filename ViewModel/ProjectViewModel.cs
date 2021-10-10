@@ -16,6 +16,6 @@ namespace ProjectManagement.ViewModel
         public string ProjectDescription { get; set; }
         public string ProjectAttachment { get; set; }
         public int? BureauId { get; set; }
-        public BureauViewModel BureauName { get; set; }
+        public string BureauName { get; set; }
     }
 }
