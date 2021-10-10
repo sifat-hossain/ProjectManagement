@@ -5,61 +5,81 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
-
-<h4>Project</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="ProjectName" class="control-label"></label>
-                <input asp-for="ProjectName" class="form-control" />
-                <span asp-validation-for="ProjectName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProjectInitialBudget" class="control-label"></label>
-                <input asp-for="ProjectInitialBudget" class="form-control" />
-                <span asp-validation-for="ProjectInitialBudget" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProjectFinalBudget" class="control-label"></label>
-                <input asp-for="ProjectFinalBudget" class="form-control" />
-                <span asp-validation-for="ProjectFinalBudget" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProjectStartDate" class="control-label"></label>
-                <input asp-for="ProjectStartDate" class="form-control" />
-                <span asp-validation-for="ProjectStartDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProjectEndDate" class="control-label"></label>
-                <input asp-for="ProjectEndDate" class="form-control" />
-                <span asp-validation-for="ProjectEndDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProjectDescription" class="control-label"></label>
-                <input asp-for="ProjectDescription" class="form-control" />
-                <span asp-validation-for="ProjectDescription" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProjectAttachment" class="control-label"></label>
-                <input asp-for="ProjectAttachment" class="form-control" />
-                <span asp-validation-for="ProjectAttachment" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BureauId" class="control-label"></label>
-                <select asp-for="BureauId" class ="form-control" asp-items="ViewBag.BureauId"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
+@if (ViewBag.Message != null)
+{
+    <partial name="Message" />
+}
+<center>
+    <div class="col-md-6">
+        <div class="card">
+            <hr />
+            <div class="card-header p-2"><h1><b>Create New Project</b></h1> </div><!-- /.card-header -->
+            <div class="card-body">
+                <div class="tab-content">
+                    <!-- /.tab-pane -->
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Project Name</label>
+                            <input asp-for="ProjectName" class="form-control col-md-6" />
+                            <span asp-validation-for="ProjectName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Project Initial Budget</label>
+                            <input asp-for="ProjectInitialBudget" class="form-control col-md-6" /> BDT
+                            <span asp-validation-for="ProjectInitialBudget" class="text-danger"></span>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Project Final Budget</label>
+                            <input asp-for="ProjectFinalBudget" class="form-control col-md-6" /> BDT
+                            <span asp-validation-for="ProjectFinalBudget" class="text-danger"></span>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Project Start Date</label>
+                            <input asp-for="ProjectStartDate" class="form-control col-md-6" />
+                            <span asp-validation-for="ProjectStartDate" class="text-danger"></span>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Project End Date</label>
+                            <input asp-for="ProjectEndDate" class="form-control col-md-6" />
+                            <span asp-validation-for="ProjectEndDate" class="text-danger"></span>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Project Description</label>
+                            <input asp-for="ProjectDescription" class="form-control col-md-6" />
+                            <span asp-validation-for="ProjectDescription" class="text-danger"></span>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Project Attachment</label>
+                            <input asp-for="ProjectAttachment" class="form-control col-md-6" />
+                            <span asp-validation-for="ProjectAttachment" class="text-danger"></span>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Project Owner</label>
+                            <select class="form-control col-md-6" asp-for="BureauId" asp-items="@(new SelectList(@ViewBag.BureauList,"BureauId","BureauName"))">
+                                <option value="" selected disabled> Please Select a Bureau</option>
+                            </select>
+                            <span asp-validation-for="BureauId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </form>
+                    <div>
+                        <a asp-action="Index">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</center>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
 

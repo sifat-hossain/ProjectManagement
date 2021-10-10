@@ -12,10 +12,12 @@ namespace ProjectManagement.Controllers
     public class ProjectController : Controller
     {
         private readonly IProject projet;
+        private readonly IBureau bureau;
         string result;
-        public ProjectController(IProject _project)
+        public ProjectController(IProject _project, IBureau _bureau)
         {
             projet = _project;
+            bureau = _bureau;
         }
         public async Task<IActionResult> Index()
         {
@@ -24,9 +26,10 @@ namespace ProjectManagement.Controllers
             return View();
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
             ViewBag.Message = TempData["result"];
+            ViewBag.BureauList = await bureau.GetAllBureau();
             return View();
         }
         [HttpPost]
