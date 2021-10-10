@@ -41,6 +41,7 @@ namespace ProjectManagement
             services.AddTransient<IForceRank, ForceRankServiceLayer>();
             services.AddTransient<IVendorInformation, VendorInformationServiceLayer>();
             services.AddTransient<IBureau, BureauServiceLayer>();
+            services.AddTransient<IProject, ProjectServiceLayer>();
             
         }
 

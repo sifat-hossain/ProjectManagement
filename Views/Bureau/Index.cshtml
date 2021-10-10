@@ -50,22 +50,23 @@
                     @{ int i = 0;}
                     @foreach (var item in @ViewBag.GetAllBureau)
                     {
-                    <tr>
-                        <td>
-                            @{ i++;}
-                            @i
-                        <td>
-                            @item.BureauName
-                        </td>
-                        <td>
-                            @item.BureauFullName
-                        </td>
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.BureauId">Edit</a> |
-                            <a asp-action="Details" asp-route-id="@item.BureauId">Details</a> |
-                            <a asp-action="Delete" asp-route-id="@item.BureauId">Delete</a>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>
+                                @{ i++;}
+                                @i
+                            </td>
+                            <td>
+                                @item.BureauName
+                            </td>
+                            <td>
+                                @item.BureauFullName
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.BureauId">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.BureauId">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.BureauId">Delete</a>
+                            </td>
+                        </tr>
                     }
                 </tbody>
             </table>

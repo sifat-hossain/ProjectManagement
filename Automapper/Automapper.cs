@@ -17,6 +17,7 @@ namespace MailSectionEALB.Automapper
             CreateMap<ForceRankDTO, ForceRankViewModel>().ReverseMap();
             CreateMap<VendorInformation, VendorInformationViewModel>().ReverseMap();
             CreateMap<Bureau, BureauViewModel>().ReverseMap();
+            CreateMap<Project, ProjectViewModel>().ReverseMap();
 
         }
     }
