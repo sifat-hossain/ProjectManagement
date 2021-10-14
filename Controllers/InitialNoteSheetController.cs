@@ -16,6 +16,7 @@ namespace ProjectManagement.Controllers
         }
         public IActionResult Index()
         {
+           // ViewBag.InitialNoteSheet;
             return View();
         }
     }

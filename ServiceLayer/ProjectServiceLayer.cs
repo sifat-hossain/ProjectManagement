@@ -38,7 +38,7 @@ namespace ProjectManagement.ServiceLayer
             {
                 fileName = Path.GetFileNameWithoutExtension(ProjectAttachment.FileName);
                 fileExtension = Path.GetExtension(ProjectAttachment.FileName);
-                fileName = "ProjectFileAttachment_" + "_" + DateTime.Now.Year + "" + DateTime.Now.Month + "" + DateTime.Now.Day + "" + DateTime.Now.TimeOfDay.Hours + "" + DateTime.Now.TimeOfDay.Minutes + "" + DateTime.Now.TimeOfDay.Seconds + "_" + fileName + "" + fileExtension;
+                fileName = fileName + "_" + DateTime.Now.Year + "" + DateTime.Now.Month + "" + DateTime.Now.Day + "" + DateTime.Now.TimeOfDay.Hours + "" + DateTime.Now.TimeOfDay.Minutes + "" + DateTime.Now.TimeOfDay.Seconds+ "" + fileExtension;
                 var path = Path.Combine(web.WebRootPath, "File/ProjectAttachment/", fileName);
                 var stream = new FileStream(path, FileMode.Create);
                 await ProjectAttachment.CopyToAsync(stream);

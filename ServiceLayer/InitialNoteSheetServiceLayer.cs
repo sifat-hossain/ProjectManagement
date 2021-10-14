@@ -8,12 +8,13 @@ using ProjectManagement.Models;
 using ProjectManagement.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace ProjectManagement.ServiceLayer
 {
-    public class InitialNoteSheetServiceLayer : IInitialNoteSheet
+    public class InitialNoteSheetServiceLayer :IInitialNoteSheet
     {
         private readonly dbContext dbContext;
         private readonly IMapper mapper;
@@ -28,7 +29,28 @@ namespace ProjectManagement.ServiceLayer
         }
         public async Task<string> CreateInitialNoteSheet(InitialNotesheetViewModel initialNotesheetViewModel, IFormFile initialNoteSheetAttachment)
         {
-            throw new NotImplementedException();
+            if (initialNotesheetViewModel == null && initialNoteSheetAttachment.Length < 0)
+            {
+                throw new Exception();
+            }
+            try
+            {
+                fileName = Path.GetFileNameWithoutExtension(initialNoteSheetAttachment.FileName);
+                fileExtension = Path.GetExtension(initialNoteSheetAttachment.FileName);
+                fileName = fileName + "_" + DateTime.Now.Year + "" + DateTime.Now.Month + "" + DateTime.Now.Day + "" + DateTime.Now.TimeOfDay.Hours + "" + DateTime.Now.TimeOfDay.Minutes + "" + DateTime.Now.TimeOfDay.Seconds + "" + fileExtension;
+                var path = Path.Combine(web.WebRootPath, "File/InitialNoteSheetAttachment", fileName);
+                var stream = new FileStream(path, FileMode.Create);
+                await initialNoteSheetAttachment.CopyToAsync(stream);
+                stream.Close();
+                initialNotesheetViewModel.InitialNotesheetAttachment = fileName;
+
+            }
+            catch
+
+            {
+                throw;
+            }
+
         }
 
         public async Task<List<InitialNotesheetViewModel>> GetAllInitialNoteSheet()
@@ -37,7 +59,7 @@ namespace ProjectManagement.ServiceLayer
             try
             {
                 List<InitialNotesheet> initialNotesheet = await dbContext.InitialNotesheets.FromSqlRaw("exec SpGetInitialNoteSheet").ToListAsync();
-                foreach(var item in initialNotesheet)
+                foreach (var item in initialNotesheet)
                 {
                     var _initailaNoteSheet = dbContext.InitialNotesheets.FromSqlRaw("exec SpGetInitialNoteSheetById {0}", item.InitialNotesheetId).ToList().FirstOrDefault();
                     initialNotesheetViewModel.Add(await InitialNotesheetViewModel(_initailaNoteSheet));
@@ -49,7 +71,7 @@ namespace ProjectManagement.ServiceLayer
             }
             return initialNotesheetViewModel;
         }
-        public async Task<InitialNotesheetViewModel> InitialNotesheetViewModel( InitialNotesheet initialNotesheet)
+        public async Task<InitialNotesheetViewModel> InitialNotesheetViewModel(InitialNotesheet initialNotesheet)
         {
             InitialNotesheetViewModel insvm = new();
             List<Project> project = await dbContext.Projects.FromSqlRaw("exec SpGetProject").ToListAsync();
@@ -67,9 +89,9 @@ namespace ProjectManagement.ServiceLayer
             throw new NotImplementedException();
         }
 
-        public async Task<string> UpdateInitialNoteSheet(InitialNotesheetViewModel initialNotesheetViewModel)
-        {
-            throw new NotImplementedException();
-        }
+        //public async Task<string> UpdateInitialNoteSheet(InitialNotesheetViewModel initialNotesheetViewModel)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }
