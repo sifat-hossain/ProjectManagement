@@ -20,7 +20,7 @@
             <div class="card-body">
                 <div class="tab-content">
                     <!-- /.tab-pane -->
-                    <form asp-action="Create">
+                    <form method="post" enctype="multipart/form-data" asp-action="Create">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         <div class="form-group row">
                             <label class="control-label col-md-3">Project Name</label>
@@ -54,7 +54,7 @@
                         </div>
                         <div class="form-group row">
                             <label class="control-label col-md-3">Project Attachment</label>
-                            <input asp-for="ProjectAttachment" class="form-control col-md-6" />
+                            <input type="file" name="ProjectAttachment" id="ProjectAttachment" class="form-control col-md-6" />
                             <span asp-validation-for="ProjectAttachment" class="text-danger"></span>
                         </div>
                         <div class="form-group row">

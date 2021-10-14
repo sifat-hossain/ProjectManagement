@@ -6,6 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ProjectManagement.ViewModel;
+using Microsoft.AspNetCore.Hosting;
+using System.IO;
+using Microsoft.AspNetCore.Http;
 
 namespace ProjectManagement.Controllers
 {
@@ -13,11 +16,13 @@ namespace ProjectManagement.Controllers
     {
         private readonly IProject projet;
         private readonly IBureau bureau;
+       
         string result;
         public ProjectController(IProject _project, IBureau _bureau)
         {
             projet = _project;
             bureau = _bureau;
+           
         }
         public async Task<IActionResult> Index()
         {
@@ -34,13 +39,13 @@ namespace ProjectManagement.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(ProjectViewModel projectViewModel)
+        public async Task<IActionResult> Create(ProjectViewModel projectViewModel, IFormFile ProjectAttachment)
         {
             try
-            {
-                if(ModelState.IsValid)
+            {               
+                if(ProjectAttachment.Length > 0 && ModelState.IsValid)
                 {
-                    result =await projet.CreateProject(projectViewModel);
+                    result =await projet.CreateProject(projectViewModel, ProjectAttachment);
                 }
             }
             catch(Exception e)
