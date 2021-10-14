@@ -69,15 +69,13 @@ namespace ProjectManagement.ServiceLayer
             List<ProjectViewModel> projectViewModel=new();
            
             try
-            {
-             
+            {             
                 List<Project> project = await dbContext.Projects.FromSqlRaw("exec SpGetProject").ToListAsync();
               
-
                 foreach (var item in project)
                 {
-                  var projectUserViewModel = dbContext.Projects.FromSqlRaw("exec SpGetProjectById {0}", item.ProjectId).ToList().FirstOrDefault();
-                  projectViewModel.Add(await ProjectViewModel(projectUserViewModel));
+                  var _project = dbContext.Projects.FromSqlRaw("exec SpGetProjectById {0}", item.ProjectId).ToList().FirstOrDefault();
+                  projectViewModel.Add(await ProjectViewModel(_project));
 
                 }
             }

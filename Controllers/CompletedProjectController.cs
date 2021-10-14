@@ -6,22 +6,34 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProjectManagement.Data;
+using ProjectManagement.Interface;
 using ProjectManagement.Models;
+using ProjectManagement.ViewModel;
 
 namespace ProjectManagement.Controllers
 {
     public class CompletedProjectController : Controller
     {
         private readonly dbContext _context;
-
-        public CompletedProjectController(dbContext context)
+        private readonly IProject project;
+        public CompletedProjectController(dbContext context, IProject _project)
         {
             _context = context;
+            project = _project;
         }
 
         // GET: CompletedProject
         public async Task<IActionResult> Index()
         {
+            int count = 0;
+            List<ProjectViewModel> amount = await project.GetAllProject();
+            foreach (var item in amount)
+            {
+                count++;
+            }
+            ViewBag.ProjectAmount = count;
+            ViewBag.CompletedProject =  _context.CompletedProjects.GroupBy(x => x.CompletedProjectId).Count();
+
             return View(await _context.CompletedProjects.ToListAsync());
         }
 

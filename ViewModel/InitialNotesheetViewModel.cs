@@ -14,7 +14,7 @@ namespace ProjectManagement.ViewModel
         public int? ProjectId { get; set; }
         public int? VendorId { get; set; }
 
-        public virtual Project Project { get; set; }
-        public virtual VendorInformation Vendor { get; set; }
+        public string ProjectName { get; set; }
+        public string VendorName { get; set; }
     }
 }
