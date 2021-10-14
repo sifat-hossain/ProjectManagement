@@ -43,7 +43,7 @@ namespace ProjectManagement.ServiceLayer
                 var stream = new FileStream(path, FileMode.Create);
                 await ProjectAttachment.CopyToAsync(stream);
                 stream.Close();
-                projectViewModel.ProjectAttachment = path;
+                projectViewModel.ProjectAttachment = fileName;
             }
             catch
             {
