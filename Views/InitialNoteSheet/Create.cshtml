@@ -1,0 +1,65 @@
+﻿@model ProjectManagement.ViewModel.InitialNotesheetViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@if (ViewBag.Message != null)
+{
+    <partial name="Message" />
+}
+<center>
+    <div class="col-md-6">
+        <div class="card">
+            <hr />
+            <div class="card-header p-2"><h1><b>Create New Initial Note Sheet</b></h1> </div><!-- /.card-header -->
+            <div class="card-body">
+                <div class="tab-content">
+                    <!-- /.tab-pane -->
+                    <form asp-action="Create" method="post" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Opening Date</label>
+                            <input asp-for="InitialNoteSheetOpeningDate" class="form-control col-md-6" />
+                            <span asp-validation-for="InitialNoteSheetOpeningDate" class="text-danger"></span>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Subject</label>
+                            <input asp-for="InitialNotesheetSubject" class="form-control col-md-6" />
+                            <span asp-validation-for="InitialNotesheetSubject" class="text-danger"></span>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Attachment</label>
+                            <input type="file" name="initialNotesheetAttachment" class="form-control col-md-6" />
+                            <span asp-validation-for="InitialNotesheetAttachment" class="text-danger"></span>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Project Name</label>
+                            <select asp-for="ProjectId" class="form-control col-md-6" asp-items="@(new SelectList(@ViewBag.ProjectList,"ProjectId","ProjectName"))">
+                                <option value="" selected disabled> Please Select a Service Name</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Vendor Name</label>
+                            <select asp-for="VendorId" class="form-control col-md-6" asp-items="@(new SelectList(@ViewBag.VendorList,"VendorId","VendorName"))">
+                                <option value="" selected disabled> Please Select a Service Name</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </form>
+                    <div>
+                        <a asp-action="Index">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</center>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

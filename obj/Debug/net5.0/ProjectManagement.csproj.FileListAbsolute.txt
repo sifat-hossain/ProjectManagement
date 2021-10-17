@@ -154,6 +154,8 @@ E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razo
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Home\Error.cshtml.g.cs
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\InitialNoteSheet\Create.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\InitialNoteSheet\Index.cshtml.g.cs
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Project\Create.cshtml.g.cs
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Project\Index.cshtml.g.cs
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\RankType\Create.cshtml.g.cs

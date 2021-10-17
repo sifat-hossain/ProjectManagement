@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using ProjectManagement.Models;
+using ProjectManagement.ViewModel;
 
 #nullable disable
 
@@ -876,5 +877,7 @@ namespace ProjectManagement.Data
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+        public DbSet<ProjectManagement.ViewModel.InitialNotesheetViewModel> InitialNotesheetViewModel { get; set; }
     }
 }

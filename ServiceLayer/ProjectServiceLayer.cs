@@ -65,7 +65,7 @@ namespace ProjectManagement.ServiceLayer
         }
 
         public async Task<List<ProjectViewModel>> GetAllProject()
-        {
+      {
             List<ProjectViewModel> projectViewModel=new();
            
             try

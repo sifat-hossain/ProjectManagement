@@ -29,6 +29,7 @@ namespace ProjectManagement.ServiceLayer
         }
         public async Task<string> CreateInitialNoteSheet(InitialNotesheetViewModel initialNotesheetViewModel, IFormFile initialNoteSheetAttachment)
         {
+            string result;
             if (initialNotesheetViewModel == null && initialNoteSheetAttachment.Length < 0)
             {
                 throw new Exception();
@@ -50,7 +51,18 @@ namespace ProjectManagement.ServiceLayer
             {
                 throw;
             }
-
+            InitialNotesheet initialNotesheet = mapper.Map<InitialNotesheet>(initialNotesheetViewModel);
+            await dbContext.InitialNotesheets.AddAsync(initialNotesheet);
+            try
+            {
+                await dbContext.SaveChangesAsync();
+                result = "Seccessfully Created The Note Sheet";
+            }
+            catch
+            {
+                throw;
+            }
+            return result;
         }
 
         public async Task<List<InitialNotesheetViewModel>> GetAllInitialNoteSheet()
@@ -89,9 +101,9 @@ namespace ProjectManagement.ServiceLayer
             throw new NotImplementedException();
         }
 
-        //public async Task<string> UpdateInitialNoteSheet(InitialNotesheetViewModel initialNotesheetViewModel)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public Task<string> UpdateInitialNoteSheet(InitialNotesheetViewModel initialNotesheetViewModel)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
