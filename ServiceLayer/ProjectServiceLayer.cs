@@ -98,8 +98,8 @@ namespace ProjectManagement.ServiceLayer
             pv.ProjectStartDate = project.ProjectStartDate;
             pv.ProjectEndDate = project.ProjectEndDate;
             pv.ProjectDescription = project.ProjectDescription;
-            pv.ProjectAttachment = Path.GetFileName(project.ProjectAttachment);
-            pv.FilePath = project.ProjectAttachment;
+            pv.ProjectAttachment = project.ProjectAttachment;
+           
             pv.BureauName = bureau.Where(x => x.BureauId == project.BureauId).FirstOrDefault().BureauName;
 
             return pv;

@@ -18,7 +18,7 @@ namespace MailSectionEALB.Automapper
             CreateMap<VendorInformation, VendorInformationViewModel>().ReverseMap();
             CreateMap<Bureau, BureauViewModel>().ReverseMap();
             CreateMap<Project, ProjectViewModel>().ReverseMap();
-            CreateMap<InitialNotesheet, InitialNotesheetViewModel>();
+            CreateMap<InitialNotesheet, InitialNotesheetViewModel>().ReverseMap();
 
         }
     }

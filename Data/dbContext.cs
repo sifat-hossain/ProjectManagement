@@ -878,6 +878,6 @@ namespace ProjectManagement.Data
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
-        public DbSet<ProjectManagement.ViewModel.InitialNotesheetViewModel> InitialNotesheetViewModel { get; set; }
+      
     }
 }

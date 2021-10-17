@@ -92,6 +92,7 @@ namespace ProjectManagement.ServiceLayer
             insvm.InitialNotesheetId = initialNotesheet.InitialNotesheetId;
             insvm.InitialNoteSheetOpeningDate = initialNotesheet.InitialNoteSheetOpeningDate;
             insvm.InitialNotesheetSubject = initialNotesheet.InitialNotesheetSubject;
+            insvm.InitialNotesheetAttachment = initialNotesheet.InitialNotesheetAttachment;
             insvm.ProjectName = project.Where(x => x.ProjectId == initialNotesheet.ProjectId).FirstOrDefault().ProjectName;
             insvm.VendorName = vendorInformation.Where(x => x.VendorId == initialNotesheet.VendorId).FirstOrDefault().VendorName;
             return insvm;

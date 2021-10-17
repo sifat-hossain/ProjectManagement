@@ -10,7 +10,11 @@ namespace ProjectManagement.ViewModel
     public class InitialNotesheetViewModel
     {      
         public int InitialNotesheetId { get; set; }
+
+        [Required(ErrorMessage ="Please input opening date")]
+        [DataType(DataType.Date)]
         public DateTime? InitialNoteSheetOpeningDate { get; set; }
+      
         public string InitialNotesheetSubject { get; set; }
         public string InitialNotesheetAttachment { get; set; }
         public int? ProjectId { get; set; }
