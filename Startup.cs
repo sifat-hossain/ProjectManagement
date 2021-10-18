@@ -44,6 +44,7 @@ namespace ProjectManagement
             services.AddTransient<IBureau, BureauServiceLayer>();
             services.AddTransient<IProject, ProjectServiceLayer>();
             services.AddTransient<IInitialNoteSheet, InitialNoteSheetServiceLayer>();
+            services.AddTransient<IInvitationForTender, InvitationForTenderServiceLayer>();
             
         }
 

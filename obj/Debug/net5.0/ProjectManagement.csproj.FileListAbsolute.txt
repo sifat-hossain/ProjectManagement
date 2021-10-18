@@ -179,3 +179,5 @@ E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ref\
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.pdb
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.genruntimeconfig.cache
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.csproj.AssemblyReference.cache
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\InvitationForTender\Index.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\InvitationForTender\Create.cshtml.g.cs

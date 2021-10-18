@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using ProjectManagement.Models;
-using ProjectManagement.ViewModel;
 
 #nullable disable
 
@@ -33,7 +32,7 @@ namespace ProjectManagement.Data
         public virtual DbSet<FinalContract> FinalContracts { get; set; }
         public virtual DbSet<ForceRank> ForceRanks { get; set; }
         public virtual DbSet<InitialNotesheet> InitialNotesheets { get; set; }
-        public virtual DbSet<IvitationForTender> IvitationForTenders { get; set; }
+        public virtual DbSet<InvitationForTender> InvitationForTenders { get; set; }
         public virtual DbSet<Lc> Lcs { get; set; }
         public virtual DbSet<Noa> Noas { get; set; }
         public virtual DbSet<NoaAcceptance> NoaAcceptances { get; set; }
@@ -70,7 +69,6 @@ namespace ProjectManagement.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-
             }
         }
 
@@ -307,19 +305,19 @@ namespace ProjectManagement.Data
                     .HasConstraintName("FK__InitialNo__Vendo__3D5E1FD2");
             });
 
-            modelBuilder.Entity<IvitationForTender>(entity =>
+            modelBuilder.Entity<InvitationForTender>(entity =>
             {
-                entity.ToTable("IvitationForTender");
+                entity.ToTable("InvitationForTender");
 
-                entity.Property(e => e.IvitationForTenderDate).HasColumnType("date");
+                entity.Property(e => e.InvitationForTenderDate).HasColumnType("date");
 
                 entity.HasOne(d => d.Project)
-                    .WithMany(p => p.IvitationForTenders)
+                    .WithMany(p => p.InvitationForTenders)
                     .HasForeignKey(d => d.ProjectId)
                     .HasConstraintName("FK__Ivitation__Proje__4F7CD00D");
 
                 entity.HasOne(d => d.Vendor)
-                    .WithMany(p => p.IvitationForTenders)
+                    .WithMany(p => p.InvitationForTenders)
                     .HasForeignKey(d => d.VendorId)
                     .HasConstraintName("FK__Ivitation__Vendo__5070F446");
             });
@@ -877,7 +875,5 @@ namespace ProjectManagement.Data
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
-
-      
     }
 }

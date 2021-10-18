@@ -9,36 +9,37 @@ using System.Threading.Tasks;
 
 namespace ProjectManagement.Controllers
 {
-    public class InitialNoteSheetController : Controller
+    public class InvitationForTenderController : Controller
     {
-        private readonly IInitialNoteSheet initialNoteSheet;
+        private readonly IInvitationForTender invitationForTender;
         private readonly IProject project;
         private readonly IVendorInformation vendorInformation;
         string result;
-        public InitialNoteSheetController(IInitialNoteSheet _initialNoteSheet, IProject _project,IVendorInformation _vendorInformation)
+        public InvitationForTenderController(IInvitationForTender _invitationForTender, IProject _project, IVendorInformation _vendorInformation)
         {
-            initialNoteSheet = _initialNoteSheet;
+            invitationForTender = _invitationForTender;
             project = _project;
             vendorInformation = _vendorInformation;
         }
         public async Task<IActionResult> Index()
         {
-            var initialNoteSheetList= await initialNoteSheet.GetAllInitialNoteSheet();
-            ViewBag.InitialNoteSheet = initialNoteSheetList;
+            var invitationForTenderList = await invitationForTender.GetAllInvitationForTender();
+            ViewBag.InvitationForTender = invitationForTenderList;
             return View();
         }
         public async Task<IActionResult> Create()
         {
             ViewBag.Message = TempData["result"];
             ViewBag.ProjectList = await project.GetAllProject();
-            ViewBag.VendorList =await vendorInformation.GetVendorInformation();
+            ViewBag.VendorList = await vendorInformation.GetVendorInformation();
             return View();
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(InitialNotesheetViewModel initialNotesheetViewModel, IFormFile initialNotesheetAttachment)
+        public async Task<IActionResult> Create(InvitationForTenderViewModel invitationForTenderViewModel, IFormFile InvitationForTenderAttachment)
         {
-            if(initialNotesheetViewModel== null&& initialNotesheetAttachment.Length<0)
+            if(invitationForTenderViewModel==null)
             {
                 return NotFound();
             }
@@ -46,16 +47,15 @@ namespace ProjectManagement.Controllers
             {
                 if(ModelState.IsValid)
                 {
-                    result = await initialNoteSheet.CreateInitialNoteSheet(initialNotesheetViewModel, initialNotesheetAttachment);
+                    result = await invitationForTender.CreateInvitationForTender(invitationForTenderViewModel, InvitationForTenderAttachment);
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 result = e.Message;
             }
             TempData["result"] = result;
             return RedirectToAction(nameof(Create));
         }
-       
     }
 }

@@ -1,5 +1,4 @@
-﻿
-
+﻿@model IEnumerable<ProjectManagement.ViewModel.InvitationForTenderViewModel>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -15,9 +14,9 @@
     <div class="card">
 
         <div class="card-header border-0">
-            <button class="btn btn-primary" style="border-radius:20px 5px;" type="button" onclick="location.href='@Url.Action("Create", "InitialNoteSheet")'"><b>Create</b></button>
+            <button class="btn btn-primary" style="border-radius:20px 5px;" type="button" onclick="location.href='@Url.Action("Create", "InvitationForTender")'"><b>Create</b></button>
             <hr />
-            <center>  <h1 class="card-title"><b>Initial Note Sheet List</b></h1></center>
+            <center>  <h1 class="card-title"><b>Tender Invitation List</b></h1></center>
             @*<div class="card-tools">
                     <a href="#" class="btn btn-tool btn-sm">
                         <i class="fas fa-download"></i>
@@ -37,19 +36,16 @@
                             Sl No
                         </th>
                         <th>
-                            @Html.DisplayName("Initial Note Sheet Opening Date")
+                            @Html.DisplayName("Tender Invitation Date")
                         </th>
                         <th>
-                            @Html.DisplayName("Initial Note Sheet Subject")
-                        </th>
-                        <th>
-                            @Html.DisplayName("Initial Note Sheet Attachment")
-                        </th>
-                        <th>
-                            @Html.DisplayName("Project Name")
+                            @Html.DisplayName("Project")
                         </th>
                         <th>
                             @Html.DisplayName("Vendor")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Attachment")
                         </th>
                         <th>
                             @Html.DisplayName("Action")
@@ -58,7 +54,7 @@
                 </thead>
                 <tbody>
                     @{ int i = 0;}
-                    @foreach (var item in @ViewBag.InitialNoteSheet)
+                    @foreach (var item in @ViewBag.InvitationForTender)
                     {
                         <tr>
                             <td>
@@ -66,14 +62,9 @@
                                 @i
                             </td>
                             <td>
-                                @item.InitialNoteSheetOpeningDate
+                                @item.InvitationForTenderDate.ToShortDateString()
                             </td>
-                            <td>
-                                @item.InitialNotesheetSubject
-                            </td>
-                            <td>
-                                <a class="btn btn-outline-primary" href="/File/InitialNoteSheetAttachment/@item.InitialNotesheetAttachment" target="_blank">@item.InitialNotesheetAttachment</a>
-                            </td>
+
                             <td>
                                 @item.ProjectName
                             </td>
@@ -81,9 +72,12 @@
                                 @item.VendorName
                             </td>
                             <td>
-                                <a asp-action="Edit" asp-route-id="@item.InitialNotesheetId">Edit</a> |
-                                <a asp-action="Details" asp-route-id="@item.InitialNotesheetId">Details</a> |
-                                <a asp-action="Delete" asp-route-id="@item.InitialNotesheetId">Delete</a>
+                                <a class="btn btn-outline-primary" href="/File/InvitationForTenderAttachment/@item.InvitationForTenderAttachment" target="_blank">@item.InvitationForTenderAttachment</a>
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.InvitationForTenderId">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.InvitationForTenderId">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.InvitationForTenderId">Delete</a>
                             </td>
                         </tr>
                      }

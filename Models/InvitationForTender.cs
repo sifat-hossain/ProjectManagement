@@ -5,14 +5,13 @@ using System.Collections.Generic;
 
 namespace ProjectManagement.Models
 {
-    public partial class InitialNotesheet
+    public partial class InvitationForTender
     {
-        public int InitialNotesheetId { get; set; }
-        public DateTime? InitialNoteSheetOpeningDate { get; set; }
-        public string InitialNotesheetSubject { get; set; }
-        public string InitialNotesheetAttachment { get; set; }
+        public int InvitationForTenderId { get; set; }
         public int? ProjectId { get; set; }
         public int? VendorId { get; set; }
+        public DateTime? InvitationForTenderDate { get; set; }
+        public string InvitationForTenderAttachment { get; set; }
 
         public virtual Project Project { get; set; }
         public virtual VendorInformation Vendor { get; set; }
