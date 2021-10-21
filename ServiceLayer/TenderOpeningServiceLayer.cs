@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using ProjectManagement.Data;
 using ProjectManagement.Interface;
+using ProjectManagement.Models;
 using ProjectManagement.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -27,21 +29,21 @@ namespace ProjectManagement.ServiceLayer
         }
         public async Task<string> CreateTenderOpening(TenderOpeningViewModel tenderOpeningViewModel, IFormFile tenderOpeningAttachment)
         {
-         
+            string result;
             if (tenderOpeningViewModel == null && tenderOpeningAttachment.Length < 0)
             {
                 throw new Exception();
             }
             try
             {
-                fileName = Path.GetFileNameWithoutExtension(tenderOpeningViewModel.FileName);
-                fileExtension = Path.GetExtension(tenderOpeningViewModel.FileName);
+                fileName = Path.GetFileNameWithoutExtension(tenderOpeningAttachment.FileName);
+                fileExtension = Path.GetExtension(tenderOpeningAttachment.FileName);
                 fileName = fileName + "_" + DateTime.Now.Year + "" + DateTime.Now.Month + "" + DateTime.Now.Day + "" + DateTime.Now.TimeOfDay.Hours + "" + DateTime.Now.TimeOfDay.Minutes + "" + DateTime.Now.TimeOfDay.Seconds + "" + fileExtension;
-                var path = Path.Combine(web.WebRootPath, "File/InitialNoteSheetAttachment", fileName);
+                var path = Path.Combine(web.WebRootPath, "File/TenderOpeningAttachment", fileName);
                 var stream = new FileStream(path, FileMode.Create);
-                await tenderOpeningViewModel.CopyToAsync(stream);
+                await tenderOpeningAttachment.CopyToAsync(stream);
                 stream.Close();
-               
+                tenderOpeningViewModel.TenderOpeningAttachment = fileName;
 
             }
             catch
@@ -49,14 +51,51 @@ namespace ProjectManagement.ServiceLayer
             {
                 throw;
             }
-            return "";
+            TenderOpening tenderOpening = mapper.Map<TenderOpening>(tenderOpeningViewModel);
+            await dbContext.TenderOpenings.AddAsync(tenderOpening);
+            try
+            {
+                await dbContext.SaveChangesAsync();
+                result = "Successfully Inserted";
+            }
+            catch(Exception e)
+            {
+                result = e.Message;
+            }
+            return result;
         }
 
-        public Task<List<TenderOpeningViewModel>> GetAllTenderOpening()
+        public async Task<List<TenderOpeningViewModel>> GetAllTenderOpening()
         {
-            throw new NotImplementedException();
+            List<TenderOpeningViewModel> tenderOpeningViewModel = new();
+            try
+            {
+                List<TenderOpening> tenderOpening = await dbContext.TenderOpenings.FromSqlRaw("exec SpGetAllTenderOpening").ToListAsync();
+                foreach(var item in tenderOpening)
+                {
+                    var _tendarOpening =  dbContext.TenderOpenings.FromSqlRaw("exec SpGetAllTenderOpeningById {0}", item.TenderOpeningId).ToList().FirstOrDefault();
+                    tenderOpeningViewModel.Add(await TenderOpeningViewModel(_tendarOpening));
+                }
+            }
+            catch
+            {
+                throw;
+            }
+            return tenderOpeningViewModel;
         }
+        public async Task<TenderOpeningViewModel> TenderOpeningViewModel(TenderOpening tenderOpening)
+        {
+            TenderOpeningViewModel tovm = new();
+            List<Project> project = await dbContext.Projects.FromSqlRaw("exec SpGetProject").ToListAsync();
+            tovm.TenderOpeningId = tenderOpening.TenderOpeningId;
+            tovm.TenderOpeningDate = tenderOpening.TenderOpeningDate;
+            tovm.TenderClosingDate = tenderOpening.TenderClosingDate;
+            tovm.TenderOpeningAttachment = tenderOpening.TenderOpeningAttachment;
+            tovm.TenderHonorium = tenderOpening.TenderHonorium;
+            tovm.ProjectName = project.Where(x => x.ProjectId == tenderOpening.ProjectId).FirstOrDefault().ProjectName;
+            return tovm;
 
+        }
         public TenderOpeningViewModel GetTenderOpeningById(int? id)
         {
             throw new NotImplementedException();

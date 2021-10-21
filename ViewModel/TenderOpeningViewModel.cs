@@ -15,11 +15,8 @@ namespace ProjectManagement.ViewModel
         public DateTime? TenderClosingDate { get; set; }
         public decimal? TenderHonorium { get; set; }
         public string ProjectName { get; set; }
-        public string FileName { get; internal set; }
+        public string TenderOpeningAttachment { get; set; }
 
-        internal Task CopyToAsync(FileStream stream)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }
