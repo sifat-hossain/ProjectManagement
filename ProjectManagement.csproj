@@ -31,6 +31,7 @@
     <Folder Include="Data\" />
     <Folder Include="wwwroot\File\InitialNoteSheetAttachment\" />
     <Folder Include="wwwroot\File\InvitationForTenderAttachment\" />
+    <Folder Include="wwwroot\File\TenderOpeningAttachment\" />
     <Folder Include="wwwroot\File\ProjectAttachment\" />
   </ItemGroup>
 
