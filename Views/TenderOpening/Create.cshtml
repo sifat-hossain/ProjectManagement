@@ -1,0 +1,75 @@
+﻿@model ProjectManagement.ViewModel.TenderOpeningViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>TenderOpening</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        
+    </div>
+</div>
+
+@if (ViewBag.Message != null)
+{
+    <partial name="Message" />
+}
+<center>
+    <div class="col-md-6">
+        <div class="card">
+            <hr />
+            <div class="card-header p-2"><h1><b>Tender Opening Information</b></h1> </div><!-- /.card-header -->
+            <div class="card-body">
+                <div class="tab-content">
+                    <!-- /.tab-pane -->
+                    <form asp-action="Create" method="post" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Project Name</label>
+                            <select asp-for="ProjectId" class="form-control col-md-6" asp-items="@(new SelectList(@ViewBag.ProjectList,"ProjectId","ProjectName"))">
+                                <option value="" selected disabled> Please Select a Project Name</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Tender Opening Date</label>
+                            <input asp-for="TenderOpeningDate" class="form-control col-md-6" />
+                            <span asp-validation-for="TenderOpeningDate" class="text-danger"></span>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Tender Closing Date</label>
+                            <input asp-for="TenderClosingDate" class="form-control col-md-6" />
+                            <span asp-validation-for="TenderClosingDate" class="text-danger"></span>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Tender Honorium</label>
+                            <input asp-for="TenderHonorium" class="form-control col-md-6" />
+                            <span asp-validation-for="TenderHonorium" class="text-danger"></span>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-3"> Attachment</label>
+                            <input type="file" asp-for="TenderOpeningAttachment" name="tenderOpeningAttachment" class="form-control col-md-6" />
+                            <span asp-validation-for="TenderOpeningAttachment" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </form>
+                    <div>
+                        <a asp-action="Index">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</center>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
