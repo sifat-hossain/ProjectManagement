@@ -46,6 +46,7 @@ namespace ProjectManagement
             services.AddTransient<IInitialNoteSheet, InitialNoteSheetServiceLayer>();
             services.AddTransient<IInvitationForTender, InvitationForTenderServiceLayer>();
             services.AddTransient<ITenderOpening, TenderOpeningServiceLayer>();
+            services.AddTransient<IUserRole, UserRoleServiceLayer>();
             
         }
 

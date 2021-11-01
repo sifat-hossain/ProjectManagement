@@ -21,6 +21,8 @@ namespace MailSectionEALB.Automapper
             CreateMap<InvitationForTender, InvitationForTenderViewModel>().ReverseMap();
             CreateMap<InvitationForTender, InvitationForTenderViewModel>().ReverseMap();
             CreateMap<TenderOpening, TenderOpeningViewModel>().ReverseMap();
+            CreateMap<FinalApproval, FinalApprovalViewModel>().ReverseMap();
+            CreateMap<UserRole, UserRoleViewModel>().ReverseMap();
         }
     }
 }
