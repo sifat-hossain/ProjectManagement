@@ -23,6 +23,7 @@ namespace MailSectionEALB.Automapper
             CreateMap<TenderOpening, TenderOpeningViewModel>().ReverseMap();
             CreateMap<FinalApproval, FinalApprovalViewModel>().ReverseMap();
             CreateMap<UserRole, UserRoleViewModel>().ReverseMap();
+            CreateMap<UserInformation, UserInformationViewModel>().ReverseMap();
         }
     }
 }

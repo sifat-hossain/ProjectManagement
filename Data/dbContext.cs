@@ -748,11 +748,6 @@ namespace ProjectManagement.Data
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__UserInfor__Desig__1B0907CE");
 
-                entity.HasOne(d => d.ForceRank)
-                    .WithMany(p => p.UserInformations)
-                    .HasForeignKey(d => d.ForceRankId)
-                    .HasConstraintName("FK__UserInfor__Force__1BFD2C07");
-
                 entity.HasOne(d => d.UserRole)
                     .WithMany(p => p.UserInformations)
                     .HasForeignKey(d => d.UserRoleId)

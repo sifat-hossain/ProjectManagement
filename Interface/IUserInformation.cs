@@ -11,5 +11,8 @@ namespace ProjectManagement.Interface
    public interface IUserInformation
     {
         Task<List<UserInformationViewModel>> GetAllUserInformation();
+        Task<string> CreateUser(UserInformationViewModel userInformationViewModel);
+        UserInformationViewModel GetUserById(int? id);
+        Task<string> UpdateUser(UserInformationViewModel userInformationViewModel);
     }
 }
