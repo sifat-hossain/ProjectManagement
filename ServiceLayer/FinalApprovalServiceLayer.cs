@@ -74,7 +74,7 @@ namespace ProjectManagement.ServiceLayer
                 foreach (var item in finalApproval)
                 {
                     var _finalApproval = dbContext.FinalApprovals.FromSqlRaw("exec SpGetFinalApprovalById {0}", item.FinalApprovalId).ToList().FirstOrDefault();
-                   // finalApprovalViewModel.Add(await FinalApprovalViewModel(_finalApproval));
+                   finalApprovalViewModel.Add(await FinalApprovalViewModel(_finalApproval));
                 }
             }
             catch
@@ -83,12 +83,20 @@ namespace ProjectManagement.ServiceLayer
             }
             return finalApprovalViewModel;
         }
-        //public async Task<FinalApprovalViewModel> FinalApprovalViewModel(FinalApproval finalApproval)
-        //{
-        //    FinalApprovalViewModel fav = new();
-        //    List<Project> project = await dbContext.Projects.FromSqlRaw("exec SpGetProject").ToListAsync();
-        //    List<UserInformation>
-        //}
+        public async Task<FinalApprovalViewModel> FinalApprovalViewModel(FinalApproval finalApproval)
+        {
+            FinalApprovalViewModel fav = new();
+            List<Project> project = await dbContext.Projects.FromSqlRaw("exec SpGetProject").ToListAsync();
+            List<UserInformation> userInformation = await dbContext.UserInformations.FromSqlRaw("exec SpGetUserList").ToListAsync();
+
+            fav.FinalApprovalId = finalApproval.FinalApprovalId;
+            fav.ApprovedDate = finalApproval.ApprovedDate;
+            fav.FinalApprovalAttachment = finalApproval.FinalApprovalAttachment;
+            fav.ProjectName = project.Where(x => x.ProjectId == finalApproval.ProjectId).FirstOrDefault().ProjectName;
+            fav.UserName = userInformation.Where(x => x.UserId == finalApproval.UserId).FirstOrDefault().UserName;
+
+            return fav;
+        }
 
         public FinalApprovalViewModel GetFinalApprovalById(int? id)
         {

@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (ViewBag.Message != null)
+{
+    <partial name="Message" />
+}
+<div class="col-lg-12">
+
+    <!-- /.card -->
+    <div class="card">
+
+        <div class="card-header border-0">
+            <button class="btn btn-primary" style="border-radius:20px 5px;" type="button" onclick="location.href='@Url.Action("Create", "FinalApproval")'"><b>Create</b></button>
+            <hr />
+            <center>  <h1 class="card-title"><b>Final Approved Project List</b></h1></center>
+            @*<div class="card-tools">
+                    <a href="#" class="btn btn-tool btn-sm">
+                        <i class="fas fa-download"></i>
+                    </a>
+                    <a href="#" class="btn btn-tool btn-sm">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </div>*@
+
+            <hr />
+        </div>
+        <div class="card-body table-responsive p-0">
+            <table class="table table-striped table-valign-middle">
+                <thead>
+                    <tr>
+                        <th>
+                            Sl No
+                        </th>
+                        <th>
+                            @Html.DisplayName("Project Name")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Approved Date")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Approved Person")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Attachment")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Action")
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{ int i = 0;}
+                    @foreach (var item in @ViewBag.FinalApproval)
+                    {
+                        <tr>
+                            <td>
+                                @{ i++;}
+                                @i
+                            </td>
+                            <td>
+                                @item.ProjectName
+                            </td>
+                            <td>
+                                @item.ApprovedDate
+                            </td>
+                            <td>
+                                @item.UserName
+                            </td>
+                            <td>
+                                <a class="btn btn-outline-primary" href="/File/FinalApprovalAttachment/@item.FinalApprovalAttachment" target="_blank">@item.FinalApprovalAttachment</a>    
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.FinalApprovalId">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.FinalApprovalId">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.FinalApprovalId">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- /.card -->
+</div>

@@ -48,6 +48,7 @@ namespace ProjectManagement
             services.AddTransient<ITenderOpening, TenderOpeningServiceLayer>();
             services.AddTransient<IUserRole, UserRoleServiceLayer>();
             services.AddTransient<IUserInformation, UserInformationServiceLayer>();
+            services.AddTransient<IFinalApproval, FinalApprovalServiceLayer>();
             
         }
 
