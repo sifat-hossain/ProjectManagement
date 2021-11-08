@@ -185,3 +185,6 @@ E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razo
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\UserRole\Index.cshtml.g.cs
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\UserRole\Create.cshtml.g.cs
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\UserRole\Edit.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.csproj.AssemblyReference.cache
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\UserInformation\Index.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\UserInformation\Create.cshtml.g.cs
