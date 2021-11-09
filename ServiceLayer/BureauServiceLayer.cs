@@ -7,14 +7,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ProjectManagement.Data;
-using MailSectionEALB.Automapper;
+using AutoMapper;
 
 namespace ProjectManagement.ServiceLayer
 {
     public class BureauServiceLayer : IBureau
     {
         public readonly dbContext dbContext;
-        public readonly Automapper.IMapper mapper;
+        public readonly IMapper mapper;
         public BureauServiceLayer(dbContext _dbContext, AutoMapper.IMapper _mapper)
         {
             dbContext = _dbContext;
