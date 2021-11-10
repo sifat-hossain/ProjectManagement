@@ -381,3 +381,5 @@ F:\Github\ProjectManagement\obj\Debug\net5.0\ProjectManagement.RazorTargetAssemb
 F:\Github\ProjectManagement\obj\Debug\net5.0\ProjectManagement.Views.pdb
 F:\Github\ProjectManagement\obj\Debug\net5.0\ProjectManagement.csproj.CopyComplete
 F:\Github\ProjectManagement\obj\Debug\net5.0\ProjectManagement.genruntimeconfig.cache
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\PO\Index.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\PO\Create.cshtml.g.cs
