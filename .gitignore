@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+bin/Debug/net5.0/ProjectManagement.Views.pdb
+bin/Debug/net5.0/ProjectManagement.pdb
+*.dll
+*.pdb

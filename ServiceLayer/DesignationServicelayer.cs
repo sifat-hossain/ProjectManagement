@@ -33,7 +33,7 @@ namespace ProjectManagement.ServiceLayer
                     Designation designation = mapper.Map<Designation>(designationViewModel);
                     await dbContext.Designations.AddAsync(designation);
                     await dbContext.SaveChangesAsync();
-                    result = "Seccessfully Created The New Designation";
+                    result = "Successfully Created The New Designation";
                 }
             }
             catch(Exception e)
@@ -69,7 +69,7 @@ namespace ProjectManagement.ServiceLayer
                 Designation designation = mapper.Map<Designation>(designationViewModel);
                 dbContext.Designations.Update(designation);
                 await dbContext.SaveChangesAsync();
-                result = "Seccessfully Updated";
+                result = "Successfully Updated";
             }
             catch(Exception e)
             {

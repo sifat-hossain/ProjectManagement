@@ -55,7 +55,7 @@ namespace ProjectManagement.ServiceLayer
             try
             {
                 await dbContext.SaveChangesAsync();
-                result = "Seccessfully Created The New Project";
+                result = "Successfully Created The New Project";
             }
             catch (DbUpdateException e)
             {
