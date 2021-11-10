@@ -24,6 +24,7 @@ namespace MailSectionEALB.Automapper
             CreateMap<FinalApproval, FinalApprovalViewModel>().ReverseMap();
             CreateMap<UserRole, UserRoleViewModel>().ReverseMap();
             CreateMap<UserInformation, UserInformationViewModel>().ReverseMap();
+            CreateMap<Noa, NoaViewModel>().ReverseMap();
         }
     }
 }
