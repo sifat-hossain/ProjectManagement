@@ -54,7 +54,7 @@ namespace ProjectManagement.ServiceLayer
             try
             {
                 await dbContext.SaveChangesAsync();
-                result = "Seccessfully Created Invitation";
+                result = "Successfully Created Invitation";
             }
             catch
             {

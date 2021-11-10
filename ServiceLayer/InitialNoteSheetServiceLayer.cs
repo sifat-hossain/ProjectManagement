@@ -56,7 +56,7 @@ namespace ProjectManagement.ServiceLayer
             try
             {
                 await dbContext.SaveChangesAsync();
-                result = "Seccessfully Created The Note Sheet";
+                result = "Successfully Created The Note Sheet";
             }
             catch
             {

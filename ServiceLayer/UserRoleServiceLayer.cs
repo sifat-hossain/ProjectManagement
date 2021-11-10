@@ -31,7 +31,7 @@ namespace ProjectManagement.ServiceLayer
             try
             {
                 await dbContext.SaveChangesAsync();
-                result = "Seccessfully Created The New User Role";
+                result = "Successfully Created The New User Role";
             }
             catch (DbUpdateException e)
             {
@@ -80,7 +80,7 @@ namespace ProjectManagement.ServiceLayer
             try
             {
                 await dbContext.SaveChangesAsync();
-                result = "Seccessfully Updated The User Role";
+                result = "Successfully Updated The User Role";
             }
             catch (DbUpdateException e)
             {

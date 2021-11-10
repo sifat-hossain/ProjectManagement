@@ -29,7 +29,7 @@ namespace ProjectManagement.ServiceLayer
             try
             {
                 await dbContext.SaveChangesAsync();
-                result = "Seccessfully Created The New Bureau";
+                result = "Successfully Created The New Bureau";
             }
             catch (DbUpdateException e)
             {
@@ -72,7 +72,7 @@ namespace ProjectManagement.ServiceLayer
             try
             {
                 await dbContext.SaveChangesAsync();
-                result = "Seccessfully Updated The Bureau";
+                result = "Successfully Updated The Bureau";
             }
             catch (DbUpdateException e)
             {
