@@ -10,6 +10,8 @@ namespace ProjectManagement.ViewModel
     {
         public int NoaId { get; set; }
         public int? ProjectId { get; set; }
+        public string ProjectName { get; set; }
+
         public string NoaCode { get; set; }
         public DateTime? Pgdate { get; set; }
         public decimal? FinalContatractPrice { get; set; }
