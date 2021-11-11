@@ -25,5 +25,12 @@ namespace ProjectManagement.Controllers
             ViewBag.Noa = await noa.GetAllNoa();
             return View();
         }
+
+        public async Task<IActionResult> Create()
+        {
+            ViewBag.Message = TempData["result"];
+            ViewBag.ProjectList = await project.GetAllProject();
+            return View();
+        }
     }
 }

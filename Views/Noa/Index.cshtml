@@ -33,7 +33,7 @@
                 <thead>
                     <tr>
                         <th>
-                            Sl No
+                            Sl
                         </th>
 
                         <th>
@@ -46,10 +46,10 @@
                             @Html.DisplayName("PG Date")
                         </th>
                         <th>
-                            @Html.DisplayName("Final Contatract Price")
+                            @Html.DisplayName("Final Contract Price")
                         </th>
                         <th>
-                            @Html.DisplayName("Tender No.")
+                            @Html.DisplayName("Tender No")
                         </th>
                         <th>
                             @Html.DisplayName("Attachment")
@@ -75,20 +75,27 @@
                             @item.NoaCode
                         </td>
                         <td>
-                            @item.Pgdate.ToShortDateString()
+                            @item.Pgdate.ToString("dd MMM, yyyy")
                         </td>
 
                         <td>
-                            @item.FinalContatractPrice
+                            <b>@item.FinalContatractPrice</b> BDT
                         </td>
-                        
+
                         <td>
                             @item.TenderNo
                         </td>
+                        @if (item.NoaAttachment == null)
+                        {
+                            <td style="color: red">No Attachment Found!</td>
+                        }
+                        else
+                        {
+                            <td>
+                                <a class="btn btn-outline-primary" href="/File/NoaAttachment/@item.NoaAttachment" target="_blank">@item.NoaAttachment</a>
+                            </td>
+                        }
 
-                        <td>
-                            <a class="btn btn-outline-primary" href="/File/NoaAttachment/@item.NoaAttachment" target="_blank">@item.NoaAttachment</a>
-                        </td>
                         <td>
                             <a asp-action="Edit" asp-route-id="@item.NoaId">Edit</a> |
                             <a asp-action="Details" asp-route-id="@item.NoaId">Details</a> |
