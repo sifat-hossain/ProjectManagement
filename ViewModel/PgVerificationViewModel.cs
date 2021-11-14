@@ -15,7 +15,6 @@ namespace ProjectManagement.ViewModel
         public DateTime? PgOpeningDate { get; set; }
         public DateTime? PgExpireDate { get; set; }
         public string PgVerificationAttachment { get; set; }
-
-        public virtual Noa Noa { get; set; }
+        public string NoaCode { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using ProjectManagement.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,6 +14,7 @@ namespace ProjectManagement.ViewModel
         public string ProjectName { get; set; }
 
         public string NoaCode { get; set; }
+        [DataType(DataType.Date)]
         public DateTime? Pgdate { get; set; }
         public decimal? FinalContatractPrice { get; set; }
         public string TenderNo { get; set; }
