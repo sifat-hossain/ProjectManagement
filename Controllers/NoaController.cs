@@ -13,6 +13,7 @@ namespace ProjectManagement.Controllers
     {
         private readonly INoa noa;
         private readonly IProject project;
+        string result;
 
         public NoaController(INoa _noa, IProject _project)
         {
@@ -31,6 +32,25 @@ namespace ProjectManagement.Controllers
             ViewBag.Message = TempData["result"];
             ViewBag.ProjectList = await project.GetAllProject();
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(NoaViewModel noaViewModel)
+        {
+            try
+            {
+                if (noaViewModel.NoaAttachmentFile.Length > 0 && ModelState.IsValid)
+                {
+                    result = await noa.CreateNoa(noaViewModel);
+                }
+            }
+            catch (Exception e)
+            {
+                result = e.Message;
+            }
+            TempData["result"] = result;
+            return RedirectToAction(nameof(Create));
         }
     }
 }
