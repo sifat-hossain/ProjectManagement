@@ -19,7 +19,7 @@ namespace MailSectionEALB.Automapper
             CreateMap<Project, ProjectViewModel>().ReverseMap();
             CreateMap<InitialNotesheet, InitialNotesheetViewModel>().ReverseMap();
             CreateMap<InvitationForTender, InvitationForTenderViewModel>().ReverseMap();
-            CreateMap<InvitationForTender, InvitationForTenderViewModel>().ReverseMap();
+            CreateMap<Noa, NoaViewModel>().ReverseMap();
             CreateMap<TenderOpening, TenderOpeningViewModel>().ReverseMap();
             CreateMap<FinalApproval, FinalApprovalViewModel>().ReverseMap();
             CreateMap<UserRole, UserRoleViewModel>().ReverseMap();

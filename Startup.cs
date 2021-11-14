@@ -50,6 +50,7 @@ namespace ProjectManagement
             services.AddTransient<IUserInformation, UserInformationServiceLayer>();
             services.AddTransient<IFinalApproval, FinalApprovalServiceLayer>();
             services.AddTransient<IPO,POServiceLayer>();
+            services.AddTransient<INoa,NoaServiceLayer>();
             
         }
 
