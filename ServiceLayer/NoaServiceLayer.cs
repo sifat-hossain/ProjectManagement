@@ -29,22 +29,27 @@ namespace ProjectManagement.ServiceLayer
             web = _web;
         }
 
-        public async Task<string> CreateNoa(NoaViewModel noaViewModel, IFormFile noaAttachment)
+        public async Task<string> CreateNoa(NoaViewModel noaViewModel)
         {
 
             string result;
-            if (noaViewModel == null && noaAttachment.Length < 0)
+            if (noaViewModel == null && noaViewModel.NoaAttachmentFile.Length < 0)
             {
                 throw new Exception();
             }
             try
             {
-                fileName = Path.GetFileNameWithoutExtension(noaAttachment.FileName);
-                fileExtension = Path.GetExtension(noaAttachment.FileName);
+                fileName = Path.GetFileNameWithoutExtension(noaViewModel.NoaAttachmentFile.FileName);
+                fileExtension = Path.GetExtension(noaViewModel.NoaAttachmentFile.FileName);
                 fileName = fileName + "_" + DateTime.Now.Year + "" + DateTime.Now.Month + "" + DateTime.Now.Day + "" + DateTime.Now.TimeOfDay.Hours + "" + DateTime.Now.TimeOfDay.Minutes + "" + DateTime.Now.TimeOfDay.Seconds + "" + fileExtension;
+                var directory = Path.Combine(web.WebRootPath, "File/NoaAttachment/");
                 var path = Path.Combine(web.WebRootPath, "File/NoaAttachment/", fileName);
+                if (!Directory.Exists(directory))
+                {
+                    Directory.CreateDirectory(directory);
+                }
                 var stream = new FileStream(path, FileMode.Create);
-                await noaAttachment.CopyToAsync(stream);
+                await noaViewModel.NoaAttachmentFile.CopyToAsync(stream);
                 stream.Close();
                 noaViewModel.NoaAttachment = fileName;
             }
