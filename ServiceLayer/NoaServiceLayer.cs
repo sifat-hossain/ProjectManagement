@@ -87,6 +87,7 @@ namespace ProjectManagement.ServiceLayer
             {
                 throw;
             }
+            noaViewModel.Sort((a, b) => b.NoaId.CompareTo(a.NoaId));
             return noaViewModel;
         }
 

@@ -10,7 +10,7 @@
     <partial name="Message" />
 }
 <center>
-    <div class="col-md-8">
+    <div class="col-md-10">
         <div class="card">
             <hr />
             <div class="card-header p-2"><h1><b>Create NOA</b></h1> </div><!-- /.card-header -->
@@ -40,12 +40,12 @@
                         <div class="form-group row">
                             <label class="control-label col-md-3">PG Date</label>
                             <input asp-for="Pgdate" class="form-control col-md-6" />
-                            <span asp-validation-for="Pgdate" class="text-danger"></span>                    
+                            <span asp-validation-for="Pgdate" class="col-md-3 text-danger"></span>                    
                         </div>
                         <div class="form-group row">
                             <label class="control-label col-md-3">Final Contract Price</label>
                             <input asp-for="FinalContatractPrice" class="form-control col-md-6" />
-                            <span asp-validation-for="FinalContatractPrice" class="text-danger"></span>
+                            <span asp-validation-for="FinalContatractPrice" class="col-md-3 text-danger"></span>
                         </div>                      
                         <div class="form-group row">
                             <label class="control-label col-md-3">Attachment</label>
