@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ProjectManagement.Interface;
 using ProjectManagement.ViewModel;
 using System;
@@ -9,23 +8,24 @@ using System.Threading.Tasks;
 
 namespace ProjectManagement.Controllers
 {
-    public class NoaController : Controller
+    public class PIController : Controller
     {
-        private readonly INoa noa;
+        private readonly IPI pi;
         private readonly IProject project;
         string result;
 
-        public NoaController(INoa _noa, IProject _project)
+        public PIController(IPI iPI, IProject _project)
         {
-            noa = _noa;
+            pi = iPI;
             project = _project;
         }
 
         public async Task<IActionResult> Index()
         {
-            ViewBag.Noa = await noa.GetAllNoa();
+            ViewBag.listOfData = await pi.GetAllPI();
             return View();
         }
+
 
         public async Task<IActionResult> Create()
         {
@@ -36,13 +36,13 @@ namespace ProjectManagement.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(NoaViewModel noaViewModel)
+        public async Task<IActionResult> Create(PiViewModel viewModel)
         {
             try
             {
-                if (noaViewModel.NoaAttachmentFile.Length > 0 && ModelState.IsValid)
+                if (viewModel.PIAttachmentFile.Length > 0 && ModelState.IsValid)
                 {
-                    result = await noa.CreateNoa(noaViewModel);
+                    result = await pi.CreatePI(viewModel);
                 }
             }
             catch (Exception e)

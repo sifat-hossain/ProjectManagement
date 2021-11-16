@@ -1,0 +1,60 @@
+﻿@model ProjectManagement.ViewModel.PiViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (ViewBag.Message != null)
+{
+    <partial name="Message" />
+}
+<center>
+    <div class="col-md-10">
+        <div class="card">
+            <hr />
+            <div class="card-header p-2"><h1><b>Create PI</b></h1> </div><!-- /.card-header -->
+            <div class="card-body">
+                <div class="tab-content">
+                    <!-- /.tab-pane -->
+                    <form asp-action="Create" method="post" enctype="multipart/form-data">
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Project Name</label>
+                            <select asp-for="ProjectId" class="form-control col-md-6" asp-items="@(new SelectList(@ViewBag.ProjectList,"ProjectId","ProjectName"))">
+                                <option value="" selected disabled> Please Select a Project</option>
+                            </select>
+                            <span asp-validation-for="ProjectId" class="col-md-3 text-danger"></span>
+                        </div>                       
+                       
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">PI Date</label>
+                            <input type="date" asp-for="Pidate" class="form-control col-md-6" />
+                            <span asp-validation-for="Pidate" class="col-md-3 text-danger"></span>                    
+                        </div>
+                      
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Attachment</label>
+                            <input asp-for="PIAttachmentFile" type="file" class="form-control col-md-6" />
+                            <span asp-validation-for="PIAttachmentFile" class="col-md-3 text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+
+                    </form>
+                    <div>
+                        <a asp-action="Index">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</center>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

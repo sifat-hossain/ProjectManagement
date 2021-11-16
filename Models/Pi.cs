@@ -9,7 +9,7 @@ namespace ProjectManagement.Models
     {
         public int PiId { get; set; }
         public int? ProjectId { get; set; }
-        public DateTime? Pidate { get; set; }
+        public DateTime Pidate { get; set; }
         public string PiAttachment { get; set; }
 
         public virtual Project Project { get; set; }

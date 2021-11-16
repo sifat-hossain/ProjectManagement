@@ -49,9 +49,12 @@ namespace ProjectManagement
             services.AddTransient<IUserRole, UserRoleServiceLayer>();
             services.AddTransient<IUserInformation, UserInformationServiceLayer>();
             services.AddTransient<IFinalApproval, FinalApprovalServiceLayer>();
-            services.AddTransient<IPO, POServiceLayer>();
+            
             services.AddTransient<INoa, NoaServiceLayer>();
             services.AddTransient<IPGVerification, PGVerificationServiceLayer>();
+            services.AddTransient<IPO,POServiceLayer>();
+           
+            services.AddTransient<IPI,PIServiceLayer>();
             
         }
 
