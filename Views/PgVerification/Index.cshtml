@@ -1,0 +1,66 @@
+﻿@model IEnumerable<ProjectManagement.Models.PgVerification>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PgVerificationStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PgPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PgOpeningDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PgExpireDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PgVerificationAttachment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Noa)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PgVerificationStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PgPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PgOpeningDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PgExpireDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PgVerificationAttachment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Noa.NoaId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PgVerificationId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PgVerificationId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PgVerificationId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -25,6 +25,7 @@ namespace MailSectionEALB.Automapper
             CreateMap<UserRole, UserRoleViewModel>().ReverseMap();
             CreateMap<UserInformation, UserInformationViewModel>().ReverseMap();
             CreateMap<Po, PoViewModel>().ReverseMap();
+            CreateMap<PgVerification, PgVerificationViewModel>().ReverseMap();
         }
     }
 }

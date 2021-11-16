@@ -1,4 +1,5 @@
-﻿using ProjectManagement.Models;
+﻿using Microsoft.AspNetCore.Http;
+using ProjectManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,5 +17,7 @@ namespace ProjectManagement.ViewModel
         public DateTime? PgExpireDate { get; set; }
         public string PgVerificationAttachment { get; set; }
         public string NoaCode { get; set; }
+        public string ProjectName { get; set; }
+        public IFormFile PGVerificationAttachmentFile { get; set; }
     }
 }
