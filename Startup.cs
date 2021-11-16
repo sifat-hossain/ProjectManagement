@@ -55,6 +55,7 @@ namespace ProjectManagement
             services.AddTransient<IPO,POServiceLayer>();
            
             services.AddTransient<IPI,PIServiceLayer>();
+            services.AddTransient<ILC,LCServiceLayer>();
             
         }
 
