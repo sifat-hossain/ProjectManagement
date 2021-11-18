@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProjectManagement.Interface;
+using ProjectManagement.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,37 @@ namespace ProjectManagement.Controllers
         {
             ViewBag.PgVerificationList = await pGVerification.GetAllPgVerification();
             return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Create()
+        {
+            ViewBag.Message = TempData["result"];
+            ViewBag.Noa = await noa.GetAllNoa();
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(PgVerificationViewModel pgVerificationViewModel)
+        {
+            if(pgVerificationViewModel==null)
+            {
+                return NotFound();
+            }
+            try
+            {
+                if(ModelState.IsValid)
+                {
+                    result = await pGVerification.CreatePgVerification(pgVerificationViewModel);
+                }
+            }
+            catch(Exception ex)
+            {
+                result = ex.Message;
+            }
+            TempData["result"] = result;
+            return RedirectToAction(nameof(Create));
         }
     }
 }

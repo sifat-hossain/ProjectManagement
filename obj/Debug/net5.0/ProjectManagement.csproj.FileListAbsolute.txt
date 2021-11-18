@@ -385,3 +385,9 @@ E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ref\
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.pdb
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.genruntimeconfig.cache
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.csproj.AssemblyReference.cache
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\LC\Create.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\LC\Index.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\PgVerification\Index.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\PI\Create.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\PI\Index.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\PgVerification\Create.cshtml.g.cs

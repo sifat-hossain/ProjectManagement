@@ -1,66 +1,125 @@
-﻿@model IEnumerable<ProjectManagement.Models.PgVerification>
+﻿
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.PgVerificationStatus)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PgPrice)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PgOpeningDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PgExpireDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PgVerificationAttachment)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Noa)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.PgVerificationStatus)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PgPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PgOpeningDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PgExpireDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PgVerificationAttachment)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Noa.NoaId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.PgVerificationId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PgVerificationId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PgVerificationId">Delete</a>
-            </td>
-        </tr>
+@if (ViewBag.Message != null)
+{
+    <partial name="Message" />
 }
-    </tbody>
-</table>
+<div class="col-lg-12">
+
+    <!-- /.card -->
+    <div class="card">
+
+        <div class="card-header border-0">
+            <button class="btn btn-primary" style="border-radius:20px 5px;" type="button" onclick="location.href='@Url.Action("Create", "PgVerification")'"><b>Create</b></button>
+            <hr />
+            <center>  <h1 class="card-title"><b>NOA List</b></h1></center>
+            @*<div class="card-tools">
+                    <a href="#" class="btn btn-tool btn-sm">
+                        <i class="fas fa-download"></i>
+                    </a>
+                    <a href="#" class="btn btn-tool btn-sm">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </div>*@
+
+            <hr />
+        </div>
+        <div class="card-body table-responsive p-0">
+            <table class="table table-striped table-valign-middle">
+                <thead>
+                    <tr>
+                        <th>
+                            SL
+                        </th>
+                        <th>
+                            @Html.DisplayName("Project Name")
+                        </th>
+                        <th>
+                            @Html.DisplayName("NOA Code")
+                        </th>
+                        <th>
+                            @Html.DisplayName("PG Price")
+                        </th>
+                        <th>
+                            @Html.DisplayName("PG Opening Date")
+                        </th>
+                        <th>
+                            @Html.DisplayName("PG Expire Date")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Attachment")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Status")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Action")
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{ int i = 0;}
+                    @foreach (var item in @ViewBag.PgVerificationList)
+                    {
+                        <tr>
+                            <td>
+                                @{ i++;}
+                                @i
+                            </td>
+                            <td>
+                                @item.ProjectName
+                            </td>
+                            <td>
+                                @item.NoaCode
+                            </td>
+                            <td>
+                                @item.PgPrice
+                            </td>
+                            <td>
+                                @item.PgOpeningDate.ToString("dd MMM, yyyy")
+                            </td>
+                            <td>
+                                @item.PgExpireDate.ToString("dd MMM, yyyy")
+                            </td>
+                            @if (@item.PgVerificationAttachment == null)
+                            {
+                                <td style="color: red">No Attachment Found!</td>
+                            }
+                            else
+                            {
+                                <td>
+                                    <a class="btn btn-outline-primary" href="/File/PgVerificationAttachment/@item.PgVerificationAttachment" target="_blank"> @item.PgVerificationAttachment</a>
+                                </td>
+                            }
+
+                            @if (@item.PgVerificationStatus == 0)
+                            {
+                                <td>
+                                    Pending
+                                </td>
+                            }
+                            else
+                            {
+                                <td>
+                                    Verified
+                                </td>
+                            }
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.PgVerificationId">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.PgVerificationId">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.PgVerificationId">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <!-- /.card -->
+</div>
