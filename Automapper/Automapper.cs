@@ -28,6 +28,7 @@ namespace MailSectionEALB.Automapper
             CreateMap<PgVerification, PgVerificationViewModel>().ReverseMap();
             CreateMap<Pi, PiViewModel>().ReverseMap();
             CreateMap<Lc, LcViewModel>().ReverseMap();
+            CreateMap<PsiMember, PsiMemberViewModel>().ReverseMap();
         }
     }
 }
