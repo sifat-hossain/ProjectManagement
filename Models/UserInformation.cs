@@ -26,15 +26,10 @@ namespace ProjectManagement.Models
         public string UserName { get; set; }
         public int DesignationId { get; set; }
         public string PhoneNumber { get; set; }
-        public string UserImage { get; set; }
         public string UserEmail { get; set; }
-        public int UserDgfiId { get; set; }
-        public bool? UserType { get; set; }
-        public int? ForceRankId { get; set; }
         public int UserRoleId { get; set; }
 
         public virtual Designation Designation { get; set; }
-        public virtual ForceRank ForceRank { get; set; }
         public virtual UserRole UserRole { get; set; }
         public virtual ICollection<CostEstimationCommitteeMember> CostEstimationCommitteeMembers { get; set; }
         public virtual ICollection<EvalutionCommitteemember> EvalutionCommitteemembers { get; set; }

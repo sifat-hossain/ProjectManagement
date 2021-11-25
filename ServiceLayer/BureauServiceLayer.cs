@@ -7,13 +7,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ProjectManagement.Data;
+using AutoMapper;
 
 namespace ProjectManagement.ServiceLayer
 {
     public class BureauServiceLayer : IBureau
     {
         public readonly dbContext dbContext;
-        public readonly AutoMapper.IMapper mapper;
+        public readonly IMapper mapper;
         public BureauServiceLayer(dbContext _dbContext, AutoMapper.IMapper _mapper)
         {
             dbContext = _dbContext;
@@ -28,7 +29,7 @@ namespace ProjectManagement.ServiceLayer
             try
             {
                 await dbContext.SaveChangesAsync();
-                result = "Seccessfully Created The New Bureau";
+                result = "Successfully Created The New Bureau";
             }
             catch (DbUpdateException e)
             {
@@ -71,7 +72,7 @@ namespace ProjectManagement.ServiceLayer
             try
             {
                 await dbContext.SaveChangesAsync();
-                result = "Seccessfully Updated The Bureau";
+                result = "Successfully Updated The Bureau";
             }
             catch (DbUpdateException e)
             {

@@ -10,7 +10,6 @@ namespace ProjectManagement.ViewModel
     {
         public int EvalutionId { get; set; }
         public int? ProjectId { get; set; }
-        public int? EvalutionCommitteememberId { get; set; }
         public DateTime? EvalutionMeetingDate { get; set; }
         public string EvalutionMeetingMinutes { get; set; }
         public string EvalutionReport { get; set; }

@@ -31,6 +31,7 @@ namespace ProjectManagement
             services.AddControllers().AddNewtonsoftJson();
           
             services.AddRazorPages().AddNewtonsoftJson();
+           
 
             services.AddMvc().AddNewtonsoftJson();
             services.AddControllersWithViews().AddNewtonsoftJson();
@@ -42,6 +43,19 @@ namespace ProjectManagement
             services.AddTransient<IVendorInformation, VendorInformationServiceLayer>();
             services.AddTransient<IBureau, BureauServiceLayer>();
             services.AddTransient<IProject, ProjectServiceLayer>();
+            services.AddTransient<IInitialNoteSheet, InitialNoteSheetServiceLayer>();
+            services.AddTransient<IInvitationForTender, InvitationForTenderServiceLayer>();
+            services.AddTransient<ITenderOpening, TenderOpeningServiceLayer>();
+            services.AddTransient<IUserRole, UserRoleServiceLayer>();
+            services.AddTransient<IUserInformation, UserInformationServiceLayer>();
+            services.AddTransient<IFinalApproval, FinalApprovalServiceLayer>();
+            
+            services.AddTransient<INoa, NoaServiceLayer>();
+            services.AddTransient<IPGVerification, PGVerificationServiceLayer>();
+            services.AddTransient<IPO,POServiceLayer>();
+           
+            services.AddTransient<IPI,PIServiceLayer>();
+            services.AddTransient<ILC,LCServiceLayer>();
             
         }
 

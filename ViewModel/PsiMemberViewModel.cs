@@ -13,7 +13,7 @@ namespace ProjectManagement.ViewModel
         public int? ProjectId { get; set; }
         public DateTime? PsiMemberCreateDate { get; set; }
 
-        public virtual Project Project { get; set; }
-        public virtual UserInformation User { get; set; }
+        public string ProjectName { get; set; }
+        public string UserName { get; set; }
     }
 }
