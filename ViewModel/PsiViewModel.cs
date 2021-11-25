@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectManagement.ViewModel
 {
-    public class PsiModel
+    public class PsiViewModel
     {
         public int PsiId { get; set; }
         public int? ProjectId { get; set; }

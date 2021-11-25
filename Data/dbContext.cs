@@ -178,11 +178,6 @@ namespace ProjectManagement.Data
 
                 entity.Property(e => e.FinalContractPrice).HasColumnType("decimal(18, 0)");
 
-                entity.HasOne(d => d.EvalutionCommitteemember)
-                    .WithMany(p => p.Evalutions)
-                    .HasForeignKey(d => d.EvalutionCommitteememberId)
-                    .HasConstraintName("FK__Evalution__Evalu__5AEE82B9");
-
                 entity.HasOne(d => d.Project)
                     .WithMany(p => p.Evalutions)
                     .HasForeignKey(d => d.ProjectId)
@@ -589,11 +584,6 @@ namespace ProjectManagement.Data
                     .WithMany(p => p.Psis)
                     .HasForeignKey(d => d.ProjectId)
                     .HasConstraintName("FK__Psi__ProjectId__797309D9");
-
-                entity.HasOne(d => d.PsiMember)
-                    .WithMany(p => p.Psis)
-                    .HasForeignKey(d => d.PsiMemberId)
-                    .HasConstraintName("FK__Psi__PsiMemberId__7A672E12");
             });
 
             modelBuilder.Entity<PsiMember>(entity =>
