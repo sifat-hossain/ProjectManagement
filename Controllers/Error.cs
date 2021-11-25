@@ -9,7 +9,7 @@ namespace ProjectManagement.Controllers
     public class Error : Controller
     {
         [Route("Error/{statusCode}")]
-        public IActionResult HttpStatusCodeHandler(int statusCode)
+        public IActionResult HttpStatusCodeHandler(int statusCode)      
         {
             switch (statusCode)
             {

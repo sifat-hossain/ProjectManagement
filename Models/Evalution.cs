@@ -9,7 +9,6 @@ namespace ProjectManagement.Models
     {
         public int EvalutionId { get; set; }
         public int? ProjectId { get; set; }
-        public int? EvalutionCommitteememberId { get; set; }
         public DateTime? EvalutionMeetingDate { get; set; }
         public string EvalutionMeetingMinutes { get; set; }
         public string EvalutionReport { get; set; }
@@ -17,7 +16,6 @@ namespace ProjectManagement.Models
         public decimal? FinalContractPrice { get; set; }
         public string EvalutionAttachment { get; set; }
 
-        public virtual EvalutionCommitteemember EvalutionCommitteemember { get; set; }
         public virtual Project Project { get; set; }
     }
 }

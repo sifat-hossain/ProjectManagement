@@ -10,6 +10,7 @@ namespace ProjectManagement.Models
         public int InitialNotesheetId { get; set; }
         public DateTime? InitialNoteSheetOpeningDate { get; set; }
         public string InitialNotesheetSubject { get; set; }
+        public string InitialNotesheetAttachment { get; set; }
         public int? ProjectId { get; set; }
         public int? VendorId { get; set; }
 

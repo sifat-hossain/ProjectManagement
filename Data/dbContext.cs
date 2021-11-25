@@ -32,7 +32,7 @@ namespace ProjectManagement.Data
         public virtual DbSet<FinalContract> FinalContracts { get; set; }
         public virtual DbSet<ForceRank> ForceRanks { get; set; }
         public virtual DbSet<InitialNotesheet> InitialNotesheets { get; set; }
-        public virtual DbSet<IvitationForTender> IvitationForTenders { get; set; }
+        public virtual DbSet<InvitationForTender> InvitationForTenders { get; set; }
         public virtual DbSet<Lc> Lcs { get; set; }
         public virtual DbSet<Noa> Noas { get; set; }
         public virtual DbSet<NoaAcceptance> NoaAcceptances { get; set; }
@@ -69,8 +69,8 @@ namespace ProjectManagement.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                //optionsBuilder.UseSqlServer("Data Source=DESKTOP-KV0F3SL\\SQL;Initial Catalog=ProjectManagementDB;user id=sa;password=sifat123;");
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+//                optionsBuilder.UseSqlServer("Data Source=DESKTOP-KV0F3SL\\SQL;Initial Catalog=ProjectManagementDB;user id=sa;password=sifat123;");
             }
         }
 
@@ -178,11 +178,6 @@ namespace ProjectManagement.Data
 
                 entity.Property(e => e.FinalContractPrice).HasColumnType("decimal(18, 0)");
 
-                entity.HasOne(d => d.EvalutionCommitteemember)
-                    .WithMany(p => p.Evalutions)
-                    .HasForeignKey(d => d.EvalutionCommitteememberId)
-                    .HasConstraintName("FK__Evalution__Evalu__5AEE82B9");
-
                 entity.HasOne(d => d.Project)
                     .WithMany(p => p.Evalutions)
                     .HasForeignKey(d => d.ProjectId)
@@ -251,6 +246,8 @@ namespace ProjectManagement.Data
 
                 entity.Property(e => e.ApprovedDate).HasColumnType("date");
 
+                entity.Property(e => e.FinalApprovalAttachment).IsUnicode(false);
+
                 entity.HasOne(d => d.Project)
                     .WithMany(p => p.FinalApprovals)
                     .HasForeignKey(d => d.ProjectId)
@@ -307,19 +304,19 @@ namespace ProjectManagement.Data
                     .HasConstraintName("FK__InitialNo__Vendo__3D5E1FD2");
             });
 
-            modelBuilder.Entity<IvitationForTender>(entity =>
+            modelBuilder.Entity<InvitationForTender>(entity =>
             {
-                entity.ToTable("IvitationForTender");
+                entity.ToTable("InvitationForTender");
 
-                entity.Property(e => e.IvitationForTenderDate).HasColumnType("date");
+                entity.Property(e => e.InvitationForTenderDate).HasColumnType("date");
 
                 entity.HasOne(d => d.Project)
-                    .WithMany(p => p.IvitationForTenders)
+                    .WithMany(p => p.InvitationForTenders)
                     .HasForeignKey(d => d.ProjectId)
                     .HasConstraintName("FK__Ivitation__Proje__4F7CD00D");
 
                 entity.HasOne(d => d.Vendor)
-                    .WithMany(p => p.IvitationForTenders)
+                    .WithMany(p => p.InvitationForTenders)
                     .HasForeignKey(d => d.VendorId)
                     .HasConstraintName("FK__Ivitation__Vendo__5070F446");
             });
@@ -587,11 +584,6 @@ namespace ProjectManagement.Data
                     .WithMany(p => p.Psis)
                     .HasForeignKey(d => d.ProjectId)
                     .HasConstraintName("FK__Psi__ProjectId__797309D9");
-
-                entity.HasOne(d => d.PsiMember)
-                    .WithMany(p => p.Psis)
-                    .HasForeignKey(d => d.PsiMemberId)
-                    .HasConstraintName("FK__Psi__PsiMemberId__7A672E12");
             });
 
             modelBuilder.Entity<PsiMember>(entity =>
@@ -698,6 +690,8 @@ namespace ProjectManagement.Data
 
                 entity.Property(e => e.TenderHonorium).HasColumnType("decimal(18, 0)");
 
+                entity.Property(e => e.TenderOpeningAttachment).IsUnicode(false);
+
                 entity.Property(e => e.TenderOpeningDate).HasColumnType("date");
 
                 entity.HasOne(d => d.Project)
@@ -743,11 +737,6 @@ namespace ProjectManagement.Data
                     .HasForeignKey(d => d.DesignationId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__UserInfor__Desig__1B0907CE");
-
-                entity.HasOne(d => d.ForceRank)
-                    .WithMany(p => p.UserInformations)
-                    .HasForeignKey(d => d.ForceRankId)
-                    .HasConstraintName("FK__UserInfor__Force__1BFD2C07");
 
                 entity.HasOne(d => d.UserRole)
                     .WithMany(p => p.UserInformations)
