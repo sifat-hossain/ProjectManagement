@@ -29,6 +29,7 @@ namespace MailSectionEALB.Automapper
             CreateMap<Pi, PiViewModel>().ReverseMap();
             CreateMap<Lc, LcViewModel>().ReverseMap();
             CreateMap<PsiMember, PsiMemberViewModel>().ReverseMap();
+            CreateMap<Psi, PsiViewModel>().ReverseMap();
         }
     }
 }
