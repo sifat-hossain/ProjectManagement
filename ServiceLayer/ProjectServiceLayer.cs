@@ -105,7 +105,7 @@ namespace ProjectManagement.ServiceLayer
             pv.BureauName = bureau.Where(x => x.BureauId == project.BureauId).FirstOrDefault().BureauName;
 
             double amount = (double)pv.ProjectInitialBudget;
-            amount.ToString("C");
+            //amount.ToString("C");
             pv.initialBudget = amount.ToString("N2", CultureInfo.GetCultureInfo("bn-bd"));             
             pv.finalBudget = ((double)pv.ProjectFinalBudget).ToString("N2", CultureInfo.GetCultureInfo("bn-bd")); 
 

@@ -49,6 +49,8 @@ namespace ProjectManagement.ServiceLayer
             List<Designation> designation =await dbContext.Designations.FromSqlRaw("exec SpGetDesignation").ToListAsync();
             List<DesignationViewModel> designationViewModel = mapper.Map<List<DesignationViewModel>>(designation);
 
+            designationViewModel.Sort((a, b) => a.DesignationName.CompareTo(b.DesignationName));
+
             return designationViewModel;
         }
 

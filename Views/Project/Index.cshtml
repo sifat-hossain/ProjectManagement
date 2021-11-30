@@ -8,6 +8,11 @@
 {
     <partial name="Message" />
 }
+<style>
+    button-beauty{
+        width: 15px;
+    }
+</style>
 <div class="col-lg-12">
 
     <!-- /.card -->
@@ -51,66 +56,126 @@
                         <th>
                             @Html.DisplayName("Bureau Name")
                         </th>
-                        <th></th>
+                        <th>
+                            @Html.DisplayName("Action")
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
                     @{ int i = 0;}
                     @foreach (var item in @ViewBag.Project)
                     {
-                    <tr>
-                        <td>
-                            @{ i++;}
-                            @i
-                        </td>
-                        <td>
-                            @item.ProjectName
-                        </td>
-                        <td>
-                            <b>@item.initialBudget</b>BDT
-                        </td>
-                        <td>
-                            <b>@item.finalBudget</b>BDT
-                        </td>
-                        <td>
-                            @item.ProjectStartDate.ToString("MMM dd, yyyy")
-                        </td>
-                        @if (DateTime.Now > item.ProjectEndDate)
+                        bool isExpired = (DateTime.Now > item.ProjectEndDate) ? true : false;
+                        if (isExpired)
                         {
-                            <td style="color: orangered">
-                                @item.ProjectEndDate.ToString("MMM dd, yyyy")
-                            </td>
+                            <tr style="color: red;">
+                                <td>
+                                    @{ i++;}
+                                    @i
+                                </td>
+                                <td>
+                                    @item.ProjectName
+                                </td>
+                                <td>
+                                    <b>@item.initialBudget</b>BDT
+                                </td>
+                                <td>
+                                    <b>@item.finalBudget</b>BDT
+                                </td>
+                                <td>
+                                    @item.ProjectStartDate.ToString("MMM dd, yyyy")
+                                </td>
+                                    <td>
+                                        @item.ProjectEndDate.ToString("MMM dd, yyyy")
+                                    </td>
+
+
+                                <td>
+                                    @item.ProjectDescription
+                                </td>
+                                @if (item.ProjectAttachment == null)
+                                {
+                                    <td style="color: red">No Attachment Found!</td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        <a class="btn btn-outline-primary" href="/File/ProjectAttachment/@item.ProjectAttachment" target="_blank">Attachment</a>
+                                    </td>
+                                }
+
+                                <td>
+                                    @item.BureauName
+                                </td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.ProjectId" 
+                                       class="btn btn-outline-info" style="width: 80px;">Edit</a>
+                                    <a asp-action="Details" asp-route-id="@item.ProjectId" 
+                                       class="btn btn-outline-success" style="width: 80px;">Details</a>
+                                    <a asp-action="Delete" asp-route-id="@item.ProjectId" 
+                                       class="btn btn-outline-danger" style="width: 80px;">Delete</a>
+                                </td>
+                            </tr>
                         }
                         else
                         {
-                            <td>
-                                @item.ProjectEndDate.ToString("MMM dd, yyyy")
-                            </td>
+                <tr>
+                    <td>
+                        @{ i++;}
+                        @i
+                    </td>
+                    <td>
+                        @item.ProjectName
+                    </td>
+                    <td>
+                        <b>@item.initialBudget</b>BDT
+                    </td>
+                    <td>
+                        <b>@item.finalBudget</b>BDT
+                    </td>
+                    <td>
+                        @item.ProjectStartDate.ToString("MMM dd, yyyy")
+                    </td>
+                    @if (DateTime.Now > item.ProjectEndDate)
+                    {
+                        <td style="color: orangered">
+                            @item.ProjectEndDate.ToString("MMM dd, yyyy")
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            @item.ProjectEndDate.ToString("MMM dd, yyyy")
+                        </td>
 
-                        }
+                    }
+                    <td>
+                        @item.ProjectDescription
+                    </td>
+                    @if (item.ProjectAttachment == null)
+                    {
+                        <td style="color: red">No Attachment Found!</td>
+                    }
+                    else
+                    {
                         <td>
-                            @item.ProjectDescription
+                            <a class="btn btn-outline-primary" href="/File/ProjectAttachment/@item.ProjectAttachment" target="_blank">Attachment</a>
                         </td>
-                        @if (item.ProjectAttachment == null)
-                        {
-                            <td style="color: red">No Attachment Found!</td>
-                        }
-                        else
-                        {
-                            <td>
-                                <a class="btn btn-outline-primary" href="/File/ProjectAttachment/@item.ProjectAttachment" target="_blank">Attachment</a>
-                            </td>
-                        }
+                    }
 
-                        <td>
-                            @item.BureauName
-                        </td>
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.ProjectId">Edit</a> |
-                            <a asp-action="Details" asp-route-id="@item.ProjectId">Details</a> |
-                            <a asp-action="Delete" asp-route-id="@item.ProjectId">Delete</a>
-                        </td>
-                    </tr>
+                    <td>
+                        @item.BureauName
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ProjectId"
+                           class="btn btn-outline-info" style="width: 80px;">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.ProjectId"
+                           class="btn btn-outline-success" style="width: 80px;">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.ProjectId"
+                           class="btn btn-outline-danger" style="width: 80px;">Delete</a>
+                    </td>
+                </tr>
+                        }
                     }
                 </tbody>
             </table>
