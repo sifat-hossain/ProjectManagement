@@ -17,15 +17,6 @@
             <button class="btn btn-primary" style="border-radius:20px 5px;" type="button" onclick="location.href='@Url.Action("Create", "Project")'"><b>Create</b></button>
             <hr />
             <center>  <h1 class="card-title"><b>Project List</b></h1></center>
-            @*<div class="card-tools">
-                    <a href="#" class="btn btn-tool btn-sm">
-                        <i class="fas fa-download"></i>
-                    </a>
-                    <a href="#" class="btn btn-tool btn-sm">
-                        <i class="fas fa-bars"></i>
-                    </a>
-                </div>*@
-
             <hr />
         </div>
         <div class="card-body table-responsive p-0">
@@ -67,43 +58,59 @@
                     @{ int i = 0;}
                     @foreach (var item in @ViewBag.Project)
                     {
-                        <tr>
-                            <td>
-                                @{ i++;}
-                                @i
+                    <tr>
+                        <td>
+                            @{ i++;}
+                            @i
+                        </td>
+                        <td>
+                            @item.ProjectName
+                        </td>
+                        <td>
+                            <b>@item.initialBudget</b>BDT
+                        </td>
+                        <td>
+                            <b>@item.finalBudget</b>BDT
+                        </td>
+                        <td>
+                            @item.ProjectStartDate.ToString("MMM dd, yyyy")
+                        </td>
+                        @if (DateTime.Now > item.ProjectEndDate)
+                        {
+                            <td style="color: orangered">
+                                @item.ProjectEndDate.ToString("MMM dd, yyyy")
                             </td>
+                        }
+                        else
+                        {
                             <td>
-                                @item.ProjectName
+                                @item.ProjectEndDate.ToString("MMM dd, yyyy")
                             </td>
-                            <td>
-                                @item.ProjectInitialBudget
-                            </td>
-                            <td>
-                                @item.ProjectFinalBudget
-                            </td>
-                            <td>
-                                @item.ProjectStartDate
-                            </td>
-                            <td>
-                                @item.ProjectEndDate
-                            </td>
-                            <td>
-                                @item.ProjectDescription
-                            </td>
-                            <td>
-                              
-                                <a class="btn btn-outline-primary" href="/File/ProjectAttachment/@item.ProjectAttachment" target="_blank">@item.ProjectAttachment</a>
 
-                            </td>
+                        }
+                        <td>
+                            @item.ProjectDescription
+                        </td>
+                        @if (item.ProjectAttachment == null)
+                        {
+                            <td style="color: red">No Attachment Found!</td>
+                        }
+                        else
+                        {
                             <td>
-                                @item.BureauName
+                                <a class="btn btn-outline-primary" href="/File/ProjectAttachment/@item.ProjectAttachment" target="_blank">Attachment</a>
                             </td>
-                            <td>
-                                <a asp-action="Edit" asp-route-id="@item.ProjectId">Edit</a> |
-                                <a asp-action="Details" asp-route-id="@item.ProjectId">Details</a> |
-                                <a asp-action="Delete" asp-route-id="@item.ProjectId">Delete</a>
-                            </td>
-                        </tr>
+                        }
+
+                        <td>
+                            @item.BureauName
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.ProjectId">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.ProjectId">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.ProjectId">Delete</a>
+                        </td>
+                    </tr>
                     }
                 </tbody>
             </table>

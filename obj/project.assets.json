@@ -8333,24 +8333,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Sifat\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Software Department\\ProjectManagement\\ProjectManagement\\ProjectManagement.csproj",
+      "projectUniqueName": "F:\\Github\\ProjectManagement\\ProjectManagement.csproj",
       "projectName": "ProjectManagement",
-      "projectPath": "E:\\Software Department\\ProjectManagement\\ProjectManagement\\ProjectManagement.csproj",
-      "packagesPath": "C:\\Users\\Sifat\\.nuget\\packages\\",
-      "outputPath": "E:\\Software Department\\ProjectManagement\\ProjectManagement\\obj\\",
+      "projectPath": "F:\\Github\\ProjectManagement\\ProjectManagement.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "F:\\Github\\ProjectManagement\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Sifat\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8437,7 +8432,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

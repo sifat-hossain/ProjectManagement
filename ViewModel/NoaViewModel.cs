@@ -19,8 +19,8 @@ namespace ProjectManagement.ViewModel
 
         [Required (ErrorMessage = "Please Input NOA Code")]
         public string NoaCode { get; set; }
-        [DataType(DataType.Date)]
 
+        [DataType(DataType.Date)]
         [Required(ErrorMessage = "Please Pick PG Date")]
         public DateTime? Pgdate { get; set; }
 
