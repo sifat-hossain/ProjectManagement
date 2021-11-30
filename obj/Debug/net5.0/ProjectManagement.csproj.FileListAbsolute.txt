@@ -391,6 +391,7 @@ E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ref\
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.pdb
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.genruntimeconfig.cache
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.csproj.AssemblyReference.cache
+<<<<<<< HEAD
 F:\Github\ProjectManagement\obj\Debug\net5.0\ProjectManagement.csproj.AssemblyReference.cache
 F:\Github\ProjectManagement\obj\Debug\net5.0\Razor\Views\LC\Create.cshtml.g.cs
 F:\Github\ProjectManagement\obj\Debug\net5.0\Razor\Views\LC\Index.cshtml.g.cs
@@ -402,3 +403,9 @@ F:\Github\ProjectManagement\obj\Debug\net5.0\Razor\Views\PI\Create.cshtml.g.cs
 F:\Github\ProjectManagement\obj\Debug\net5.0\Razor\Views\PI\Index.cshtml.g.cs
 F:\Github\ProjectManagement\obj\Debug\net5.0\Razor\Views\PO\Create.cshtml.g.cs
 F:\Github\ProjectManagement\obj\Debug\net5.0\Razor\Views\PO\Index.cshtml.g.cs
+=======
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\PSIMember\Index.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\PSIMember\Create.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\PSI\Create.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\PSI\Index.cshtml.g.cs
+>>>>>>> 8d397f975246ccd189f16f9145bddf681347deb6

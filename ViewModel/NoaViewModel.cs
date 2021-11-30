@@ -35,6 +35,6 @@ namespace ProjectManagement.ViewModel
         [Required(ErrorMessage = "Please Upload Attachment")]
         public IFormFile NoaAttachmentFile { get; set; }
 
-        public virtual Project Project { get; set; }
+       
     }
 }
