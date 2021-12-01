@@ -37,13 +37,13 @@
                             Sl No
                         </th>
                         <th>
-                            @Html.DisplayName("Initial Note Sheet Opening Date")
+                            @Html.DisplayName("Opening Date")
                         </th>
                         <th>
-                            @Html.DisplayName("Initial Note Sheet Subject")
+                            @Html.DisplayName("Subject")
                         </th>
                         <th>
-                            @Html.DisplayName("Initial Note Sheet Attachment")
+                            @Html.DisplayName("Attachment")
                         </th>
                         <th>
                             @Html.DisplayName("Project Name")
@@ -60,32 +60,46 @@
                     @{ int i = 0;}
                     @foreach (var item in @ViewBag.InitialNoteSheet)
                     {
-                        <tr>
+                    <tr>
+                        <td>
+                            @{ i++;}
+                            @i
+                        </td>
+                        <td>
+                            @item.InitialNoteSheetOpeningDate.ToString("MMM dd, yyyy")
+                        </td>
+                        <td>
+                            @item.InitialNotesheetSubject
+                        </td>
+                        @if (@item.InitialNotesheetAttachment == null)
+                        {
+                            <td style="color: red">No Attachment Found!</td>
+
+                        }
+                        else
+                        {
                             <td>
-                                @{ i++;}
-                                @i
+                                <a class="btn btn-outline-primary" href="/File/InitialNoteSheetAttachment/@item.InitialNotesheetAttachment" target="_blank">Attachment</a>
                             </td>
-                            <td>
-                                @item.InitialNoteSheetOpeningDate
-                            </td>
-                            <td>
-                                @item.InitialNotesheetSubject
-                            </td>
-                            <td>
-                                <a class="btn btn-outline-primary" href="/File/InitialNoteSheetAttachment/@item.InitialNotesheetAttachment" target="_blank">@item.InitialNotesheetAttachment</a>
-                            </td>
-                            <td>
-                                @item.ProjectName
-                            </td>
-                            <td>
-                                @item.VendorName
-                            </td>
-                            <td>
-                                <a asp-action="Edit" asp-route-id="@item.InitialNotesheetId">Edit</a> |
-                                <a asp-action="Details" asp-route-id="@item.InitialNotesheetId">Details</a> |
-                                <a asp-action="Delete" asp-route-id="@item.InitialNotesheetId">Delete</a>
-                            </td>
-                        </tr>
+                        }
+
+                        <td>
+                            @item.ProjectName
+                        </td>
+                        <td>
+                            @item.VendorName
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.InitialNotesheetId"
+                               class="btn btn-outline-info" style="width: 70px;">Edit</a>
+                            
+                            <a asp-action="Details" asp-route-id="@item.InitialNotesheetId"
+                               class="btn btn-outline-success" style="width: 75px;">Details</a>
+                            
+                            <a asp-action="Delete" asp-route-id="@item.InitialNotesheetId"
+                               class="btn btn-outline-danger" style="width: 70px;">Delete</a>
+                        </td>
+                    </tr>
                      }
                 </tbody>
             </table>

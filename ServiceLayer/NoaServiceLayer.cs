@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using System.IO;
+using System.Globalization;
 
 namespace ProjectManagement.ServiceLayer
 {
@@ -103,6 +104,9 @@ namespace ProjectManagement.ServiceLayer
             nvm.NoaAttachment = noa.NoaAttachment;
             nvm.Pgdate = noa.Pgdate;
             nvm.ProjectName = project.Where(x => x.ProjectId == noa.ProjectId).FirstOrDefault().ProjectName;
+
+            nvm.contractPrice = ((double)nvm.FinalContatractPrice).ToString("N2", CultureInfo.GetCultureInfo("bn-bd"));
+
             return nvm;
         }
 

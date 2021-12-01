@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
+using System.Globalization;
 
 namespace ProjectManagement.ServiceLayer
 {
@@ -83,6 +84,8 @@ namespace ProjectManagement.ServiceLayer
             {
                 throw;
             }
+            projectViewModel.Sort((a, b) => b.ProjectId.CompareTo(a.ProjectId));
+
             return projectViewModel;
         }
         public async Task<ProjectViewModel> ProjectViewModel(Project project)
@@ -98,10 +101,19 @@ namespace ProjectManagement.ServiceLayer
             pv.ProjectStartDate = project.ProjectStartDate;
             pv.ProjectEndDate = project.ProjectEndDate;
             pv.ProjectDescription = project.ProjectDescription;
-            pv.ProjectAttachment = project.ProjectAttachment;
-           
+            pv.ProjectAttachment = project.ProjectAttachment;           
             pv.BureauName = bureau.Where(x => x.BureauId == project.BureauId).FirstOrDefault().BureauName;
 
+            double amount = (double)pv.ProjectInitialBudget;
+            //amount.ToString("C");
+            pv.initialBudget = amount.ToString("N2", CultureInfo.GetCultureInfo("bn-bd"));             
+            pv.finalBudget = ((double)pv.ProjectFinalBudget).ToString("N2", CultureInfo.GetCultureInfo("bn-bd")); 
+
+            /*
+            ILookup<string, CultureInfo> cultureByCurrency =
+                CultureInfo.GetCultures(CultureTypes.AllCultures)
+                .ToLookup(_ => _.NumberFormat.CurrencySymbol);
+            */
             return pv;
         }
         public ProjectViewModel GetProjectById(int? id)

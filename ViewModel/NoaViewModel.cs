@@ -19,13 +19,14 @@ namespace ProjectManagement.ViewModel
 
         [Required (ErrorMessage = "Please Input NOA Code")]
         public string NoaCode { get; set; }
-        [DataType(DataType.Date)]
 
+        [DataType(DataType.Date)]
         [Required(ErrorMessage = "Please Pick PG Date")]
         public DateTime? Pgdate { get; set; }
 
         [Required(ErrorMessage = "Please Input Contract Price")]
         public decimal? FinalContatractPrice { get; set; }
+        public string contractPrice { get; set; }
 
         [Required(ErrorMessage = "Please Input Tender No.")]
         public string TenderNo { get; set; }
