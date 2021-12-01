@@ -1,0 +1,90 @@
+﻿@model ProjectManagement.Models.Project
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Project</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProjectName)
+        </dt>
+        <dd class="col-sm-10">
+            @ViewBag.Project.ProjectName
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProjectInitialBudget)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProjectInitialBudget)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProjectFinalBudget)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProjectFinalBudget)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProjectStartDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProjectStartDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProjectEndDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProjectEndDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProjectDescription)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProjectDescription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProjectAttachment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProjectAttachment)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Bureau)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Bureau.BureauName)
+        </dd>
+    </dl>
+</div>
+
+<section class="content">
+    <div class="card card-solid">
+        <!-- Default box -->
+        <div class="col-md-3 p-2">
+            <div class="card">
+                <hr />
+                <center>  <div class="card-header"><h1><b>Project</b></h1> </div> </center><!-- /.card-header -->
+                <div class="card-body">
+                    <div class="tab-content">
+                        <div class="form-group row">
+                            <label class="control-label col-md-5">Project Name :</label>
+                            <div class="col-md-3">
+                                @ViewBag.Project.ProjectName
+                            </div>
+                            <label class="control-label col-md-5">Initial Budget :</label>
+                            <div class="col-md-3">
+                                @ViewBag.Project.ProjectInitialBudget
+                            </div>
+                            <label class="control-label col-md-5">  Final Budget :</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
