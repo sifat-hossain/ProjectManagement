@@ -26,6 +26,7 @@ namespace ProjectManagement.ViewModel
 
         [Required(ErrorMessage = "Please Input Contract Price")]
         public decimal? FinalContatractPrice { get; set; }
+        public string contractPrice { get; set; }
 
         [Required(ErrorMessage = "Please Input Tender No.")]
         public string TenderNo { get; set; }
