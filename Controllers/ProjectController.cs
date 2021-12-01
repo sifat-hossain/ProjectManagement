@@ -9,24 +9,25 @@ using ProjectManagement.ViewModel;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using Microsoft.AspNetCore.Http;
+using ProjectManagement.Models;
 
 namespace ProjectManagement.Controllers
 {
     public class ProjectController : Controller
     {
-        private readonly IProject projet;
+        private readonly IProject project;
         private readonly IBureau bureau;
-       
+
         string result;
         public ProjectController(IProject _project, IBureau _bureau)
         {
-            projet = _project;
+            project = _project;
             bureau = _bureau;
-           
+
         }
         public async Task<IActionResult> Index()
         {
-            var projectList= await projet.GetAllProject();
+            var projectList = await project.GetAllProject();
             ViewBag.Project = projectList;
             return View();
         }
@@ -42,18 +43,36 @@ namespace ProjectManagement.Controllers
         public async Task<IActionResult> Create(ProjectViewModel projectViewModel, IFormFile ProjectAttachment)
         {
             try
-            {               
-                if(ProjectAttachment.Length > 0 && ModelState.IsValid)
+            {
+                if (ProjectAttachment.Length > 0 && ModelState.IsValid)
                 {
-                    result =await projet.CreateProject(projectViewModel, ProjectAttachment);
+                    result = await project.CreateProject(projectViewModel, ProjectAttachment);
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 result = e.Message;
             }
             TempData["result"] = result;
             return RedirectToAction(nameof(Create));
+        }
+        [HttpGet]
+        public IActionResult Details(int? id)
+        {
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+            try
+            {
+                ViewBag.Project = project.GetProjectById(id);
+            }
+            catch (Exception e)
+            {
+                ViewBag.Message = e.Message;
+            }
+            return View();
         }
     }
 }

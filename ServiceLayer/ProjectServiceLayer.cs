@@ -118,7 +118,21 @@ namespace ProjectManagement.ServiceLayer
         }
         public ProjectViewModel GetProjectById(int? id)
         {
-            throw new NotImplementedException();
+            ProjectViewModel projectViewModel = new();
+            if (id == null)
+            {
+                throw new NullReferenceException();
+            }
+            try
+            {
+                Project project= dbContext.Projects.FromSqlRaw("exec SpGetProjectById {0}",id).ToList().FirstOrDefault();
+                projectViewModel = mapper.Map<ProjectViewModel>(project);
+            }
+            catch
+            {
+                throw;
+            }
+            return projectViewModel;
         }
 
         public Task<string> UpdateProject(ProjectViewModel projectViewModel)
