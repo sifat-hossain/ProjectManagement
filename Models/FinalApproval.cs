@@ -11,6 +11,7 @@ namespace ProjectManagement.Models
         public int? ProjectId { get; set; }
         public DateTime? ApprovedDate { get; set; }
         public int? UserId { get; set; }
+        public string FinalApprovalAttachment { get; set; }
 
         public virtual Project Project { get; set; }
         public virtual UserInformation User { get; set; }

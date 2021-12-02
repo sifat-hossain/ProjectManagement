@@ -8328,6 +8328,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.9",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.9",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
+      "System.ComponentModel.Annotations >= 5.0.0",
       "angularjs >= 1.8.2"
     ]
   },
@@ -8408,6 +8409,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[5.0.2, )"
+          },
+          "System.ComponentModel.Annotations": {
+            "target": "Package",
+            "version": "[5.0.0, )"
           },
           "angularjs": {
             "target": "Package",

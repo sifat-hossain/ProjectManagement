@@ -7,6 +7,7 @@ namespace ProjectManagement.ViewModel
 {
     public class VendorInformationViewModel
     {
+        public int VendorId { get; set; }
         public string VendorName { get; set; }
         public string VendorTradeLicenceNo { get; set; }
         public string VendorEmail { get; set; }

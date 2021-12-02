@@ -69,7 +69,7 @@
                     <!-- small box -->
                     <div class="small-box bg-success ">
                         <div class="inner">
-                            <h3>5</h3>
+                            <h3> @ViewBag.CompletedProject</h3>
 
                             <p>Completed Project</p>
                         </div>
@@ -84,14 +84,14 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h3>10</h3>
+                            <h3>@ViewBag.ProjectAmount</h3>
 
                             <p>Project Under Development</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-stats-bars"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="~/Project/Index" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -189,45 +189,60 @@
                             @{ int i = 0;}
                             @foreach (var item in Model)
                             {
-                                <tr>
-                                    <td>
-                                        @{ i++;}
-                                        @i
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.ProjectName)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.ContractDate)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.WarrantyExpiredDate)
+                            <tr>
+                                <td>
+                                    @{ i++;}
+                                    @i
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ProjectName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ContractDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.WarrantyExpiredDate)
 
-                                        @if ((item.WarrantyExpiredDate.Value.Date - DateTime.Now.Date).Days < 60)
+                                    @if ((item.WarrantyExpiredDate.Value.Date - DateTime.Now.Date).Days < 60)
+                                    {
+                                        int value = (item.WarrantyExpiredDate.Value.Date - DateTime.Now.Date).Days;
+                                        <p class="text-danger">
+                                            Warranty Will be Expired Within <b style="color:black"> @value </b>Days
+                                        </p>
+                                    }
+                                </td>
+                                <td>
+                                    @item.PgexpiredDate.Value.ToString("dd MMM, yyyy")
+
+                                    @if ((item.PgexpiredDate.Value.Date - DateTime.Now.Date).Days < 60)
+                                    {
+                                        int value = (item.PgexpiredDate.Value.Date - DateTime.Now.Date).Days;
+                                        if (value == 0)
                                         {
-                                            int value = (item.WarrantyExpiredDate.Value.Date - DateTime.Now.Date).Days;
+                                            <p class="text-warning"><b style="color:black">PG expires today</b></p>
+                                        }
+                                        else if (value > 0)
+                                        {
                                             <p class="text-danger">
-                                             Warranty Will be Expired Within <b style="color:black"> @value </b>Days
+                                                PG Will be Expired Within <b style="color:black"> @value </b>Days
                                             </p>
                                         }
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.PgexpiredDate)
-
-                                        @if ((item.PgexpiredDate.Value.Date - DateTime.Now.Date).Days < 60)
+                                        else
                                         {
-                                            int value = (item.PgexpiredDate.Value.Date - DateTime.Now.Date).Days;
-                                            <p class="text-danger">
-                                             PG Will be Expired Within <b style="color:black"> @value </b>Days
-                                            </p>
+                                            <p><b class="text-danger">PG already expired</b></p>
                                         }
-                                    </td>
-                                    <td>
-                                        <a asp-action="Edit" asp-route-id="@item.CompletedProjectId">Edit</a> |
-                                        <a asp-action="Details" asp-route-id="@item.CompletedProjectId">Details</a> |
-                                        <a asp-action="Delete" asp-route-id="@item.CompletedProjectId">Delete</a>
-                                    </td>
-                                </tr>
+                                    }
+                                </td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.CompletedProjectId"
+                                       class="btn btn-outline-info" style="width: 80px;">Edit</a><br />
+                                    <a asp-action="Details" asp-route-id="@item.CompletedProjectId"
+                                       class="btn btn-outline-success" style="width: 80px;">Details</a><br />
+                                    <a asp-action="Delete" asp-route-id="@item.CompletedProjectId"
+                                       class="btn btn-outline-danger" style="width: 80px;">Delete</a>
+                                </td>
+
+                            </tr>
                             }
                         </tbody>
                     </table>

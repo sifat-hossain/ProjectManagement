@@ -19,7 +19,7 @@ namespace ProjectManagement.Models
             FinalApprovals = new HashSet<FinalApproval>();
             FinalContracts = new HashSet<FinalContract>();
             InitialNotesheets = new HashSet<InitialNotesheet>();
-            IvitationForTenders = new HashSet<IvitationForTender>();
+            InvitationForTenders = new HashSet<InvitationForTender>();
             Lcs = new HashSet<Lc>();
             Noas = new HashSet<Noa>();
             PacMembers = new HashSet<PacMember>();
@@ -61,7 +61,7 @@ namespace ProjectManagement.Models
         public virtual ICollection<FinalApproval> FinalApprovals { get; set; }
         public virtual ICollection<FinalContract> FinalContracts { get; set; }
         public virtual ICollection<InitialNotesheet> InitialNotesheets { get; set; }
-        public virtual ICollection<IvitationForTender> IvitationForTenders { get; set; }
+        public virtual ICollection<InvitationForTender> InvitationForTenders { get; set; }
         public virtual ICollection<Lc> Lcs { get; set; }
         public virtual ICollection<Noa> Noas { get; set; }
         public virtual ICollection<PacMember> PacMembers { get; set; }

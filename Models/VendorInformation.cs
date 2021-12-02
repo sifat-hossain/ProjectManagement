@@ -10,7 +10,7 @@ namespace ProjectManagement.Models
         public VendorInformation()
         {
             InitialNotesheets = new HashSet<InitialNotesheet>();
-            IvitationForTenders = new HashSet<IvitationForTender>();
+            InvitationForTenders = new HashSet<InvitationForTender>();
             ProjectDetails = new HashSet<ProjectDetail>();
             VendorContactPersonInformations = new HashSet<VendorContactPersonInformation>();
         }
@@ -23,7 +23,7 @@ namespace ProjectManagement.Models
         public string VendorClearence { get; set; }
 
         public virtual ICollection<InitialNotesheet> InitialNotesheets { get; set; }
-        public virtual ICollection<IvitationForTender> IvitationForTenders { get; set; }
+        public virtual ICollection<InvitationForTender> InvitationForTenders { get; set; }
         public virtual ICollection<ProjectDetail> ProjectDetails { get; set; }
         public virtual ICollection<VendorContactPersonInformation> VendorContactPersonInformations { get; set; }
     }

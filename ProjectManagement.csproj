@@ -24,10 +24,18 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Data\" />
+    <Folder Include="wwwroot\File\InitialNoteSheetAttachment\" />
+    <Folder Include="wwwroot\File\InvitationForTenderAttachment\" />
+    <Folder Include="wwwroot\File\FinalApprovalAttachment\" />
+    <Folder Include="wwwroot\File\PSIAttachment\" />
+    <Folder Include="wwwroot\File\PgVerificationAttachment\" />
+    <Folder Include="wwwroot\File\POAttachment\" />
+    <Folder Include="wwwroot\File\TenderOpeningAttachment\" />
     <Folder Include="wwwroot\File\ProjectAttachment\" />
   </ItemGroup>
 

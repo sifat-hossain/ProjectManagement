@@ -77,18 +77,14 @@ namespace ProjectManagement.Controllers
 
         [HttpPost]
         public async Task<IActionResult> Edit(DesignationViewModel designationViewModel)
-        {
-            
+        {            
             try
             {
-
                 result = await designation.UpdateDesignation(designationViewModel);
-
             }
             catch (Exception e)
             {
                 result = e.Message;
-
             }
             TempData["result"] = result;
             return RedirectToAction("Edit", new{id= designationViewModel.DesignationId});

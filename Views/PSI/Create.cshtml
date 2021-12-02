@@ -1,0 +1,78 @@
+﻿@model ProjectManagement.ViewModel.PsiViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script src="~/AngularJs/angular.js"></script>
+<script src="~/AngularJs/AngularController/PSI.js"></script>
+@if (ViewBag.Message != null)
+{
+    <partial name="Message" />
+}
+<div ng-app="mymodule" ng-controller="mycontroller">
+
+    <center>
+        <div class="col-md-6">
+            <div class="card">
+                <hr />
+                <div class="card-header p-2"><h1><b>Create New PSI</b></h1> </div><!-- /.card-header -->
+                <div class="card-body">
+                    <div class="tab-content">
+                        <!-- /.tab-pane -->
+                        <form asp-action="Create" method="post" enctype="multipart/form-data">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-3">Project</label>
+                                <select asp-for="ProjectId" class="form-control col-md-6" asp-items="@(new SelectList(@ViewBag.ProjectList,"ProjectId","ProjectName"))">
+                                    <option value="" selected disabled> Please Select a Project Name</option>
+                                </select>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-3">PSI Location</label>
+                                <input asp-for="PsiLocation" class="form-control col-md-6" />
+                                <span asp-validation-for="PsiLocation" class="text-danger"></span>
+                            </div>
+
+
+
+                            <div class="form-group row">
+                                <label class="control-label col-md-3">Start Date</label>
+
+                                <input asp-for="PsiStartDate" ng-model="PsiModel.PsiStartDate" class="form-control col-md-6" ng-change="activePsiEndDate()" />
+                                <span asp-validation-for="PsiStartDate" class="text-danger"></span>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-3">End Date</label>
+                                <input asp-for="PsiEndDate" ng-disabled="!PsiModel.PsiStartDate" class="form-control col-md-6" />
+                                <span asp-validation-for="PsiEndDate" class="text-danger"></span>
+                            </div>
+
+
+
+
+                            <div class="form-group row">
+                                <label class="control-label col-md-3">Attachment</label>
+                                <input asp-for="PsiAttachmentFile" class="form-control col-md-6" />
+                                <span asp-validation-for="PsiAttachment" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Create" class="btn btn-primary" />
+                            </div>
+                        </form>
+                        <div>
+                            <a asp-action="Index">Back to List</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

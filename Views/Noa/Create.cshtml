@@ -1,0 +1,73 @@
+﻿@model ProjectManagement.ViewModel.NoaViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (ViewBag.Message != null)
+{
+    <partial name="Message" />
+}
+<center>
+    <div class="col-md-10">
+        <div class="card">
+            <hr />
+            <div class="card-header p-2"><h1><b>Create NOA</b></h1> </div><!-- /.card-header -->
+            <div class="card-body">
+                <div class="tab-content">
+                    <!-- /.tab-pane -->
+                    <form asp-action="Create" method="post" enctype="multipart/form-data">
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group row">
+                            <label class="pull-right control-label col-md-3">Project Name</label>
+                            <select asp-for="ProjectId" class="form-control col-md-6" asp-items="@(new SelectList(@ViewBag.ProjectList,"ProjectId","ProjectName"))">
+                                <option value="" selected disabled> Please Select a Project</option>
+                            </select>
+                            <span asp-validation-for="ProjectId" class="col-md-3 text-danger"></span>
+                        </div>                       
+                        <div class="form-group row">
+                            <label class=" pull-right control-label col-md-3">NOA Code</label>
+                            <input asp-for="NoaCode" class="form-control col-md-6" type="text" />
+                            <span asp-validation-for="NoaCode" class="col-md-3 text-danger"></span>
+                        </div>                     
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Tender No.</label>
+                            <input asp-for="TenderNo" class="form-control col-md-6" type="text" />
+                            <span asp-validation-for="TenderNo" class="col-md-3 text-danger"></span>
+                        </div>                       
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">PG Date</label>
+                            <input asp-for="Pgdate" class="form-control col-md-6" />
+                            <span asp-validation-for="Pgdate" class="col-md-3 text-danger"></span>                    
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Final Contract Price</label>
+                            <input asp-for="FinalContatractPrice" class="form-control col-md-6" />
+                            <span asp-validation-for="FinalContatractPrice" class="col-md-3 text-danger"></span>
+                        </div>                      
+                        <div class="form-group row">
+                            <label class="control-label col-md-3">Attachment</label>
+                            <input asp-for="NoaAttachmentFile" type="file" class="form-control col-md-6" />
+                            <span asp-validation-for="NoaAttachmentFile" class="col-md-3 text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+
+                    </form>
+                    <div>
+                        <a asp-action="Index">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</center>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

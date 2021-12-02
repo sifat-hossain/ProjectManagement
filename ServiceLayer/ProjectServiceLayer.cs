@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
+using System.Globalization;
 
 namespace ProjectManagement.ServiceLayer
 {
@@ -38,7 +39,7 @@ namespace ProjectManagement.ServiceLayer
             {
                 fileName = Path.GetFileNameWithoutExtension(ProjectAttachment.FileName);
                 fileExtension = Path.GetExtension(ProjectAttachment.FileName);
-                fileName = "ProjectFileAttachment_" + "_" + DateTime.Now.Year + "" + DateTime.Now.Month + "" + DateTime.Now.Day + "" + DateTime.Now.TimeOfDay.Hours + "" + DateTime.Now.TimeOfDay.Minutes + "" + DateTime.Now.TimeOfDay.Seconds + "_" + fileName + "" + fileExtension;
+                fileName = fileName + "_" + DateTime.Now.Year + "" + DateTime.Now.Month + "" + DateTime.Now.Day + "" + DateTime.Now.TimeOfDay.Hours + "" + DateTime.Now.TimeOfDay.Minutes + "" + DateTime.Now.TimeOfDay.Seconds+ "" + fileExtension;
                 var path = Path.Combine(web.WebRootPath, "File/ProjectAttachment/", fileName);
                 var stream = new FileStream(path, FileMode.Create);
                 await ProjectAttachment.CopyToAsync(stream);
@@ -55,7 +56,7 @@ namespace ProjectManagement.ServiceLayer
             try
             {
                 await dbContext.SaveChangesAsync();
-                result = "Seccessfully Created The New Project";
+                result = "Successfully Created The New Project";
             }
             catch (DbUpdateException e)
             {
@@ -69,15 +70,13 @@ namespace ProjectManagement.ServiceLayer
             List<ProjectViewModel> projectViewModel=new();
            
             try
-            {
-             
+            {             
                 List<Project> project = await dbContext.Projects.FromSqlRaw("exec SpGetProject").ToListAsync();
               
-
                 foreach (var item in project)
                 {
-                  var projectUserViewModel = dbContext.Projects.FromSqlRaw("exec SpGetProjectById {0}", item.ProjectId).ToList().FirstOrDefault();
-                  projectViewModel.Add(await ProjectViewModel(projectUserViewModel));
+                  var _project = dbContext.Projects.FromSqlRaw("exec SpGetProjectById {0}", item.ProjectId).ToList().FirstOrDefault();
+                  projectViewModel.Add(await ProjectViewModel(_project));
 
                 }
             }
@@ -85,6 +84,8 @@ namespace ProjectManagement.ServiceLayer
             {
                 throw;
             }
+            projectViewModel.Sort((a, b) => b.ProjectId.CompareTo(a.ProjectId));
+
             return projectViewModel;
         }
         public async Task<ProjectViewModel> ProjectViewModel(Project project)
@@ -100,15 +101,38 @@ namespace ProjectManagement.ServiceLayer
             pv.ProjectStartDate = project.ProjectStartDate;
             pv.ProjectEndDate = project.ProjectEndDate;
             pv.ProjectDescription = project.ProjectDescription;
-            pv.ProjectAttachment = Path.GetFileName(project.ProjectAttachment);
-            pv.FilePath = project.ProjectAttachment;
+            pv.ProjectAttachment = project.ProjectAttachment;           
             pv.BureauName = bureau.Where(x => x.BureauId == project.BureauId).FirstOrDefault().BureauName;
 
+            double amount = (double)pv.ProjectInitialBudget;
+            //amount.ToString("C");
+            pv.initialBudget = amount.ToString("N2", CultureInfo.GetCultureInfo("bn-bd"));             
+            pv.finalBudget = ((double)pv.ProjectFinalBudget).ToString("N2", CultureInfo.GetCultureInfo("bn-bd")); 
+
+            /*
+            ILookup<string, CultureInfo> cultureByCurrency =
+                CultureInfo.GetCultures(CultureTypes.AllCultures)
+                .ToLookup(_ => _.NumberFormat.CurrencySymbol);
+            */
             return pv;
         }
-        public ProjectViewModel GetProjectById(int? id)
+        public async Task<ProjectViewModel> GetProjectById(int? id)
         {
-            throw new NotImplementedException();
+            ProjectViewModel projectViewModel = new();
+            if (id == null)
+            {
+                throw new NullReferenceException();
+            }
+            try
+            {
+                Project project= dbContext.Projects.FromSqlRaw("exec SpGetProjectById {0}",id).ToList().FirstOrDefault();
+                projectViewModel = mapper.Map<ProjectViewModel>(await ProjectViewModel(project));
+            }
+            catch
+            {
+                throw;
+            }
+            return projectViewModel;
         }
 
         public Task<string> UpdateProject(ProjectViewModel projectViewModel)

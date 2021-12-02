@@ -1,0 +1,77 @@
+﻿@model ProjectManagement.ViewModel.PgVerificationViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@if (ViewBag.Message != null)
+{
+    <partial name="Message" />
+}
+    <center>
+        <div class="col-md-10">
+            <div class="card">
+                <hr />
+                <div class="card-header p-2"><h1><b>Create NOA</b></h1> </div><!-- /.card-header -->
+                <div class="card-body">
+                    <div class="tab-content">
+                        <!-- /.tab-pane -->
+                        <form asp-action="Create" method="post" enctype="multipart/form-data">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group row">
+                                <label class="pull-right control-label col-md-3">Project Name</label>
+                                <select asp-for="NoaId" class="form-control col-md-6" asp-items="@(new SelectList(@ViewBag.Noa,"NoaId","NoaCode"))">
+                                    <option value="" selected disabled> Please Select a NOA Code</option>
+                                </select>
+                                <span asp-validation-for="NoaId" class="col-md-3 text-danger"></span>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="control-label col-md-3">PG Price</label>
+                                <input asp-for="PgPrice" class="form-control col-md-6" />
+                                <span asp-validation-for="PgPrice" class="col-md-3 text-danger"></span>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-3">Opening Date</label>
+                                <input asp-for="PgOpeningDate" class="form-control col-md-6" />
+                                <span asp-validation-for="PgOpeningDate" class="col-md-3 text-danger"></span>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-3">Expire Date</label>
+                                <input asp-for="PgExpireDate" class="form-control col-md-6" />
+                                <span asp-validation-for="PgExpireDate" class="col-md-3 text-danger"></span>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-3">Verification Status</label>
+                                <select asp-for="PgVerificationStatus" class="form-control col-md-6">
+                                    <option value="" selected disabled> Please Select Status</option>
+                                    <option value="0">Pending</option>
+                                    <option value="1">Verified</option>
+                                </select>
+                                <span asp-validation-for="PgVerificationStatus" class="col-md-3 text-danger"></span>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="control-label col-md-3">Attachment</label>
+                                <input type="file" asp-for="PGVerificationAttachmentFile" class="form-control col-md-6" />
+                                <span asp-validation-for="PgVerificationAttachment" class="col-md-3 text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Create" class="btn btn-primary" />
+                            </div>
+                        </form>
+                        <div>
+                            <a asp-action="Index">Back to List</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+
