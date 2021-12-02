@@ -11,7 +11,7 @@ namespace ProjectManagement.Interface
     {
         Task<List<ProjectViewModel>> GetAllProject();
         Task<string> CreateProject(ProjectViewModel projectViewModel, IFormFile ProjectAttachment);
-        ProjectViewModel GetProjectById(int? id);
+      Task<ProjectViewModel> GetProjectById(int? id);
         Task<string> UpdateProject(ProjectViewModel projectViewModel);
     }
 }

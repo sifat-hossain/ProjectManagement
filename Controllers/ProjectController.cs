@@ -57,7 +57,7 @@ namespace ProjectManagement.Controllers
             return RedirectToAction(nameof(Create));
         }
         [HttpGet]
-        public IActionResult Details(int? id)
+        public async Task<IActionResult> Details(int? id)
         {
 
             if (id == null)
@@ -66,7 +66,7 @@ namespace ProjectManagement.Controllers
             }
             try
             {
-                ViewBag.Project = project.GetProjectById(id);
+                ViewBag.Project =await project.GetProjectById(id);
             }
             catch (Exception e)
             {

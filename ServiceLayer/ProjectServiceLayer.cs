@@ -116,7 +116,7 @@ namespace ProjectManagement.ServiceLayer
             */
             return pv;
         }
-        public ProjectViewModel GetProjectById(int? id)
+        public async Task<ProjectViewModel> GetProjectById(int? id)
         {
             ProjectViewModel projectViewModel = new();
             if (id == null)
@@ -126,7 +126,7 @@ namespace ProjectManagement.ServiceLayer
             try
             {
                 Project project= dbContext.Projects.FromSqlRaw("exec SpGetProjectById {0}",id).ToList().FirstOrDefault();
-                projectViewModel = mapper.Map<ProjectViewModel>(project);
+                projectViewModel = mapper.Map<ProjectViewModel>(await ProjectViewModel(project));
             }
             catch
             {

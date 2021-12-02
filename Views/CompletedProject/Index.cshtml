@@ -212,7 +212,7 @@
                                     }
                                 </td>
                                 <td>
-                                    @item.PgexpiredDate
+                                    @item.PgexpiredDate.Value.ToString("dd MMM, yyyy")
 
                                     @if ((item.PgexpiredDate.Value.Date - DateTime.Now.Date).Days < 60)
                                     {
