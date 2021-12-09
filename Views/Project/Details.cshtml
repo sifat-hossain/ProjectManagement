@@ -1,19 +1,43 @@
 ﻿
-
+@using ProjectManagement.ViewModel
 @{
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    ProjectViewModel projectView = ViewBag.Project;
 }
+<center>
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header p-2"><h3><b>@projectView.ProjectName</b></h3> </div><!-- /.card-header -->
+            <div class="card-body">
+                <div class="tab-content">
+                    <button class="btn btn-success">PGD No:  @projectView.PgdNo </button>
+                    <button class="btn btn-primary">LOT No:  @projectView.LotNo </button>
+                    <button class="btn btn-warning">RDPP Budget:  @projectView.rdppBudget BDT</button>
+                </div>
+            </div>
 
+            <div class="row p-1">
+                @if (ViewBag.InitialNS != null)
+                {
+                    <partial name="~/Views/ProjectView/InitialNoteSheet.cshtml" />
+                }
+                @if (ViewBag.Tender != null)
+                {
+                    <partial name="~/Views/ProjectView/InvitationForTender.cshtml" />
+                }
+                @if (ViewBag.TenderOpening != null)
+                {
+                    <partial name="~/Views/ProjectView/TenderOpening.cshtml" />
+                }
+                
+            </div>
 
-<section class="content form-group">
-    <div class="card card-solid">
-        <!-- Default box -->
-        <div class="row">
-            <partial name="~/Views/ProjectView/Project.cshtml" />            
-            <partial name="~/Views/ProjectView/InitialNoteSheet.cshtml" />            
-            <partial name="~/Views/ProjectView/InviationForTender.cshtml" />            
         </div>
     </div>
+</center>
 
-</section>
+
+
+<!-- Default box -->
+

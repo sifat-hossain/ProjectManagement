@@ -93,6 +93,7 @@ namespace ProjectManagement.ServiceLayer
             tovm.TenderOpeningAttachment = tenderOpening.TenderOpeningAttachment;
             tovm.TenderHonorium = tenderOpening.TenderHonorium;
             tovm.ProjectName = project.Where(x => x.ProjectId == tenderOpening.ProjectId).FirstOrDefault().ProjectName;
+            tovm.ProjectId = tenderOpening.ProjectId;
             return tovm;
 
         }

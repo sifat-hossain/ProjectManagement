@@ -30,31 +30,34 @@
                 <thead>
                     <tr>
                         <th>
-                            Sl No
+                            Sl.
                         </th>
                         <th>
-                            @Html.DisplayName("Project Name")
+                            @Html.DisplayName("Item Name")
                         </th>
                         <th>
-                            @Html.DisplayName("Project Initial Budget")
+                            @Html.DisplayName("PGD/ PWD No")
                         </th>
                         <th>
-                            @Html.DisplayName("Project Final Budget")
+                            @Html.DisplayName("Lot No")
                         </th>
                         <th>
+                            @Html.DisplayName("RDPP Budget")
+                        </th>
+                        @*<th>
                             @Html.DisplayName("Project Start Date")
                         </th>
                         <th>
                             @Html.DisplayName("Project End Date")
+                        </th>*@
+                        <th>
+                            @Html.DisplayName("Description")
                         </th>
                         <th>
-                            @Html.DisplayName("Project Description")
+                            @Html.DisplayName("Attachment")
                         </th>
                         <th>
-                            @Html.DisplayName("Project Attachment")
-                        </th>
-                        <th>
-                            @Html.DisplayName("Bureau Name")
+                            @Html.DisplayName("User")
                         </th>
                         <th>
                             @Html.DisplayName("Action")
@@ -68,54 +71,64 @@
                         bool isExpired = (DateTime.Now > item.ProjectEndDate) ? true : false;
                         if (isExpired)
                         {
-                            <tr style="color: red;">
-                                <td>
-                                    @{ i++;}
-                                    @i
-                                </td>
-                                <td>
-                                    @item.ProjectName
-                                </td>
-                                <td>
-                                    <b>@item.initialBudget</b>BDT
-                                </td>
-                                <td>
-                                    <b>@item.finalBudget</b>BDT
-                                </td>
-                                <td>
-                                    @item.ProjectStartDate.ToString("MMM dd, yyyy")
-                                </td>
-                                    <td>
-                                        @item.ProjectEndDate.ToString("MMM dd, yyyy")
-                                    </td>
+                    <tr style="color: red;">
+                        <td>
+                            @{ i++;}
+                            @i
+                        </td>
+                        <td>
+                            @item.ProjectName
+                        </td>
+                        @*<td>
+            <b>@item.initialBudget</b>BDT
+        </td>
+        <td>
+            <b>@item.finalBudget</b>BDT
+        </td>*@
+                        <td>
+                            @item.PgdNo
+                        </td>
+                        <td>
+                            @item.LotNo
+                        </td>
+                        <td>
+                            <b>@item.rdppBudget</b>BDT
+                        </td>
+
+                        @*<td>
+                            @item.ProjectStartDate.ToString("MMM dd, yyyy")
+                        </td>
+                        <td>
+                            @item.ProjectEndDate.ToString("MMM dd, yyyy")
+                        </td>*@
 
 
-                                <td>
-                                    @item.ProjectDescription
-                                </td>
-                                @if (item.ProjectAttachment == null)
-                                {
-                                    <td style="color: red">No Attachment Found!</td>
-                                }
-                                else
-                                {
-                                    <td>
-                                        <a class="btn btn-outline-primary" href="/File/ProjectAttachment/@item.ProjectAttachment" target="_blank">Attachment</a>
-                                    </td>
-                                }
+                        <td>
+                            @item.ProjectDescription
+                        </td>
+                        @if (item.ProjectAttachment == null)
+                        {
+                            <td style="color: red">No Attachment Found!</td>
+                        }
+                        else
+                        {
+                            <td>
+                                <a class="btn btn-outline-primary" href="/File/ProjectAttachment/@item.ProjectAttachment" target="_blank">Attachment</a>
+                            </td>
+                        }
 
-                                <td>
-                                    @item.BureauName
-                                </td>
-                                <td>
-                                    <a asp-action="Edit" asp-route-id="@item.ProjectId" 
-                                       class="btn btn-outline-info" style="width: 80px;">Edit</a>
-                                    <a asp-action="Details" asp-route-id="@item.ProjectId" 
-                                       class="btn btn-outline-success" style="width: 80px;">Details</a>
-                                    <a asp-action="Delete" asp-route-id="@item.ProjectId" 
-                                       class="btn btn-outline-danger" style="width: 80px;">Delete</a>
-                                </td>
-                            </tr>
+                        <td>
+                            @item.BureauName
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.ProjectId"
+                               class="btn btn-outline-info" style="width: 80px;">Edit</a>
+                            <a asp-action="Details" asp-route-id="@item.ProjectId"
+                               class="btn btn-outline-success" style="width: 80px;">Details</a>
+                            <a asp-action="Delete" asp-route-id="@item.ProjectId"
+                               class="btn btn-outline-danger" style="width: 80px;">Delete</a>
+                        </td>
+                    </tr>
                         }
                         else
                         {
@@ -127,28 +140,30 @@
                     <td>
                         @item.ProjectName
                     </td>
+                    @*<td>
+            <b>@item.initialBudget</b>BDT
+        </td>
+        <td>
+            <b>@item.finalBudget</b>BDT
+        </td>*@
                     <td>
-                        <b>@item.initialBudget</b>BDT
+                        @item.PgdNo
                     </td>
                     <td>
-                        <b>@item.finalBudget</b>BDT
+                        @item.LotNo
                     </td>
                     <td>
-                        @item.ProjectStartDate.ToString("MMM dd, yyyy")
+                        <b>@item.rdppBudget</b>BDT
                     </td>
-                    @if (DateTime.Now > item.ProjectEndDate)
-                    {
-                        <td style="color: orangered">
-                            @item.ProjectEndDate.ToString("MMM dd, yyyy")
-                        </td>
-                    }
-                    else
-                    {
-                        <td>
-                            @item.ProjectEndDate.ToString("MMM dd, yyyy")
-                        </td>
 
-                    }
+                    @*<td>
+            @item.ProjectStartDate.ToString("MMM dd, yyyy")
+        </td>
+        <td>
+            @item.ProjectEndDate.ToString("MMM dd, yyyy")
+        </td>*@
+
+
                     <td>
                         @item.ProjectDescription
                     </td>
@@ -168,9 +183,9 @@
                     </td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.ProjectId"
-                           class="btn btn-outline-info" style="width: 80px;">Edit</a><br />
+                           class="btn btn-outline-info" style="width: 80px;">Edit</a>
                         <a asp-action="Details" asp-route-id="@item.ProjectId"
-                           class="btn btn-outline-success" style="width: 80px;">Details</a><br />
+                           class="btn btn-outline-success" style="width: 80px;">Details</a>
                         <a asp-action="Delete" asp-route-id="@item.ProjectId"
                            class="btn btn-outline-danger" style="width: 80px;">Delete</a>
                     </td>

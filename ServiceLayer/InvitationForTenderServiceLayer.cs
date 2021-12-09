@@ -91,6 +91,7 @@ namespace ProjectManagement.ServiceLayer
             ift.InvitationForTenderDate = invitationForTender.InvitationForTenderDate;
             ift.ProjectName = project.Where(x => x.ProjectId == invitationForTender.ProjectId).FirstOrDefault().ProjectName;
             ift.VendorName = vendorInformation.Where(x => x.VendorId == invitationForTender.VendorId).FirstOrDefault().VendorName;
+            ift.ProjectId = invitationForTender.ProjectId;
             return ift;
         }
         public InvitationForTenderViewModel GetInvitationForTenderById(int? id)

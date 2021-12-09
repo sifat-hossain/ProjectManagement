@@ -2,21 +2,21 @@
 <div class="col-md-3">
     <div class="card">
         <center>
-            <div class="card-header p-2" style="background-color: bisque">
-                <h4>@ViewBag.InitialNS.InitialNoteSheetOpeningDate.ToString("dd MMM, yyyy")</h4>
+            <div class="card-header p-2" style="background-color: aquamarine">
+                <h4>@ViewBag.Tender.InvitationForTenderDate.ToString("dd MMM, yyyy")</h4>
             </div><!-- /.card-header -->
         </center>
         <div class="card-body">
             <div class="">
                 <div class="col-md-10">
-                    <b>Initial Notesheet</b>
+                    <b>Invitation for Tender</b>
                 </div>
                 <br />
                 <div class="col-md-10">
                     <div class="icon">
                         <i class="ion ion-bag"></i>
                     </div>
-                    <a asp-controller="InitialNoteSheet" asp-action="Index"
+                    <a asp-controller="InvitationForTender" asp-action="Index"
                        class="small-box-footer">View Details  <span><i class="fas fa-arrow-circle-right"></i></span></a>
                 </div>
             </div>

@@ -44,9 +44,12 @@ namespace ProjectManagement.Models
         public string ProjectName { get; set; }
         public decimal? ProjectInitialBudget { get; set; }
         public decimal? ProjectFinalBudget { get; set; }
+        public decimal? RDPPBudget { get; set; }
         public DateTime ProjectStartDate { get; set; }
         public DateTime? ProjectEndDate { get; set; }
         public string ProjectDescription { get; set; }
+        public string PgdNo { get; set; }
+        public string LotNo { get; set; }
         public string ProjectAttachment { get; set; }
         public int? BureauId { get; set; }
 
