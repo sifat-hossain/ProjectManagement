@@ -13,14 +13,14 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 1 "E:\Software Department\ProjectManagement\ProjectManagement\Views\_ViewImports.cshtml"
+#line 1 "F:\Github\ProjectManagement\Views\_ViewImports.cshtml"
 using ProjectManagement;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "E:\Software Department\ProjectManagement\ProjectManagement\Views\_ViewImports.cshtml"
+#line 2 "F:\Github\ProjectManagement\Views\_ViewImports.cshtml"
 using ProjectManagement.Models;
 
 #line default
@@ -73,7 +73,7 @@ using ProjectManagement.Models;
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a78e1c5e543e54c6d835e426bfd9337bb724f0667958", async() => {
                 WriteLiteral("\r\n    <meta charset=\"utf-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n    <title>");
 #nullable restore
-#line 6 "E:\Software Department\ProjectManagement\ProjectManagement\Views\Shared\_Layout.cshtml"
+#line 6 "F:\Github\ProjectManagement\Views\Shared\_Layout.cshtml"
       Write(ViewData["Title"]);
 
 #line default
@@ -141,7 +141,7 @@ using ProjectManagement.Models;
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n    ");
 #nullable restore
-#line 14 "E:\Software Department\ProjectManagement\ProjectManagement\Views\Shared\_Layout.cshtml"
+#line 14 "F:\Github\ProjectManagement\Views\Shared\_Layout.cshtml"
 Write(await RenderSectionAsync("Styles", required: false));
 
 #line default
@@ -193,7 +193,7 @@ Write(await RenderSectionAsync("Styles", required: false));
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n        \r\n\r\n        <div class=\"content-wrapper\">\r\n            ");
 #nullable restore
-#line 24 "E:\Software Department\ProjectManagement\ProjectManagement\Views\Shared\_Layout.cshtml"
+#line 24 "F:\Github\ProjectManagement\Views\Shared\_Layout.cshtml"
        Write(RenderBody());
 
 #line default
@@ -272,7 +272,7 @@ Write(await RenderSectionAsync("Styles", required: false));
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n\r\n    ");
 #nullable restore
-#line 37 "E:\Software Department\ProjectManagement\ProjectManagement\Views\Shared\_Layout.cshtml"
+#line 37 "F:\Github\ProjectManagement\Views\Shared\_Layout.cshtml"
 Write(await RenderSectionAsync("Scripts", required: false));
 
 #line default

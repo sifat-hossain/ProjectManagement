@@ -12,6 +12,7 @@ namespace ProjectManagement.Interface
         Task<List<InitialNotesheetViewModel>> GetAllInitialNoteSheet();
         Task<string> CreateInitialNoteSheet(InitialNotesheetViewModel initialNotesheetViewModel, IFormFile initialNoteSheetAttachment);
         InitialNotesheetViewModel GetInitialNoteSheetById(int? id);
+        Task<InitialNotesheetViewModel> GetInitialNoteSheetByProjectId(int? projectId);
         Task<string> UpdateInitialNoteSheet(InitialNotesheetViewModel initialNotesheetViewModel);
     }
 }

@@ -95,11 +95,21 @@ namespace ProjectManagement.ServiceLayer
             insvm.InitialNotesheetAttachment = initialNotesheet.InitialNotesheetAttachment;
             insvm.ProjectName = project.Where(x => x.ProjectId == initialNotesheet.ProjectId).FirstOrDefault().ProjectName;
             insvm.VendorName = vendorInformation.Where(x => x.VendorId == initialNotesheet.VendorId).FirstOrDefault().VendorName;
+            insvm.ProjectId = initialNotesheet.ProjectId;
             return insvm;
         }
         public InitialNotesheetViewModel GetInitialNoteSheetById(int? id)
         {
             throw new NotImplementedException();
+        }
+         public async Task<InitialNotesheetViewModel> GetInitialNoteSheetByProjectId(int? projectId)
+        {
+            List<InitialNotesheetViewModel> listNS = await GetAllInitialNoteSheet();
+            InitialNotesheetViewModel noteSheet = listNS.Where(m => m.ProjectId == projectId).FirstOrDefault();
+            return noteSheet;
+
+            //throw new NotImplementedException();
+
         }
 
         public Task<string> UpdateInitialNoteSheet(InitialNotesheetViewModel initialNotesheetViewModel)

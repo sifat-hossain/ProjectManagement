@@ -10,11 +10,19 @@ namespace ProjectManagement.ViewModel
     {
         public int ProjectId { get; set; }
         public string ProjectName { get; set; }
+
+        public string PgdNo { get; set; }
+        public string LotNo { get; set; }
+
         public decimal? ProjectInitialBudget { get; set; }
         public decimal? ProjectFinalBudget { get; set; }
 
         public string initialBudget { get; set; }
         public string finalBudget { get; set; }
+        public string rdppBudget { get; set; }
+
+        public decimal? RDPPBudget { get; set; }
+
 
         [DataType(DataType.Date)]
         [Required(ErrorMessage = "Please Pick a Start Date")]

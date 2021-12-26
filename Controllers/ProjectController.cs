@@ -17,12 +17,19 @@ namespace ProjectManagement.Controllers
     {
         private readonly IProject project;
         private readonly IBureau bureau;
+        private readonly IInitialNoteSheet initialNS;
+        private readonly IInvitationForTender tender;
+        private readonly ITenderOpening openingTender;
 
         string result;
-        public ProjectController(IProject _project, IBureau _bureau)
+        public ProjectController(IProject _project, IBureau _bureau, IInitialNoteSheet initialNoteSheet, IInvitationForTender _tender,
+            ITenderOpening _openingTender            )
         {
             project = _project;
             bureau = _bureau;
+            initialNS = initialNoteSheet;
+            tender = _tender;
+            openingTender = _openingTender;
 
         }
         public async Task<IActionResult> Index()
@@ -66,7 +73,21 @@ namespace ProjectManagement.Controllers
             }
             try
             {
-                ViewBag.Project =await project.GetProjectById(id);
+                ViewBag.Project = await project.GetProjectById(id);
+
+                //Initial Notesheet panel:
+                InitialNotesheetViewModel noteSheet = await initialNS.GetInitialNoteSheetByProjectId(id);
+                ViewBag.InitialNS = noteSheet;
+
+                //Invitation for Tender:
+                List<InvitationForTenderViewModel> tenderList = await tender.GetAllInvitationForTender();
+                InvitationForTenderViewModel inviteForTender =  tenderList.Where(m => m.ProjectId == id).FirstOrDefault();
+                ViewBag.Tender = inviteForTender;
+
+                //Tender Opening:
+                List<TenderOpeningViewModel> tenderOpenings = await openingTender.GetAllTenderOpening();
+                TenderOpeningViewModel  tenderOpening = tenderOpenings.Where(m => m.ProjectId == id).FirstOrDefault();
+                ViewBag.TenderOpening = tenderOpening;
             }
             catch (Exception e)
             {
