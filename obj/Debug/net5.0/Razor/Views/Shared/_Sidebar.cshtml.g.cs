@@ -13,14 +13,14 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 1 "F:\Github\ProjectManagement\Views\_ViewImports.cshtml"
+#line 1 "E:\Software Department\ProjectManagement\ProjectManagement\Views\_ViewImports.cshtml"
 using ProjectManagement;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "F:\Github\ProjectManagement\Views\_ViewImports.cshtml"
+#line 2 "E:\Software Department\ProjectManagement\ProjectManagement\Views\_ViewImports.cshtml"
 using ProjectManagement.Models;
 
 #line default
