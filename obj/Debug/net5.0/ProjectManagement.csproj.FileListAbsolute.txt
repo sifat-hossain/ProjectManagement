@@ -171,6 +171,9 @@ E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razo
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\PI\Index.cshtml.g.cs
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\PO\Create.cshtml.g.cs
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\PO\Index.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\ProjectView\InitialNoteSheet.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\ProjectView\InviationForTender.cshtml.g.cs
+E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\ProjectView\Project.cshtml.g.cs
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Project\Create.cshtml.g.cs
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Project\Details.cshtml.g.cs
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\Project\Index.cshtml.g.cs
@@ -205,6 +208,3 @@ E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Proj
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ref\ProjectManagement.dll
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.pdb
 E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\ProjectManagement.genruntimeconfig.cache
-E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\ProjectView\Project.cshtml.g.cs
-E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\ProjectView\InitialNoteSheet.cshtml.g.cs
-E:\Software Department\ProjectManagement\ProjectManagement\obj\Debug\net5.0\Razor\Views\ProjectView\InviationForTender.cshtml.g.cs
