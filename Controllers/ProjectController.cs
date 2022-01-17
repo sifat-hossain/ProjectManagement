@@ -79,6 +79,7 @@ namespace ProjectManagement.Controllers
                 InitialNotesheetViewModel noteSheet = await initialNS.GetInitialNoteSheetByProjectId(id);
                 ViewBag.InitialNS = noteSheet;
 
+
                 //Invitation for Tender:
                 List<InvitationForTenderViewModel> tenderList = await tender.GetAllInvitationForTender();
                 InvitationForTenderViewModel inviteForTender =  tenderList.Where(m => m.ProjectId == id).FirstOrDefault();

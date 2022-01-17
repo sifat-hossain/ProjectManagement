@@ -21,11 +21,33 @@ namespace ProjectManagement.Controllers
             project = _project;
             vendorInformation = _vendorInformation;
         }
-        public async Task<IActionResult> Index()
+
+        [HttpGet]
+        public async Task<IActionResult> Index(int? ProjectId)
         {
-            var invitationForTenderList = await invitationForTender.GetAllInvitationForTender();
-            ViewBag.InvitationForTender = invitationForTenderList;
+            //var invitationForTenderList = await invitationForTender.GetAllInvitationForTender();
+            //ViewBag.InvitationForTender = invitationForTenderList;
+            //return View();
+            
+
+
+            //ProjectId = 1006;
+            if (ProjectId != null)
+            {
+       
+                InvitationForTenderViewModel tenderInvitation = await invitationForTender.GetInvitationForTendeByProjectId(ProjectId);
+                ViewBag.InvitationForTender = tenderInvitation;
+
+            }
+            else
+            {
+                var invitationForTenderList = await invitationForTender.GetAllInvitationForTender();
+                ViewBag.InvitationForTenderList = invitationForTenderList;
+            }
+
             return View();
+
+
         }
         public async Task<IActionResult> Create()
         {

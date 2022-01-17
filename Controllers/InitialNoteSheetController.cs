@@ -21,11 +21,32 @@ namespace ProjectManagement.Controllers
             project = _project;
             vendorInformation = _vendorInformation;
         }
+        /*
         public async Task<IActionResult> Index()
         {
             var initialNoteSheetList= await initialNoteSheet.GetAllInitialNoteSheet();
             ViewBag.InitialNoteSheet = initialNoteSheetList;
             return View();
+        }
+        */
+        [HttpGet]
+        public async Task<IActionResult> Index(int? ProjectId)
+        {
+            //ProjectId = 1006;
+            if (ProjectId != null)
+            {
+                InitialNotesheetViewModel noteSheet = await initialNoteSheet.GetInitialNoteSheetByProjectId(ProjectId);
+                ViewBag.InitialNoteSheet = noteSheet;
+
+            }
+            else
+            {
+                var initialNoteSheetList = await initialNoteSheet.GetAllInitialNoteSheet();
+                ViewBag.InitialNoteSheetList = initialNoteSheetList;
+            }
+
+            return View();
+
         }
         public async Task<IActionResult> Create()
         {

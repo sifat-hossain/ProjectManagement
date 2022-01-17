@@ -34,6 +34,9 @@
                 <thead>
                     <tr>
                         <th>
+                            Sl No
+                        </th>
+                        <th>
                             @Html.DisplayName("Project")
                         </th>
                         <th>
@@ -55,9 +58,14 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @{ int i = 0;}
                     @foreach (var item in @ViewBag.TenderOpening)
                     {
                         <tr>
+                            <td>
+                                @{ i++;}
+                                @i
+                            </td>
                             <td>
                                 @item.ProjectName
                             </td>
@@ -71,7 +79,7 @@
                                 @item.TenderHonorium
                             </td>
                             <td>
-                                <a class="btn btn-outline-primary" href="/File/TenderOpeningAttachment/@item.TenderOpeningAttachment" target="_blank">@item.TenderOpeningAttachment</a>  
+                                <a class="btn btn-outline-primary" href="/File/TenderOpeningAttachment/@item.TenderOpeningAttachment" target="_blank">@item.TenderOpeningAttachment</a>
                             </td>
                             <td>
                                 <a asp-action="Edit" asp-route-id="@item.TenderOpeningId">Edit</a> |

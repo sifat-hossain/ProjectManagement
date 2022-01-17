@@ -12,6 +12,7 @@ namespace ProjectManagement.Interface
         Task<List<InvitationForTenderViewModel>> GetAllInvitationForTender();
         Task<string>CreateInvitationForTender(InvitationForTenderViewModel invitationForTenderViewModel, IFormFile InvitationForTenderAttachment);
         InvitationForTenderViewModel GetInvitationForTenderById(int? id);
+        Task<InvitationForTenderViewModel> GetInvitationForTendeByProjectId(int? projectId);
         Task<string>UpdateInvitationForTender(InvitationForTenderViewModel invitationForTenderViewModel);
     }
 }

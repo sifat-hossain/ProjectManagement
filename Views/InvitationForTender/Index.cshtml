@@ -36,14 +36,15 @@
                             Sl No
                         </th>
                         <th>
-                            @Html.DisplayName("Tender Invitation Date")
-                        </th>
-                        <th>
                             @Html.DisplayName("Project")
                         </th>
                         <th>
                             @Html.DisplayName("Vendor")
                         </th>
+                        <th>
+                            @Html.DisplayName("Tender Invitation Date")
+                        </th>
+
                         <th>
                             @Html.DisplayName("Attachment")
                         </th>
@@ -54,23 +55,57 @@
                 </thead>
                 <tbody>
                     @{ int i = 0;}
-                    @foreach (var item in @ViewBag.InvitationForTender)
+                    @if (@ViewBag.InvitationForTenderList != null)
                     {
+                        @foreach (var item in @ViewBag.InvitationForTenderList)
+                        {
+                            <tr>
+                                <td>
+                                    @{ i++;}
+                                    @i
+                                </td>
+                                <td>
+                                    @item.ProjectName
+                                </td>
+                                <td>
+                                    @item.VendorName
+                                </td>
+                                <td>
+                                    @item.InvitationForTenderDate.ToShortDateString()
+                                </td>
+
+
+                                <td>
+                                    <a class="btn btn-outline-primary" href="/File/InvitationForTenderAttachment/@item.InvitationForTenderAttachment" target="_blank">@item.InvitationForTenderAttachment</a>
+                                </td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.InvitationForTenderId">Edit</a> |
+                                    <a asp-action="Details" asp-route-id="@item.InvitationForTenderId">Details</a> |
+                                    <a asp-action="Delete" asp-route-id="@item.InvitationForTenderId">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        var item = @ViewBag.InvitationForTender;
+
                         <tr>
                             <td>
                                 @{ i++;}
                                 @i
                             </td>
                             <td>
-                                @item.InvitationForTenderDate.ToShortDateString()
-                            </td>
-
-                            <td>
                                 @item.ProjectName
                             </td>
                             <td>
                                 @item.VendorName
                             </td>
+                            <td>
+                                @item.InvitationForTenderDate.ToShortDateString()
+                            </td>
+
+
                             <td>
                                 <a class="btn btn-outline-primary" href="/File/InvitationForTenderAttachment/@item.InvitationForTenderAttachment" target="_blank">@item.InvitationForTenderAttachment</a>
                             </td>
@@ -80,7 +115,9 @@
                                 <a asp-action="Delete" asp-route-id="@item.InvitationForTenderId">Delete</a>
                             </td>
                         </tr>
-                     }
+
+                    }
+
                 </tbody>
             </table>
         </div>

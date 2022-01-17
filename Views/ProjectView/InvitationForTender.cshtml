@@ -15,9 +15,18 @@
                 <div class="col-md-10">
                     <div class="icon">
                         <i class="ion ion-bag"></i>
+
+                       @* <a asp-controller="InvitationForTender" asp-action="Index"
+                           class="small-box-footer">View Details  <span><i class="fas fa-arrow-circle-right"></i></span></a>*@
+
+                        <a href="@Url.Action("Index", "InvitationForTender", new { ProjectId = @ViewBag.InitialNS.ProjectId })">
+                            View Details <i class="fas fa-arrow-circle-right"></i>
+                        </a>
+
                     </div>
-                    <a asp-controller="InvitationForTender" asp-action="Index"
-                       class="small-box-footer">View Details  <span><i class="fas fa-arrow-circle-right"></i></span></a>
+                  
+
+
                 </div>
             </div>
         </div>

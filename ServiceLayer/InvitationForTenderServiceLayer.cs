@@ -99,6 +99,18 @@ namespace ProjectManagement.ServiceLayer
             throw new NotImplementedException();
         }
 
+
+        public async Task<InvitationForTenderViewModel> GetInvitationForTendeByProjectId(int? projectId)
+        {
+            List<InvitationForTenderViewModel> listNS = await GetAllInvitationForTender();
+            InvitationForTenderViewModel tenderInvitation = listNS.Where(m => m.ProjectId == projectId).FirstOrDefault();
+            return tenderInvitation;
+
+            //throw new NotImplementedException();
+
+        }
+
+
         public Task<string> UpdateInvitationForTender(InvitationForTenderViewModel invitationForTenderViewModel)
         {
             throw new NotImplementedException();
