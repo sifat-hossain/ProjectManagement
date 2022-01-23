@@ -1,0 +1,26 @@
+﻿
+<div class="col-md-3">
+    <div class="card">
+        <center>
+            <div class="card-header p-2" style="background-color: honeydew">
+                <h4>@ViewBag.Noa.Pgdate.ToString("dd MMM, yyyy")</h4>
+            </div><!-- /.card-header -->
+        </center>
+        <div class="card-body">
+            <div class="">
+                <div class="col-md-10">
+                    <b>NOA</b>
+                </div>
+                <br />
+                <div class="col-md-10">
+                    <div class="icon">
+                        <i class="ion ion-bag"></i>
+                         <a href="@Url.Action("Index", "Noa", new { ProjectId = @ViewBag.Noa.ProjectId })">
+                             View Details <i class="fas fa-arrow-circle-right"></i>
+                         </a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+        </div>

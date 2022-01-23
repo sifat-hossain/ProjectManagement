@@ -21,9 +21,19 @@ namespace ProjectManagement.Controllers
             project = _project;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? ProjectId)
         {
-            ViewBag.Noa = await noa.GetAllNoa();
+            if (ProjectId != null)
+            {
+                NoaViewModel noteSheet = await noa.GetNoaByProjectId(ProjectId);
+                ViewBag.Noa = noteSheet;
+
+            }
+            else
+            {
+                ViewBag.NoaList = await noa.GetAllNoa();
+
+            }
             return View();
         }
 

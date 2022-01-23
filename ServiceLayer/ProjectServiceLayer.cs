@@ -96,28 +96,23 @@ namespace ProjectManagement.ServiceLayer
 
             pv.ProjectId = project.ProjectId;
             pv.ProjectName = project.ProjectName;
-            pv.ProjectInitialBudget = project.ProjectInitialBudget;
-            pv.ProjectFinalBudget = project.ProjectFinalBudget;
-            pv.ProjectStartDate = project.ProjectStartDate;
-            pv.ProjectEndDate = project.ProjectEndDate;
+            //pv.ProjectInitialBudget = project.ProjectInitialBudget;
+            //pv.ProjectFinalBudget = project.ProjectFinalBudget;
+            //pv.ProjectStartDate = project.ProjectStartDate;
+            //pv.ProjectEndDate = project.ProjectEndDate;
             pv.ProjectDescription = project.ProjectDescription;
             pv.ProjectAttachment = project.ProjectAttachment;           
             pv.BureauName = bureau.Where(x => x.BureauId == project.BureauId).FirstOrDefault().BureauName;
             pv.RDPPBudget = project.RDPPBudget;
             pv.LotNo = project.LotNo;
             pv.PgdNo = project.PgdNo;
-            double amount = (double)pv.ProjectInitialBudget;
+            //double amount = (double)pv.ProjectInitialBudget;
             //amount.ToString("C");
-            pv.initialBudget = amount.ToString("N2", CultureInfo.GetCultureInfo("bn-bd"));             
-            pv.finalBudget = ((double)pv.ProjectFinalBudget).ToString("N2", CultureInfo.GetCultureInfo("bn-bd"));
+            //pv.initialBudget = amount.ToString("N2", CultureInfo.GetCultureInfo("bn-bd"));             
+            //pv.finalBudget = ((double)pv.ProjectFinalBudget).ToString("N2", CultureInfo.GetCultureInfo("bn-bd"));
             pv.RDPPBudget = (pv.RDPPBudget == null) ? 0 : pv.RDPPBudget;
             pv.rdppBudget = ((double)pv.RDPPBudget).ToString("N2", CultureInfo.GetCultureInfo("bn-bd")); 
 
-            /*
-            ILookup<string, CultureInfo> cultureByCurrency =
-                CultureInfo.GetCultures(CultureTypes.AllCultures)
-                .ToLookup(_ => _.NumberFormat.CurrencySymbol);
-            */
             return pv;
         }
         public async Task<ProjectViewModel> GetProjectById(int? id)

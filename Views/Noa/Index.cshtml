@@ -54,54 +54,96 @@
                         <th>
                             @Html.DisplayName("Attachment")
                         </th>
-                        <th>
+                        @*<th>
                             @Html.DisplayName("Action")
-                        </th>
+                        </th>*@
                     </tr>
                 </thead>
                 <tbody>
                     @{ int i = 0;}
-                    @foreach (var item in @ViewBag.Noa)
+                    @if (ViewBag.NoaList != null)
                     {
-                    <tr>
-                        <td>
-                            @{ i++;}
-                            @i
-                        </td>
-                        <td>
-                            @item.ProjectName
-                        </td>
-                        <td>
-                            @item.NoaCode.ToUpper()
-                        </td>
-                        <td>
-                            @item.Pgdate.ToString("MMM dd, yyyy")
-                        </td>
-                        <td>
-                            <b>@item.contractPrice</b> BDT
-                        </td>
-                        <td>
-                            @item.TenderNo
-                        </td>
-                        @if (item.NoaAttachment == null)
+                        @foreach (var item in @ViewBag.NoaList)
                         {
-                            <td style="color: red">No Attachment Found!</td>
+                            <tr>
+                                <td>
+                                    @{ i++;}
+                                    @i
+                                </td>
+                                <td>
+                                    @item.ProjectName
+                                </td>
+                                <td>
+                                    @item.NoaCode.ToUpper()
+                                </td>
+                                <td>
+                                    @item.Pgdate.ToString("MMM dd, yyyy")
+                                </td>
+                                <td>
+                                    <b>@item.contractPrice</b> BDT
+                                </td>
+                                <td>
+                                    @item.TenderNo
+                                </td>
+                                @if (item.NoaAttachment == null)
+                                {
+                                    <td style="color: red">No Attachment Found!</td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        <a class="btn btn-outline-primary" href="/File/NoaAttachment/@item.NoaAttachment" target="_blank">Attachment</a>
+                                    </td>
+                                }
+                                @*<td>
+                                    <a asp-action="Edit" asp-route-id="@item.NoaId"
+                                       class="btn btn-outline-info" style="width: 80px;">Edit</a>
+                                    <a asp-action="Details" asp-route-id="@item.NoaId"
+                                       class="btn btn-outline-success" style="width: 80px;">Details</a>
+                                    <a asp-action="Delete" asp-route-id="@item.NoaId"
+                                       class="btn btn-outline-danger" style="width: 80px;">Delete</a>
+                                </td>*@
+                            </tr>
                         }
-                        else
-                        {
+
+                    }
+                    else
+                    {
+                        var item = @ViewBag.Noa;
+
+                        <tr>
                             <td>
-                                <a class="btn btn-outline-primary" href="/File/NoaAttachment/@item.NoaAttachment" target="_blank">Attachment</a>
+                                @{ i++;}
+                                @i
                             </td>
-                        }
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.NoaId"
-                               class="btn btn-outline-info" style="width: 80px;">Edit</a>
-                            <a asp-action="Details" asp-route-id="@item.NoaId"
-                               class="btn btn-outline-success" style="width: 80px;">Details</a>
-                            <a asp-action="Delete" asp-route-id="@item.NoaId"
-                               class="btn btn-outline-danger" style="width: 80px;">Delete</a>
-                        </td>
-                    </tr>
+                            <td>
+                                @item.ProjectName
+                            </td>
+                            <td>
+                                @item.NoaCode.ToUpper()
+                            </td>
+                            <td>
+                                @item.Pgdate.ToString("MMM dd, yyyy")
+                            </td>
+                            <td>
+                                <b>@item.contractPrice</b> BDT
+                            </td>
+                            <td>
+                                @item.TenderNo
+                            </td>
+                            @if (item.NoaAttachment == null)
+                            {
+                                <td style="color: red">No Attachment Found!</td>
+                            }
+                            else
+                            {
+                                <td>
+                                    <a class="btn btn-outline-primary" href="/File/NoaAttachment/@item.NoaAttachment" target="_blank">Attachment</a>
+                                </td>
+                            }
+
+                        </tr>
+
                     }
                 </tbody>
             </table>

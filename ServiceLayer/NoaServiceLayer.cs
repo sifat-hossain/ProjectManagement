@@ -103,6 +103,7 @@ namespace ProjectManagement.ServiceLayer
             nvm.TenderNo = noa.TenderNo;
             nvm.NoaAttachment = noa.NoaAttachment;
             nvm.Pgdate = noa.Pgdate;
+            nvm.ProjectId = noa.ProjectId;
             nvm.ProjectName = project.Where(x => x.ProjectId == noa.ProjectId).FirstOrDefault().ProjectName;
 
             nvm.contractPrice = ((double)nvm.FinalContatractPrice).ToString("N2", CultureInfo.GetCultureInfo("bn-bd"));
@@ -120,6 +121,14 @@ namespace ProjectManagement.ServiceLayer
         public Task<string> UpdateNoa(NoaViewModel noaViewModel)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<NoaViewModel> GetNoaByProjectId(int? projectId)
+        {
+            List<NoaViewModel> listNoa = await GetAllNoa();
+            NoaViewModel noa = listNoa.Where(id => id.ProjectId == projectId).FirstOrDefault();
+
+            return noa; ;
         }
     }
 }

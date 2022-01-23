@@ -20,16 +20,22 @@ namespace ProjectManagement.Controllers
         private readonly IInitialNoteSheet initialNS;
         private readonly IInvitationForTender tender;
         private readonly ITenderOpening openingTender;
+        private readonly INoa inoa;
+        private readonly ILC ilc;
+        private readonly IFinalApproval finalApproval;
 
         string result;
         public ProjectController(IProject _project, IBureau _bureau, IInitialNoteSheet initialNoteSheet, IInvitationForTender _tender,
-            ITenderOpening _openingTender            )
+            ITenderOpening _openingTender, INoa _noa, ILC _lc, IFinalApproval finalApproval           )
         {
             project = _project;
             bureau = _bureau;
             initialNS = initialNoteSheet;
             tender = _tender;
             openingTender = _openingTender;
+            inoa = _noa;
+            ilc = _lc;
+            this.finalApproval = finalApproval;
 
         }
         public async Task<IActionResult> Index()
@@ -89,6 +95,21 @@ namespace ProjectManagement.Controllers
                 List<TenderOpeningViewModel> tenderOpenings = await openingTender.GetAllTenderOpening();
                 TenderOpeningViewModel  tenderOpening = tenderOpenings.Where(m => m.ProjectId == id).FirstOrDefault();
                 ViewBag.TenderOpening = tenderOpening;
+
+                //NOA:
+                ViewBag.Noa = await inoa.GetNoaByProjectId(id);
+
+                //LC:
+                List<LcViewModel> lcList = await ilc.GetLCByProjectId(id);
+                ViewBag.LC = lcList.Where(m => m.ProjectId == id).FirstOrDefault();
+
+                //Final Approval:
+                List<FinalApprovalViewModel> finalApprovalViewModels = await finalApproval.GetFinalApprovalByProjectId(id);
+                if (finalApprovalViewModels.Count > 0)
+                {
+                    ViewBag.FinalApproval = finalApprovalViewModels.Where(m => m.ProjectId == id).FirstOrDefault();
+                }
+
             }
             catch (Exception e)
             {

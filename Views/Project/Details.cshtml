@@ -30,6 +30,18 @@
                 {
                     <partial name="~/Views/ProjectView/TenderOpening.cshtml" />
                 }
+                @if (ViewBag.Noa != null)
+                {
+                    <partial name="~/Views/ProjectView/Noa.cshtml" />
+                }
+                @if (ViewBag.LC != null)
+                {
+                    <partial name="~/Views/ProjectView/Lc.cshtml" />
+                }
+                 @if (ViewBag.FinalApproval != null)
+                {
+                    <partial name="~/Views/ProjectView/FinalApproval.cshtml" />
+                }
                 
             </div>
 

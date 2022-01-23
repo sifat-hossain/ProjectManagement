@@ -23,9 +23,16 @@ namespace ProjectManagement.Controllers
             project = _project;
             userInformation = _userInformation;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? ProjectId)
         {
-            ViewBag.FinalApproval = await finalApproval.GetAllFinalApproval();
+            if (ProjectId != null)
+            {
+                ViewBag.FinalApproval = await finalApproval.GetFinalApprovalByProjectId(ProjectId);
+            }
+            else
+            {
+                ViewBag.FinalApproval = await finalApproval.GetAllFinalApproval();
+            }
             return View();
         }
 

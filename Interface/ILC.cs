@@ -10,5 +10,7 @@ namespace ProjectManagement.Interface
     {
         Task<List<LcViewModel>> Details();
         Task<string> Create(LcViewModel viewModel);
+        Task<List<LcViewModel>> GetLCByProjectId(int? projectId);
+
     }
 }

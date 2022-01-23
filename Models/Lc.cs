@@ -8,7 +8,7 @@ namespace ProjectManagement.Models
     public partial class Lc
     {
         public int Lcid { get; set; }
-        public int? ProjectId { get; set; }
+        public int ProjectId { get; set; }
         public DateTime? LcopeningDate { get; set; }
         public string NominatedBank { get; set; }
         public string PaymentProcess { get; set; }

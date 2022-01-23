@@ -19,7 +19,7 @@ namespace ProjectManagement.ViewModel
         public decimal? TenderHonorium { get; set; }
         public string ProjectName { get; set; }
         public string TenderOpeningAttachment { get; set; }
-
+        public DateTime? CreateDate { get; set; }
 
     }
 }

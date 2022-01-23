@@ -44,7 +44,7 @@ namespace ProjectManagement.ServiceLayer
                 await tenderOpeningAttachment.CopyToAsync(stream);
                 stream.Close();
                 tenderOpeningViewModel.TenderOpeningAttachment = fileName;
-
+                tenderOpeningViewModel.CreateDate = DateTime.Now;
             }
             catch
 

@@ -2,28 +2,23 @@
 <div class="col-md-3">
     <div class="card">
         <center>
-            <div class="card-header p-2" style="background-color: aquamarine">
-                <h4>@ViewBag.Tender.InvitationForTenderDate.ToString("dd MMM, yyyy")</h4>
+            <div class="card-header p-2" style="background-color: aliceblue">
+                <h4>@ViewBag.FinalApproval.ApprovedDate.ToString("dd MMM, yyyy")</h4>
             </div><!-- /.card-header -->
         </center>
-        <div class="card-body">
+        <div class="card-body" style="background-color: aliceblue">
             <div class="">
                 <div class="col-md-10">
-                    <b>Invitation for Tender</b>
+                    <b>Final Approval</b>
                 </div>
                 <br />
                 <div class="col-md-10">
                     <div class="icon">
                         <i class="ion ion-bag"></i>
-
-                        <a href="@Url.Action("Index", "InvitationForTender", new { ProjectId = @ViewBag.InitialNS.ProjectId })">
+                        <a href="@Url.Action("Index", "FinalApproval", new { ProjectId = @ViewBag.FinalApproval.ProjectId })">
                             View Details <i class="fas fa-arrow-circle-right"></i>
                         </a>
-
                     </div>
-                  
-
-
                 </div>
             </div>
         </div>

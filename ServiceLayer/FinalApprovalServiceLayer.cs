@@ -44,7 +44,7 @@ namespace ProjectManagement.ServiceLayer
                 await finalApprovalAttachment.CopyToAsync(stream);
                 stream.Close();
                 finalApprovalViewModel.FinalApprovalAttachment = fileName;
-
+                finalApprovalViewModel.CreateDate = DateTime.Now;
             }
             catch
 
@@ -77,8 +77,9 @@ namespace ProjectManagement.ServiceLayer
                    finalApprovalViewModel.Add(await FinalApprovalViewModel(_finalApproval));
                 }
             }
-            catch
+            catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 throw;
             }
             return finalApprovalViewModel;
@@ -92,6 +93,7 @@ namespace ProjectManagement.ServiceLayer
             fav.FinalApprovalId = finalApproval.FinalApprovalId;
             fav.ApprovedDate = finalApproval.ApprovedDate;
             fav.FinalApprovalAttachment = finalApproval.FinalApprovalAttachment;
+            fav.ProjectId = finalApproval.ProjectId;
             fav.ProjectName = project.Where(x => x.ProjectId == finalApproval.ProjectId).FirstOrDefault().ProjectName;
             fav.UserName = userInformation.Where(x => x.UserId == finalApproval.UserId).FirstOrDefault().UserName;
 
@@ -106,6 +108,13 @@ namespace ProjectManagement.ServiceLayer
         public Task<string> UpdateFinalApproval(FinalApprovalViewModel finalApprovalViewModel)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<List<FinalApprovalViewModel>> GetFinalApprovalByProjectId(int? projectId)
+        {
+            List<FinalApprovalViewModel> list = await GetAllFinalApproval();
+            list = list.Where(id => id.ProjectId == projectId).ToList();
+            return list;
         }
     }
 }

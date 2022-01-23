@@ -58,6 +58,7 @@ namespace ProjectManagement.ServiceLayer
             viewModel.NominatedBank = model.NominatedBank;
             viewModel.PaymentProcess = model.PaymentProcess;
             viewModel.LcAttachment = model.Lcattachment;
+            viewModel.ProjectId = model.ProjectId;
             viewModel.ProjectName = project.Where(x => x.ProjectId == model.ProjectId).FirstOrDefault().ProjectName;
             return viewModel;
         }
@@ -103,5 +104,14 @@ namespace ProjectManagement.ServiceLayer
             }
             return result;
         }
+
+        public async Task<List<LcViewModel>> GetLCByProjectId(int? projectId)
+        {
+            List<LcViewModel> lcList = await Details();
+            lcList = lcList.Where(id => id.ProjectId == projectId).ToList();
+
+            return lcList;
+        }
+
     }
 }

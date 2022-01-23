@@ -15,5 +15,7 @@ namespace ProjectManagement.Models
 
         public virtual Project Project { get; set; }
         public virtual UserInformation User { get; set; }
+        public DateTime? CreateDate { get; set; }
+
     }
 }

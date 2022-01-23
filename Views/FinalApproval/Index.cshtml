@@ -53,32 +53,40 @@
                     </tr>
                 </thead>
                 <tbody>
+
                     @{ int i = 0;}
-                    @foreach (var item in @ViewBag.FinalApproval)
+                    @if (ViewBag.FinalApproval != null)
                     {
-                        <tr>
-                            <td>
-                                @{ i++;}
-                                @i
-                            </td>
-                            <td>
-                                @item.ProjectName
-                            </td>
-                            <td>
-                                @item.ApprovedDate.ToShortDateString()
-                            </td>
-                            <td>
-                                @item.UserName
-                            </td>
-                            <td>
-                                <a class="btn btn-outline-primary" href="/File/FinalApprovalAttachment/@item.FinalApprovalAttachment" target="_blank">@item.FinalApprovalAttachment</a>    
-                            </td>
-                            <td>
-                                <a asp-action="Edit" asp-route-id="@item.FinalApprovalId">Edit</a> |
-                                <a asp-action="Details" asp-route-id="@item.FinalApprovalId">Details</a> |
-                                <a asp-action="Delete" asp-route-id="@item.FinalApprovalId">Delete</a>
-                            </td>
-                        </tr>
+                        @foreach (var item in @ViewBag.FinalApproval)
+                        {
+                            <tr>
+                                <td>
+                                    @{ i++;}
+                                    @i
+                                </td>
+                                <td>
+                                    @item.ProjectName
+                                </td>
+                                <td>
+                                    @item.ApprovedDate.ToString("MMM dd, yyyy")
+                                </td>
+                                <td>
+                                    @item.UserName
+                                </td>
+                                <td>
+                                    <a class="btn btn-outline-primary" href="/File/FinalApprovalAttachment/@item.FinalApprovalAttachment" target="_blank">Attachment</a>
+                                </td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.FinalApprovalId"
+                                       class="btn btn-outline-info" style="width: 75px;">Edit</a> 
+                                    <a asp-action="Details" asp-route-id="@item.FinalApprovalId"
+                                       class="btn btn-outline-success" style="width: 75px;">Details</a> 
+                                    <a asp-action="Delete" asp-route-id="@item.FinalApprovalId"
+                                       class="btn btn-outline-danger" style="width: 75px;">Delete</a>
+                                </td>
+                            </tr>
+                        }
+
                     }
                 </tbody>
             </table>

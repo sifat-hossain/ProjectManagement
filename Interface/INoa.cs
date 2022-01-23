@@ -13,5 +13,7 @@ namespace ProjectManagement.Interface
         Task<string> CreateNoa(NoaViewModel noaViewModel);
         NoaViewModel GetNoaById(int? id);
         Task<string> UpdateNoa(NoaViewModel noaViewModel);
+        Task<NoaViewModel> GetNoaByProjectId(int? projectId);
+
     }
 }

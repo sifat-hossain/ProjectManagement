@@ -14,6 +14,7 @@ namespace ProjectManagement.ViewModel
 
         [DataType(DataType.Date)]
         public DateTime? ApprovedDate { get; set; }
+        public DateTime? CreateDate { get; set; }
         public int? UserId { get; set; }
         public string FinalApprovalAttachment { get; set; }
         public string ProjectName { get; set; }

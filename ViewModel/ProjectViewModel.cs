@@ -25,11 +25,11 @@ namespace ProjectManagement.ViewModel
 
 
         [DataType(DataType.Date)]
-        [Required(ErrorMessage = "Please Pick a Start Date")]
+        //[Required(ErrorMessage = "Please Pick a Start Date")]
         public DateTime ProjectStartDate { get; set; }
 
         [DataType(DataType.Date)]
-        [Required(ErrorMessage = "Please Pick an End Date")]
+        //[Required(ErrorMessage = "Please Pick an End Date")]
         public DateTime? ProjectEndDate { get; set; }
         public string ProjectDescription { get; set; }
         public string ProjectAttachment { get; set; }

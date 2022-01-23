@@ -13,7 +13,7 @@ namespace ProjectManagement.Models
         public DateTime? TenderClosingDate { get; set; }
         public decimal? TenderHonorium { get; set; }
         public string TenderOpeningAttachment { get; set; }
-
+        public DateTime? CreateDate { get; set; }
         public virtual Project Project { get; set; }
     }
 }
