@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "PO";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -16,15 +16,6 @@
             <button class="btn btn-primary" style="border-radius:20px 5px;" type="button" onclick="location.href='@Url.Action("Create", "PO")'"><b>Create</b></button>
             <hr />
             <center>  <h1 class="card-title"><b>PO List</b></h1></center>
-            @*<div class="card-tools">
-                    <a href="#" class="btn btn-tool btn-sm">
-                        <i class="fas fa-download"></i>
-                    </a>
-                    <a href="#" class="btn btn-tool btn-sm">
-                        <i class="fas fa-bars"></i>
-                    </a>
-                </div>*@
-
             <hr />
         </div>
         <div class="card-body table-responsive p-0">
@@ -52,26 +43,37 @@
                     @{ int i = 0;}
                     @foreach (var item in @ViewBag.POList)
                     {
-                        <tr>
+                    <tr>
+                        <td>
+                            @{ i++;}
+                            @i
+                        </td>
+                        <td>
+                            @item.ProjectName
+                        </td>
+                        <td>
+                            @item.Podate.ToString("MMM dd, yyyy")
+                        </td>
+                        @if (item.Poattachment == null)
+                        {
+                            <td style="color: red">No Attachment Found!</td>
+                        }
+                        else
+                        {
                             <td>
-                                @{ i++;}
-                                @i
+                                <a class="btn btn-outline-primary" href="/File/POAttachment/@item.Poattachment" target="_blank">Attachment</a>
                             </td>
-                            <td>
-                                @item.ProjectName
-                            </td>
-                            <td>
-                                @item.Podate.ToShortDateString()
-                            </td>
-                            <td>
-                                <a class="btn btn-outline-primary" href="/File/POAttachment/@item.Poattachment" target="_blank">@item.Poattachment</a>
-                            </td>
-                            <td>
-                                <a asp-action="Edit" asp-route-id="@item.Poid">Edit</a> |
-                                <a asp-action="Details" asp-route-id="@item.Poid">Details</a> |
-                                <a asp-action="Delete" asp-route-id="@item.Poid">Delete</a>
-                            </td>
-                        </tr>
+                        }
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Poid"
+                           class="btn btn-outline-info" style="width: 75px;">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.Poid"
+                           class="btn btn-outline-success" style="width: 75px;">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.Poid"
+                           class="btn btn-outline-danger" style="width: 75px;">Delete</a>
+                    </td>
+                    </tr>
                     }
                 </tbody>
             </table>

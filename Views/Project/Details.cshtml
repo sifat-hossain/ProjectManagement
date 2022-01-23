@@ -1,9 +1,13 @@
 ﻿
 @using ProjectManagement.ViewModel
+@using System.Collections.Generic;
+
 @{
-    ViewData["Title"] = "Details";
-    Layout = "~/Views/Shared/_Layout.cshtml";
     ProjectViewModel projectView = ViewBag.Project;
+    List<DateTime> dates = new List<DateTime>();
+
+    ViewData["Title"] = @projectView.ProjectName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <center>
     <div class="col-md-12">
@@ -16,33 +20,56 @@
                     <button class="btn btn-warning">RDPP Budget:  @projectView.rdppBudget BDT</button>
                 </div>
             </div>
-
-            <div class="row p-1">
+            @*<div>
+                <button onclick="dateSorting()">Sort by Date</button>
+            </div>*@
+            <div class="row p-1" id="divDetails">
                 @if (ViewBag.InitialNS != null)
                 {
+                    //dates.Add(ViewBag.InitialNS.InitialNoteSheetOpeningDate);
                     <partial name="~/Views/ProjectView/InitialNoteSheet.cshtml" />
                 }
                 @if (ViewBag.Tender != null)
                 {
+                    //dates.Add(ViewBag.Tender.InvitationForTenderDate);
                     <partial name="~/Views/ProjectView/InvitationForTender.cshtml" />
                 }
                 @if (ViewBag.TenderOpening != null)
                 {
+                    //dates.Add(ViewBag.TenderOpening.TenderOpeningDate);
                     <partial name="~/Views/ProjectView/TenderOpening.cshtml" />
                 }
                 @if (ViewBag.Noa != null)
                 {
+                    //dates.Add(ViewBag.Noa.Pgdate);
                     <partial name="~/Views/ProjectView/Noa.cshtml" />
                 }
                 @if (ViewBag.LC != null)
                 {
+                    //dates.Add(ViewBag.LC.LcopeningDate);
                     <partial name="~/Views/ProjectView/Lc.cshtml" />
                 }
-                 @if (ViewBag.FinalApproval != null)
+                @if (ViewBag.FinalApproval != null)
                 {
+                    //dates.Add(ViewBag.FinalApproval.ApprovedDate);
                     <partial name="~/Views/ProjectView/FinalApproval.cshtml" />
                 }
-                
+                @if (ViewBag.PO != null)
+                {
+                    //dates.Add(ViewBag.PO.Podate);
+                    <partial name="~/Views/ProjectView/PO.cshtml" />
+                }
+                @if (ViewBag.PI != null)
+                {
+                    //dates.Add(ViewBag.PI.Pidate);
+                    <partial name="~/Views/ProjectView/PI.cshtml" />
+                }
+                @if (ViewBag.PSI != null)
+                {
+                    //dates.Add(ViewBag.PSI.PsiStartDate);
+                    <partial name="~/Views/ProjectView/PSI.cshtml" />
+                }
+
             </div>
 
         </div>
@@ -51,5 +78,17 @@
 
 
 
-<!-- Default box -->
 
+@section Scripts {
+
+    <script>
+        @*function dateSorting() {
+            debugger;
+            $('#divDetails').hide();
+            if (dates != null) {
+                dates.Sort();
+            }
+
+        }*@
+    </script>
+}

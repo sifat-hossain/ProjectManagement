@@ -23,10 +23,14 @@ namespace ProjectManagement.Controllers
         private readonly INoa inoa;
         private readonly ILC ilc;
         private readonly IFinalApproval finalApproval;
+        private readonly IPO ipo;
+        private readonly IPI ipi;
+        private readonly IPSI ipsi;
 
         string result;
         public ProjectController(IProject _project, IBureau _bureau, IInitialNoteSheet initialNoteSheet, IInvitationForTender _tender,
-            ITenderOpening _openingTender, INoa _noa, ILC _lc, IFinalApproval finalApproval           )
+            ITenderOpening _openingTender, INoa _noa, ILC _lc, IFinalApproval finalApproval, IPO ipo, IPI ipi,
+            IPSI ipsi)
         {
             project = _project;
             bureau = _bureau;
@@ -36,6 +40,9 @@ namespace ProjectManagement.Controllers
             inoa = _noa;
             ilc = _lc;
             this.finalApproval = finalApproval;
+            this.ipo = ipo;
+            this.ipi = ipi;
+            this.ipsi = ipsi;
 
         }
         public async Task<IActionResult> Index()
@@ -92,9 +99,11 @@ namespace ProjectManagement.Controllers
                 ViewBag.Tender = inviteForTender;
 
                 //Tender Opening:
-                List<TenderOpeningViewModel> tenderOpenings = await openingTender.GetAllTenderOpening();
-                TenderOpeningViewModel  tenderOpening = tenderOpenings.Where(m => m.ProjectId == id).FirstOrDefault();
-                ViewBag.TenderOpening = tenderOpening;
+                List<TenderOpeningViewModel> tenderOpenings = await openingTender.GetTenderOpeningByProjectId(id);
+                if (tenderOpenings.Count > 0)
+                {
+                    ViewBag.TenderOpening = tenderOpenings.Where(m => m.ProjectId == id).FirstOrDefault();
+                }
 
                 //NOA:
                 ViewBag.Noa = await inoa.GetNoaByProjectId(id);
@@ -108,6 +117,27 @@ namespace ProjectManagement.Controllers
                 if (finalApprovalViewModels.Count > 0)
                 {
                     ViewBag.FinalApproval = finalApprovalViewModels.Where(m => m.ProjectId == id).FirstOrDefault();
+                }
+
+                //PO:
+                List<PoViewModel> poViewModels = await ipo.GetPOByProjectId(id);
+                if (poViewModels.Count > 0)
+                {
+                    ViewBag.PO = poViewModels.Where(m => m.ProjectId == id).FirstOrDefault();
+                }
+                
+                //PI:
+                List<PiViewModel> piViewModels = await ipi.GetPIByProjectId(id);
+                if (piViewModels.Count > 0)
+                {
+                    ViewBag.PI = piViewModels.Where(m => m.ProjectId == id).FirstOrDefault();
+                }
+                 
+                //PSI:
+                List<PsiViewModel> psiViewModels = await ipsi.GetPsiByProjectId(id);
+                if (psiViewModels.Count > 0)
+                {
+                    ViewBag.PSI = psiViewModels.Where(m => m.ProjectId == id).FirstOrDefault();
                 }
 
             }

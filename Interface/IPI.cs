@@ -9,6 +9,7 @@ namespace ProjectManagement.Interface
     public interface IPI
     {
         Task<List<PiViewModel>> GetAllPI();
+        Task<List<PiViewModel>> GetPIByProjectId(int? ProjectId);
         Task<string> CreatePI(PiViewModel viewModel);
         /*
 PiViewModel GetPIById(int? id);

@@ -10,6 +10,7 @@ namespace ProjectManagement.Interface
    public interface ITenderOpening
     {
         Task<List<TenderOpeningViewModel>> GetAllTenderOpening();
+        Task<List<TenderOpeningViewModel>> GetTenderOpeningByProjectId(int? ProjectId);
         Task<string> CreateTenderOpening(TenderOpeningViewModel tenderOpeningViewModel, IFormFile tenderOpeningAttachment);
         TenderOpeningViewModel GetTenderOpeningById(int? id);
         Task<string> UpdateTenderOpening(TenderOpeningViewModel tenderOpeningViewModel);

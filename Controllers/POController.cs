@@ -20,9 +20,16 @@ namespace ProjectManagement.Controllers
             pO = _pO;
             project = _project;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? ProjectId)
         {
-            ViewBag.POList = await pO.GetAllPO();
+            if (ProjectId != null)
+            {
+                ViewBag.POList = await pO.GetPOByProjectId(ProjectId);
+            }
+            else
+            {
+                ViewBag.POList = await pO.GetAllPO();
+            }
             return View();
         }
         [HttpGet]

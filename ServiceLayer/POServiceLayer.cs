@@ -55,7 +55,7 @@ namespace ProjectManagement.ServiceLayer
             try
             {
                 await dbContext.SaveChangesAsync();
-                result = "Successfully Created The PO";
+                result = "Successfully Created PO";
             }
             catch
             {
@@ -91,6 +91,7 @@ namespace ProjectManagement.ServiceLayer
             pvm.Poid = po.Poid;
             pvm.Podate = po.Podate;
             pvm.Poattachment = po.Poattachment;
+            pvm.ProjectId = po.ProjectId;
             pvm.ProjectName = project.Where(x => x.ProjectId == po.ProjectId).FirstOrDefault().ProjectName;
 
             return pvm;
@@ -103,6 +104,13 @@ namespace ProjectManagement.ServiceLayer
         public Task<string> UpdatePO(PoViewModel poViewModel)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<List<PoViewModel>> GetPOByProjectId(int? ProjectId)
+        {
+            List<PoViewModel> list = await GetAllPO();
+            list = list.Where(id => id.ProjectId == ProjectId).ToList();
+            return list;
         }
     }
 }

@@ -19,9 +19,16 @@ namespace ProjectManagement.Controllers
             pSI = _pSI;
             project = _project;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? ProjectId)
         {
-            ViewBag.PsiList = await pSI.GetAllPSI();
+            if (ProjectId != null)
+            {
+                ViewBag.PsiList = await pSI.GetPsiByProjectId(ProjectId);
+            }
+            else
+            {
+                ViewBag.PsiList = await pSI.GetAllPSI();
+            }
             return View();
         }
 

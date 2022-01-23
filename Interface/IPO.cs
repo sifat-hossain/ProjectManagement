@@ -10,6 +10,7 @@ namespace ProjectManagement.Interface
     public interface IPO
     {
         Task<List<PoViewModel>> GetAllPO();
+        Task<List<PoViewModel>> GetPOByProjectId(int? ProjectId);
         Task<string> CreatePO(PoViewModel poViewModel, IFormFile poAttachment);
         PoViewModel GetPOById(int? id);
         Task<string> UpdatePO(PoViewModel poViewModel);

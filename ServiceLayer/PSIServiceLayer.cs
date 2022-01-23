@@ -91,9 +91,10 @@ namespace ProjectManagement.ServiceLayer
             PsiViewModel pvm = new();
             List<Project> project = await dbContext.Projects.FromSqlRaw("exec SpGetProject").ToListAsync();
             pvm.PsiId = psi.PsiId;
+            pvm.ProjectId = psi.ProjectId;
             pvm.ProjectName = project.Where(x => x.ProjectId == psi.ProjectId).FirstOrDefault().ProjectName;
             pvm.PsiAttachment = psi.PsiAttachment;
-            pvm.PsiDuration = Convert.ToInt32(psi.PsiEndDate.Value.Date.Day) - Convert.ToInt32(psi.PsiStartDate.Value.Date.Day);
+            pvm.PsiDuration = 1 + Convert.ToInt32(psi.PsiEndDate.Value.Date.Day) - Convert.ToInt32(psi.PsiStartDate.Value.Date.Day);
             pvm.PsiEndDate = psi.PsiEndDate;
             pvm.PsiLocation = psi.PsiLocation;
             pvm.PsiStartDate = psi.PsiStartDate;
@@ -108,6 +109,14 @@ namespace ProjectManagement.ServiceLayer
         public Task<string> UpdatePSI(PsiViewModel psiViewModel)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<List<PsiViewModel>> GetPsiByProjectId(int? ProjectId)
+        {
+            List<PsiViewModel> list = await GetAllPSI();
+            list = list.Where(id => id.ProjectId == ProjectId).ToList();
+            return list;
+
         }
     }
 }

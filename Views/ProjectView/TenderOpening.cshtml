@@ -6,20 +6,22 @@
                 <h4>@ViewBag.TenderOpening.TenderOpeningDate.ToString("dd MMM, yyyy")</h4>
             </div><!-- /.card-header -->
         </center>
+
         <div class="card-body">
-            <div class="">
-                <div class="col-md-10">
-                    <b>Tender Opening</b>
-                </div>
-                <br />
+            <b>Tender Opening</b>
+        </div>
+
+        <center>
+            <div class="card-header p-2" style="background-color: cornsilk">
                 <div class="col-md-10">
                     <div class="icon">
                         <i class="ion ion-bag"></i>
                     </div>
-                    <a asp-controller="TenderOpening" asp-action="Index"
-                       class="small-box-footer">View Details  <span><i class="fas fa-arrow-circle-right"></i></span></a>
+                    <a href="@Url.Action("Index", "TenderOpening", new { ProjectId = @ViewBag.TenderOpening.ProjectId })">
+                        View Details <i class="fas fa-arrow-circle-right"></i>
+                    </a>
                 </div>
-            </div>
-        </div>
+            </div><!-- /.card-header -->
+        </center>
     </div>
 </div>

@@ -106,5 +106,12 @@ namespace ProjectManagement.ServiceLayer
         {
             throw new NotImplementedException();
         }
+
+        public async Task<List<TenderOpeningViewModel>> GetTenderOpeningByProjectId(int? ProjectId)
+        {
+            List<TenderOpeningViewModel> list = await GetAllTenderOpening();
+            list = list.Where(id => id.ProjectId == ProjectId).ToList();
+            return list;
+        }
     }
 }

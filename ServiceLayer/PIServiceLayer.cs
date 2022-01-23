@@ -56,6 +56,7 @@ namespace ProjectManagement.ServiceLayer
             viewModel.PiId = model.PiId;
             viewModel.Pidate = model.Pidate;
             viewModel.PiAttachment = model.PiAttachment;
+            viewModel.ProjectId = model.ProjectId;
             viewModel.ProjectName = project.Where(x => x.ProjectId == model.ProjectId).FirstOrDefault().ProjectName;
             return viewModel;
         }
@@ -102,5 +103,11 @@ namespace ProjectManagement.ServiceLayer
             return result;
         }
 
+        public async Task<List<PiViewModel>> GetPIByProjectId(int? ProjectId)
+        {
+            List<PiViewModel> list = await GetAllPI();
+            list = list.Where(id => id.ProjectId == ProjectId).ToList();
+            return list;
+        }
     }
 }

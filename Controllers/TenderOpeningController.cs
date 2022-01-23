@@ -20,10 +20,17 @@ namespace ProjectManagement.Controllers
             tenderOpening = _tenderOpening;
             project = _project;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? ProjectId)
         {
-            var tenderopening = await tenderOpening.GetAllTenderOpening();
-            ViewBag.TenderOpening = tenderopening;
+            if (ProjectId != null)
+            {
+                ViewBag.TenderOpening = await tenderOpening.GetTenderOpeningByProjectId(ProjectId);
+            }
+            else
+            {
+                ViewBag.TenderOpening = await tenderOpening.GetAllTenderOpening();
+            }
+
             return View();
         }
         public async Task<IActionResult> Create()

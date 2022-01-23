@@ -57,7 +57,7 @@
                                 </td>
 
                                 <td>
-                                    @item.Pidate.ToString("dd MMM, yyyy")
+                                    @item.Pidate.ToString("MMM dd, yyyy")
                                 </td>
 
                                 @if (item.PiAttachment == null)
@@ -67,14 +67,17 @@
                                 else
                                 {
                                     <td>
-                                        <a class="btn btn-outline-primary" href="/File/PIAttachment/@item.PiAttachment" target="_blank">@item.PiAttachment</a>
+                                        <a class="btn btn-outline-primary" href="/File/PIAttachment/@item.PiAttachment" target="_blank">Attachment</a>
                                     </td>
                                 }
 
                                 <td>
-                                    <a asp-action="Edit" asp-route-id="@item.PiId">Edit</a> |
-                                    <a asp-action="Details" asp-route-id="@item.PiId">Details</a> |
-                                    <a asp-action="Delete" asp-route-id="@item.PiId">Delete</a>
+                                    <a asp-action="Edit" asp-route-id="@item.PiId"
+                                   class="btn btn-outline-info" style="width: 70px;">Edit</a>
+                                    <a asp-action="Details" asp-route-id="@item.PiId"
+                                   class="btn btn-outline-success" style="width: 75px;">Details</a>
+                                    <a asp-action="Delete" asp-route-id="@item.PiId"
+                                   class="btn btn-outline-danger" style="width: 70px;">Delete</a>
                                 </td>
                             </tr>
                         }

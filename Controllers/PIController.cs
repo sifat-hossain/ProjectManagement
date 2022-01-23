@@ -20,9 +20,16 @@ namespace ProjectManagement.Controllers
             project = _project;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? ProjectId)
         {
-            ViewBag.listOfData = await pi.GetAllPI();
+            if (ProjectId != null)
+            {
+                ViewBag.listOfData = await pi.GetPIByProjectId(ProjectId);
+            }
+            else
+            {
+                ViewBag.listOfData = await pi.GetAllPI();
+            }
             return View();
         }
 
