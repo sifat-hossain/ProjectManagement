@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="~/Dashboard/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="~/Dashboard/dist/css/adminlte.css">
+
+    <link rel="stylesheet" type="text/css" href="~/js/DataTables/datatables.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/js/DataTables/datatables.css" />
     @await RenderSectionAsync("Styles", required: false)
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed accent-purple">
@@ -33,6 +36,9 @@
     <!-- AdminLTE App -->
     <script src="~/Dashboard/dist/js/adminlte.min.js"></script>
     <script src="~/Dashboard/plugins/overlayScrollbars/js/OverlayScrollbars.min.js"></script>
+
+    <script type="text/javascript" src="~/js/DataTables/datatables.min.js"></script>
+    <script type="text/javascript" src="~/js/DataTables/datatables.js"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 
