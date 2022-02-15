@@ -9,6 +9,25 @@
     ViewData["Title"] = @projectView.ProjectName;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@{ 
+    int countModule = 0;
+}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<style>
+    .ui-progressbar {
+        position: relative;
+        
+    }
+
+    .progress-label {
+        position: absolute;
+        left: 50%;
+        font-weight: bold;
+        
+    }
+</style>
+
 <center>
     <div class="col-md-12">
         <div class="card">
@@ -19,68 +38,126 @@
                     <button class="btn btn-primary">LOT No:  @projectView.LotNo </button>
                     <button class="btn btn-warning">RDPP Budget:  @projectView.rdppBudget BDT</button>
                 </div>
-            </div>
-            @*<div>
-                <button onclick="dateSorting()">Sort by Date</button>
-            </div>*@
-            <div class="row p-1" id="divDetails">
+
+                <hr />
+                <div id="progressbar">
+                    <div class="progress-label">
+                    </div>
+                </div>
+                <hr />
+                            <div class="row p-1" id="divDetails">
                 @if (ViewBag.InitialNS != null)
                 {
+                    countModule++;
                     //dates.Add(ViewBag.InitialNS.InitialNoteSheetOpeningDate);
                     <partial name="~/Views/ProjectView/InitialNoteSheet.cshtml" />
                 }
                 @if (ViewBag.Tender != null)
                 {
+                    countModule++;
+
                     //dates.Add(ViewBag.Tender.InvitationForTenderDate);
                     <partial name="~/Views/ProjectView/InvitationForTender.cshtml" />
                 }
                 @if (ViewBag.TenderOpening != null)
                 {
+                    countModule++;
+
                     //dates.Add(ViewBag.TenderOpening.TenderOpeningDate);
                     <partial name="~/Views/ProjectView/TenderOpening.cshtml" />
                 }
                 @if (ViewBag.Noa != null)
                 {
+                    countModule++;
+
                     //dates.Add(ViewBag.Noa.Pgdate);
                     <partial name="~/Views/ProjectView/Noa.cshtml" />
                 }
                 @if (ViewBag.LC != null)
                 {
+                    countModule++;
+
                     //dates.Add(ViewBag.LC.LcopeningDate);
                     <partial name="~/Views/ProjectView/Lc.cshtml" />
                 }
                 @if (ViewBag.FinalApproval != null)
                 {
+                    countModule++;
+
                     //dates.Add(ViewBag.FinalApproval.ApprovedDate);
                     <partial name="~/Views/ProjectView/FinalApproval.cshtml" />
                 }
                 @if (ViewBag.PO != null)
                 {
+                    countModule++;
+
                     //dates.Add(ViewBag.PO.Podate);
                     <partial name="~/Views/ProjectView/PO.cshtml" />
                 }
                 @if (ViewBag.PI != null)
                 {
+                    countModule++;
+
                     //dates.Add(ViewBag.PI.Pidate);
                     <partial name="~/Views/ProjectView/PI.cshtml" />
                 }
                 @if (ViewBag.PSI != null)
                 {
+                    countModule++;
+
                     //dates.Add(ViewBag.PSI.PsiStartDate);
                     <partial name="~/Views/ProjectView/PSI.cshtml" />
                 }
 
             </div>
 
+            </div>
+            @*<div>
+            <button onclick="dateSorting()">Sort by Date</button>
+        </div>*@
+
+            
         </div>
     </div>
 </center>
 
 
 
-
 @section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
+<script>
+
+    progressLabel = $(".progress-label");
+    var percentage = (@countModule* 100) / 16;
+    $("#progressbar").progressbar({
+        value: percentage
+
+    });
+        if (percentage < 1) {
+            $("#progressbar").css({ "backgroundColor": "red" });
+            $(".progress-label").css({ "backgroundColor": "red", "color": "white" });
+        }
+        else if (percentage <= 25) {
+            $("#progressbar").css({ backgroundColor: "orange" });
+            $("#progressbar").css({ "backgroundColor": "orange" });
+        }
+        else if (percentage <= 50) {
+            $("#progressbar").css({ backgroundColor: "yellow" });
+            $("#progressbar").css({ "backgroundColor": "yellow" });
+
+            $(".progress-label").css({ backgroundColor: "yellow" });
+        }
+        else if (percentage <= 75) {
+            $("#progressbar").css({ "backgroundColor": "green" });
+
+        }
+        else if (percentage <= 99) {
+            $("#progressbar").css({ "backgroundColor": "green" });
+        }
+    $(".progress-label").append(Math.round(percentage) + '% Completed')
+</script>
     <script>
         @*function dateSorting() {
             debugger;
